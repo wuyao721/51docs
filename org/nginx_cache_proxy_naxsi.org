@@ -1,0 +1,444 @@
+nginx搭建反向代理服务器和web防火墙
+
+#+OPTIONS: ^:nil
+
+本文讲述如何用nginx搭建代理服务器和web防火墙，操作系统为ubuntu 10.10
+
+* 下载
+** 下载nginx源码
+: root@ubuntu:~/software# wget http://nginx.org/download/nginx-1.2.0.tar.gz
+
+** 下载naxsi源码(http://code.google.com/p/naxsi/)
+: root@ubuntu:~/software# wget http://naxsi.googlecode.com/files/naxsi-0.46-1.tgz
+
+** 下载ngx_cache_purge源码(https://github.com/FRiCKLE/ngx_cache_purge/)
+: root@ubuntu:~/software# git clone git://github.com/FRiCKLE/ngx_cache_purge.git
+: root@ubuntu:~/software# wget http://labs.frickle.com/files/ngx_cache_purge-1.5.tar.gz # or this
+
+** 下载开发包
+: root@ubuntu:~/software# apt-get install libpcre3-dev libpcre3 gcc make zlib1g-dev libssl-dev libperl-dev libgeoip-dev
+
+* 编译&安装
+: root@ubuntu:~/software# tar xzvf nginx-1.2.0.tar.gz
+: root@ubuntu:~/software# tar xzvf naxsi-0.46-1.tgz
+: root@ubuntu:~/software# cd nginx-1.2.0
+: root@ubuntu:~/software/nginx-1.2.0# ./configure --user=nobody --group=nogroup --add-module=../nginx-static-etags --add-module=../nginx_substitutions_filter --add-module=../naxsi-0.46-1/naxsi_src --add-module=../ngx_cache_purge --add-module=../mod_strip --with-http_ssl_module --with-http_perl_module --with-http_sub_module --with-http_geoip_module --prefix=/usr/local/nginx
+: root@ubuntu:~/software/nginx-1.2.0# make && make install
+
+** nginx模块/特性列表
+| 功能名称      | 模块名          | 核心指令                  | 说明                       | 编译参数                                   |
+|---------------+-----------------+---------------------------+----------------------------+--------------------------------------------|
+| 负载均衡      | upstream        | upstream                  | 通过轮询的方法实现负载均衡 | 默认启用                                   |
+| 反向代理      | proxy           | proxy_pass, proxy_cache   |                            | 默认启用                                   |
+| 删除缓存      | ngx_cache_purge |                           |                            | --add-module=../ngx_cache_purge            |
+| 页面压缩      | gzip            | gzip on;                  |                            | 默认启用                                   |
+| nginx状态信息 | stub status     | stub_status on;           |                            | --with-http_stub_status_module             |
+| 文本替换      | sub             | sub_filter                |                            | --with-http_sub_module                     |
+| 多文本替换    | subs            |                           |                            | --add-module=../nginx_substitutions_filter |
+| 安全http      | ssl             | listen 443 ssl;           |                            | --with-http_ssl_module                     |
+| 最小化js,css  | perl            | perl_require Minifier.pm; | 通过内置的perl裁剪内容     | --with-http_perl_module                    |
+| 最小化html    | strip           | strip on;                 | 去除多余的页面空格         | --add-module=../mod_strip                  |
+| 黑白名单      | geoip           | geoip_country, geoip_city |                            | --with-http_geoip_module                   |
+| 本地缓存      | etags           | FileETag on;              |                            | --add-module=../nginx-static-etags         |
+| WAF防火墙     | naxsi           |                           |                            | --add-module=../naxsi-0.46-1/naxsi_src     |
+
+* 配置
+
+** 主配置文件nginx.conf
+: root@ubuntu:~# cat /usr/local/nginx/conf/nginx.conf
+: user  nobody nogroup;
+: worker_processes  1;
+: 
+: #error_log  logs/error.log;
+: #error_log  logs/error.log  notice;
+: #error_log  logs/error.log  info;
+: 
+: pid        logs/nginx.pid;
+: 
+: events {
+:     worker_connections  1024;
+:     use epoll;
+: }
+: 
+: 
+: http {
+:     include       naxsi_core.rules;
+:     include       mime.types;
+:     default_type  application/octet-stream;
+: 
+:     log_format  main  '$host $remote_addr - $remote_user [$time_local] "$request" '
+:                       '$status $body_bytes_sent "$http_referer" '
+:                       '"$http_user_agent" "$http_x_forwarded_for"';
+: 
+:     #root   html;
+: 
+:     access_log  logs/access.log  main;
+: 
+:     server_tokens off;
+: 
+:     sendfile        on;
+:     #tcp_nopush     on;
+: 
+:     #keepalive_timeout  0;
+:     keepalive_timeout  65;
+: 
+:     gzip  on;
+:     gzip_min_length 1000;
+:     gzip_buffers 4 8k;
+:     gzip_http_version 1.1;
+:     gzip_types text/plain application/x-javascript text/css application/xml;
+: 
+:     proxy_temp_path /data0/proxy_temp_path;
+:     proxy_cache_path /data0/proxy_cache_path levels=1:2 keys_zone=cache_one:50m inactive=1d max_size=1g;
+: 
+:     upstream my_server_pool{
+:         server 192.168.198.174 weight=1 max_fails=2 fail_timeout=30s;
+:     }
+: 
+:     include /usr/local/nginx/conf/conf.d/*.conf;
+:     include /usr/local/nginx/conf/sites-enabled/*;
+: }
+
+** 网站配置示例
+: root@ubuntu:~# cat /usr/local/nginx/conf/sites-enabled/fence.org
+: server {
+:     listen       80;
+:     server_name  bluedon.fence.org;
+: 
+:     #charset koi8-r;
+: 
+:     proxy_intercept_errors on;
+: 
+:     #access_log  logs/host.access.log  main;
+: 
+:     location / {
+:         include  nbs.rules;
+: 
+: 	proxy_set_header Host $host;
+: 	proxy_set_header X-Forwarded-For $remote_addr;
+: 	proxy_pass http://my_server_pool;
+: 
+:         #root   html;
+:         #index  index.html index.htm;
+:     }
+: 
+:     location ~ /purge(/.*)
+:     {
+:          allow 127.0.0.1;
+:          allow 192.168.198.71;
+: 	 deny all;
+: 	 proxy_cache_purge cache_one $host$1$is_args$args;
+:     }
+: 
+:     location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|js|css)$
+:     {
+:         include  nbs.rules;
+:     
+:         proxy_cache cache_one;
+:     
+:     	proxy_cache_valid 200 304 12h;
+:     	proxy_cache_valid 301 302 1m;
+:     	proxy_cache_valid any 1m;
+:     
+:     	proxy_cache_key $host$uri$is_args$args;
+:     
+:     	proxy_set_header Host $host;
+:     	proxy_set_header X-Forwarded-For $remote_addr;
+:     	proxy_pass http://my_server_pool;
+:     }
+: 
+:     location /RequestDenied {
+: #	 	 proxy_pass http://127.0.0.1:8080;
+: #	 	 proxy_pass http://192.168.198.171:8080;
+:         return 405;
+:     }
+: 
+:     error_page  404   =200           /fence.org.404.html;
+:     location = /fence.org.404.html {
+:            root /usr/local/nginx/html;
+:     }
+: 
+:     # redirect server error pages to the static page /50x.html
+:     #
+:     #error_page   500 502 503 504  /50x.html;
+:     #location = /50x.html {
+:     #    root   html;
+:     #}
+: 
+:     # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+:     #
+:     #location ~ \.php$ {
+:     #    proxy_pass   http://127.0.0.1;
+:     #}
+: 
+:     # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+:     #
+:     #location ~ \.php$ {
+:     #    root           html;
+:     #    fastcgi_pass   127.0.0.1:9000;
+:     #    fastcgi_index  index.php;
+:     #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+:     #    include        fastcgi_params;
+:     #}
+: 
+:     # deny access to .htaccess files, if Apache's document root
+:     # concurs with nginx's one
+:     #
+:     #location ~ /\.ht {
+:     #    deny  all;
+:     #}
+: }
+
+** 设置目录权限
+: root@ubuntu:~# chown nobody:nogroup /usr/local/nginx/html -R
+: root@ubuntu:~# mkdir /data0 -p && chown nobody:nogroup /data0 -R
+
+* 运行
+: /usr/local/nginx/sbin/nginx
+
+* naxsi[[http://code.google.com/p/naxsi/wiki/LearningMode0_46][学习模式(0.46版)]]
+naxsi制定一批规则（见naxsi_core.rules），对于网络攻击进行过滤。这样的规则有时会无差别的过滤一些正常的页面，因此需要制定白名单，对其放行。naxsi学习模式就是用来收集白名单。naxsi一般的定制流程为：
+ 1. 安装nginx+naxsi
+ 2. 配置学习模式
+ 3. 运行nginx、nx_intercept.py、nx_extract.py三个程序
+ 4. 下载网站镜像
+ 5. 收集白名单
+ 6. 修改配置，取消学习模式
+ 7. 杀死nx_intercept.py、nx_extract.py，重启nginx
+
+** 各文件说明
+| 文件名            | 说明                                                      |
+|-------------------+-----------------------------------------------------------|
+| nx_intercept.py   | 监听端口8080，获取naxsi产生的异常信息，并将其保存到数据库 |
+| nx_extract.py     | 监听端口8081，从数据库读取异常信息，以web形式显示         |
+| nx_parser.py      | 业务处理，主要是数据分析以及读写数据库                    |
+| MySQLConnector.py | 数据库句柄                                                |
+| naxsi-ui.conf     | 配置文件                                                  |
+
+** 安装python类库
+: root@ubuntu:~# apt-get install python-mysqldb python-twisted
+
+** 配置
+
+*** 加载核心库
+: root@ubuntu:~# cat /usr/local/nginx/conf/nginx.conf
+: 
+: ....
+: 
+: http {
+:     include       naxsi_core.rules;
+: 
+: ....
+: 
+:     location /RequestDenied {
+:         proxy_pass http://127.0.0.1:8080;
+:     #    return 405;
+:     }
+: ....
+: 
+
+*** 加载nbs.rules
+: root@ubuntu:~# cat /usr/local/nginx/conf/sites-enabled/fence.org
+:     location / {
+:         include  nbs.rules;
+: ....
+: 
+
+*** 核心规则naxsi_core.rules
+: root@ubuntu:~# cat /usr/local/nginx/conf/naxsi_core.rules
+: ##################################
+: ## INTERNAL RULES IDS:1-10      ##
+: ##################################
+: #weird_request : 1
+: #big_body : 2
+: #no_content_type : 3
+: 
+: #MainRule "str:123FREETEXT" "msg:learning test pattern"  "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:BLOCK" id:0;
+: 
+: ##################################
+: ## SQL Injections IDs:1000-1099 ##
+: ##################################
+: MainRule "rx:select|union|update|delete|insert|table|from|ascii|hex|unhex" "msg:sql keywords" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:4" id:1000;
+: MainRule "str:\"" "msg:double quote" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:8,$XSS:8" id:1001;
+: MainRule "str:0x" "msg:0x, possible hex encoding" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:2" id:1002;
+: ## Hardcore rules
+: MainRule "str:/*" "msg:mysql comment (/*)" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:8" id:1003;
+: MainRule "str:*/" "msg:mysql comment (*/)" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:8" id:1004;
+: MainRule "str:|" "msg:mysql keyword (|)"  "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:8" id:1005;
+: MainRule "rx:&&" "msg:mysql keyword (&&)" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:8" id:1006;
+: ## end of hardcore rules
+: MainRule "str:--" "msg:mysql comment (--)" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:4" id:1007;
+: MainRule "str:;" "msg:; in stuff" "mz:BODY|URL|ARGS" "s:$SQL:4,$XSS:8" id:1008;
+: MainRule "str:=" "msg:equal in var, probable sql/xss" "mz:ARGS|BODY" "s:$SQL:2" id:1009;
+: MainRule "str:(" "msg:parenthesis, probable sql/xss" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$SQL:4,$XSS:8" id:1010;
+: MainRule "str:)" "msg:parenthesis, probable sql/xss" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$SQL:4,$XSS:8" id:1011;
+: MainRule "str:'" "msg:simple quote" "mz:ARGS|BODY|URL|$HEADERS_VAR:Cookie" "s:$SQL:4,$XSS:8" id:1013;
+: MainRule "str:," "msg:, in stuff" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:4" id:1015;
+: MainRule "str:#" "msg:mysql comment (#)" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:4" id:1016;
+: 
+: ###############################
+: ## OBVIOUS RFI IDs:1100-1199 ##
+: ###############################
+: MainRule "str:http://" "msg:http:// scheme" "mz:ARGS|BODY|$HEADERS_VAR:Cookie" "s:$RFI:8" id:1100;
+: MainRule "str:https://" "msg:https:// scheme" "mz:ARGS|BODY|$HEADERS_VAR:Cookie" "s:$RFI:8" id:1101;
+: MainRule "str:ftp://" "msg:ftp:// scheme" "mz:ARGS|BODY|$HEADERS_VAR:Cookie" "s:$RFI:8" id:1102;
+: MainRule "str:php://" "msg:php:// scheme" "mz:ARGS|BODY|$HEADERS_VAR:Cookie" "s:$RFI:8" id:1103;
+: 
+: #######################################
+: ## Directory traversal IDs:1200-1299 ##
+: #######################################                                          
+: MainRule "str:.." "msg:double dot" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$TRAVERSAL:4" id:1200;
+: MainRule "str:/etc/passwd" "msg:obvious probe" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$TRAVERSAL:4" id:1202;
+: MainRule "str:c:\\" "msg:obvious windows path" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$TRAVERSAL:4" id:1203;
+: MainRule "str:cmd.exe" "msg:obvious probe" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$TRAVERSAL:4" id:1204;
+: MainRule "str:\\" "msg:backslash" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$TRAVERSAL:4" id:1205;
+: #MainRule "str:/" "msg:slash in args" "mz:ARGS|BODY|$HEADERS_VAR:Cookie" "s:$TRAVERSAL:2" id:1206;
+: 
+: ########################################
+: ## Cross Site Scripting IDs:1300-1399 ##
+: ########################################
+: MainRule "str:<" "msg:html open tag" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$XSS:8" id:1302;
+: MainRule "str:>" "msg:html close tag" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$XSS:8" id:1303;
+: MainRule "str:[" "msg:[, possible js" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$XSS:4" id:1310;
+: MainRule "str:]" "msg:], possible js" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$XSS:4" id:1311;
+: MainRule "str:~" "msg:~ character" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$XSS:4" id:1312;
+: MainRule "str:`"  "msg:grave accent !" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$XSS:8" id:1314;
+: MainRule "rx:%[2|3]."  "msg:double encoding !" "mz:ARGS|URL|BODY|$HEADERS_VAR:Cookie" "s:$XSS:8" id:1315;
+: 
+: ####################################
+: ## Evading tricks IDs: 1400-1500 ##
+: ####################################
+: MainRule "str:&#" "msg: utf7/8 encoding" "mz:ARGS|BODY|URL|$HEADERS_VAR:Cookie" "s:$EVADE:4" id:1400;
+: MainRule "str:%U" "msg: M$ encoding" "mz:ARGS|BODY|URL|$HEADERS_VAR:Cookie" "s:$EVADE:4" id:1401;
+: MainRule negative "rx:multipart/form-data|application/x-www-form-urlencoded" "msg:Content is neither mulipart/x-www-form.." "mz:$HEADERS_VAR:Content-type" "s:$EVADE:4" id:1402;
+: 
+: #############################
+: ## File uploads: 1500-1600 ##
+: #############################
+: MainRule "rx:.ph*|.asp*" "msg:asp/php file upload!" "mz:FILE_EXT" "s:$UPLOAD:8" id:1500;
+
+*** nbs.rules
+: root@ubuntu:~# touch /tmp/naxsi_rules.tmp
+: root@ubuntu:~# cat /usr/local/nginx/conf/nbs.rules
+: LearningMode;
+: SecRulesEnabled;
+: #SecRulesDisabled;
+: DeniedUrl "/RequestDenied";
+: 
+: include "/tmp/naxsi_rules.tmp";
+: BasicRule wl:1315 "mz:$HEADERS_VAR:cookie";
+: 
+: ## check rules
+: CheckRule "$SQL >= 8" BLOCK;
+: CheckRule "$RFI >= 8" BLOCK;
+: CheckRule "$TRAVERSAL >= 4" BLOCK;
+: CheckRule "$EVADE >= 4" BLOCK;
+: CheckRule "$XSS >= 8" BLOCK;
+
+
+** 安装mysql server并创建数据库
+: root@ubuntu:~/software# apt-get install mysql-server
+: root@ubuntu:~/software# mysql -uroot -p123456 -e 'create database naxsi_sig;'
+
+** 运行python脚本，收集白名单
+启用nx_intercept.py和nx_extract.py两进程，请注意mysql登录用户名和密码要：
+: root@ubuntu:~/software# cd naxsi-0.46-1/contrib/naxsi-ui
+: root@ubuntu:~/software/naxsi-0.46-1/contrib/naxsi-ui# cat naxsi-ui.conf
+: [nx_extract]
+: username = naxsi_web
+: password = test
+: port = 8081
+: rules_path = /usr/local/nginx/conf/core.rules
+: 
+: [nx_intercept]
+: port = 8080
+: 
+: [mysql]
+: username = root
+: password = 123456
+: hostname = 127.0.0.1
+: dbname = naxsi_sig
+: root@ubuntu:~/software/naxsi-0.46-1/contrib/naxsi-ui# python nx_intercept.py -c naxsi-ui.conf
+: root@ubuntu:~/software/naxsi-0.46-1/contrib/naxsi-ui# python nx_extract.py naxsi-ui.conf
+
+** 下载整个网站 
+下载整个网站，以产生白名单：
+: root@ubuntu:~/tmp# wget -m -e robots=off -U "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6" "http://www.example.com/"
+
+** 更新规则
+打开页面http://localhost:8081/get_rules ，然后将其产生的规则加入"nbs.rules"或"/tmp/naxsi_rules.tmp"里
+
+** 取消学习模式
+真实环境一般不会用到学习模式，我们要把他取消掉：
+
+ 1. 注掉LearningMode
+: #LearningMode;
+ 2. 修改/RequestDenied处理方式
+:     location /RequestDenied {
+: #	 	 proxy_pass http://127.0.0.1:8080;
+:         return 405;
+:     }
+
+重新加载nginx配置
+: root@ubuntu:# /usr/local/nginx/sbin/nginx -s reload
+
+** fix bug
+如果没有使用默认的配置文件naxsi-ui.conf，将可能有这样的BUG。
+nx_intercept.py第42行，没有使用指定的配置文件：
+:        self.db = MySQLConnector.MySQLConnector().connect()
+
+要将其改为如下：
+:        self.db = MySQLConnector.MySQLConnector(conf_path).connect()
+
+* Minifier
+
+[[http://cpansearch.perl.org/src/PMICHAUX/JavaScript-Minifier-1.05/lib/JavaScript/Minifier.pm][JS Minifier]]
+[[http://cpansearch.perl.org/src/PMICHAUX/CSS-Minifier-0.01/lib/CSS/Minifier.pm][CSS Minifier]]
+http://wiki.nginx.org/File:Mod_strip-0.1.tar.gz
+https://github.com/evanmiller/mod_strip
+
+* 参考资料
+ - [[http://nginx.org/][nginx下载]]
+ - [[http://code.google.com/p/naxsi/][naxsi官网]]
+ - [[http://code.google.com/p/naxsi/wiki/TableOfContents][naxsi文档]]
+ - [[http://wiki.nginx.org/][nginx wiki]]
+ - <<实战Nginx: 取代Apache的高性能Web服务器>>
+
+* FAQ
+
+** 页面403
+自己编译的nginx可能会出现这个问题，主要原因是nginx对网站目录没有权限。解决方法：一，给文件夹加访问权限；二，修改nginx.conf。第一行改成user  root root
+
+** _mysql_exceptions.OperationalError: (1049, "Unknown database 'naxsi_sig'")
+一般因为数据库没创建才有这个问题：
+: root@ubuntu:~/software# mysql -uroot -p123456 -e 'create database naxsi_sig;'
+
+** _mysql_exceptions.ProgrammingError: (1146, "Table 'naxsi_sig.exception' doesn't exist")
+一般是因为数据库里没有数据，线查看nginx的server配置是不是这样的，再确定是不是启动了nx_intercept.py
+:     location /RequestDenied {
+:         proxy_pass http://127.0.0.1:8080;
+: #        proxy_pass http://192.168.198.171:8080;
+: #        return 405;
+:     }
+
+* 未解问题
+
+** 跨站脚本攻击 
+以下请求触发了跨站脚本攻击，为什么呢？
+: GET /favicon.ico?v=3 HTTP/1.1
+: Host: bluedon.fence.org
+: Connection: keep-alive
+: Accept: */*
+: User-Agent: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5
+: Accept-Encoding: gzip,deflate,sdch
+: Accept-Language: zh-CN,zh;q=0.8
+: Accept-Charset: GBK,utf-8;q=0.7,*;q=0.3
+: Cookie: 01cdc_lastpos=index; 01cdc_lastvisit=0%091338277220%09%2Findex.php; 01cdc_ol_offset=195; 01cdc_ci=index%091338277220%09%09; _ac_app_ua=31587463e37fe13828
+: 
+: HTTP/1.1 405 Not Allowed
+: Server: nginx/1.2.0
+: Date: Tue, 29 May 2012 07:40:20 GMT
+: Content-Type: text/html
+: Content-Length: 574
+: Connection: keep-alive
+

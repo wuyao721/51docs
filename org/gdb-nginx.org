@@ -1,0 +1,24 @@
+#+BLOG: wuyao721
+#+POSTID: 47
+#+DATE: [2012-11-22 星期四 17:56]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: gdb, nginx
+#+PERMALINK: gdb-nginx
+#+TITLE: gdb调试nginx要点
+
+* 源码编译
+生成Makefile后，修改objs/Makefile 将-O改成-g3
+
+* 修改nginx配置文件
+在nginx.conf上加上这两句
+: daemon off;
+: master_process off;
+
+* gdb调试
+: gdb nginx
+
+#+begin_quote
+本文由吴遥编写，转载请注明出处。
+文章链接：[[http://www.wuyao721.com/gdb-nginx.html]]
+#+end_quote

@@ -1,0 +1,129 @@
+#+LaTeX_CLASS: cjk-article
+
+Linux常用命令
+
+* apt & dpkg
+  在debian和ubuntu系统里，apt和dpkg是系统软件包管理（也即安装和卸载等）的核心。这两个软件包默认已经安装在系统里。apt和dpkg主要的不同：dpkg则是关注于本地的软件包，apt不仅关注于本地软件包，也关注于网络上的软件包。
+
+** apt-get
+   apt-get是apt软件包的一个命令，用于安装、卸载软件包
+
+*** 更新源
+: apt-get update
+
+*** 安装软件包
+: apt-get install sqlite3
+
+*** 卸载软件包
+: apt-get remove sqlite3
+
+*** 下载源码包
+: apt-get source sqlite3
+
+*** 清理已经下载的软件包
+
+*** /etc/apt/sources.list
+: root@twomoon:~# cat /etc/apt/sources.list
+: 
+: deb http://mirrors.163.com/ubuntu/ hardy main restricted universe multiverse
+: deb http://mirrors.163.com/ubuntu/ hardy-security main restricted universe multiverse
+: deb http://mirrors.163.com/ubuntu/ hardy-updates main restricted universe multiverse
+: deb http://mirrors.163.com/ubuntu/ hardy-proposed main restricted universe multiverse
+: deb http://mirrors.163.com/ubuntu/ hardy-backports main restricted universe multiverse
+: deb-src http://mirrors.163.com/ubuntu/ hardy main restricted universe multiverse
+
+
+
+
+** apt-cache 
+
+** apt-file
+   apt-file可用于查出某个文件属于哪个文件包
+
+*** 安装&设置
+: root@twomoon:~# apt-get install apt-file
+: root@twomoon:~# apt-file update
+
+*** 查找文件来源
+: root@twomoon:~# apt-file search sqlite3.h
+: autoconf-archive: /usr/share/doc/autoconf-archive/html/ax_lib_sqlite3.html
+: bibledit: /usr/share/bibledit/install_sqlite3.html
+: cl-sql: /usr/share/doc/cl-sql/html/sqlite3.html
+: firefox-2-dev: /usr/include/firefox/sqlite3/sqlite3.h
+: haskell-hsql-sqlite3-doc: /usr/share/doc/haskell-hsql-sqlite3-doc/html/hsql-sqlite3/hsql-sqlite3.haddock
+: kat: /usr/include/kde/cppsqlite3.h
+: liblua5.1-sql-sqlite3-dev: /usr/include/lua5.1/lua-sql-sqlite3.h
+: libsqlite3-dev: /usr/include/sqlite3.h
+: libxul-dev: /usr/include/xulrunner/sqlite3/sqlite3.h
+: python2.5-doc: /usr/share/doc/python2.5/html/lib/module-sqlite3.html
+: seamonkey-dev: /usr/include/seamonkey/sqlite3/sqlite3.h
+: sunbird-dev: /usr/include/sunbird/sqlite3/sqlite3.h
+: thunderbird-dev: /usr/include/thunderbird/sqlite3/sqlite3.h
+: xulrunner-1.9-dev: /usr/include/xulrunner-1.9.0.19/unstable/sqlite3.h
+: xulrunner-1.9-dev: /usr/include/xulrunner-1.9b5/unstable/sqlite3.h
+: xulrunner-1.9.2-dev: /usr/include/xulrunner-1.9.2.13/sqlite3.h
+
+    这样我们就可以看出来sqlite3.h文件是属于包libsqlite3-dev的。
+
+** apt-spy
+
+** dpkg
+
+*** 列出软件包所有文件
+: dpkg -L
+
+*** 是否安装了某个软件包
+: dpkg -l
+
+* yum & rpm
+
+
+* 系统
+df -h
+du -h
+
+
+* 编程
+
+** gcc
+
+** make
+
+** gdb
+
+** emacs
+
+** premake4
+
+* 数据库
+
+** mysql
+*** 导入数据库
+: mysql -uroot -p123456 -e 'source mydb.sql'
+
+*** 导出数据库
+: mysqldump -uroot -p123456 mydb > /home/mydb.sql
+
+
+* 网络
+
+** wget
+
+** 本地端口
+   netstat -na
+   ps -aux
+
+** TODO DNS
+
+*** TODO bind
+    dig yaogaibian.com +trace
+    nslookup
+
+* 配置
+
+** /etc/resolv.conf
+** /etc/hosts
+** /etc/hostname
+
+
+
