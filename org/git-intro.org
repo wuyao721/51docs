@@ -1,0 +1,46 @@
+#+BLOG: wuyao721
+#+POSTID: 170
+#+DATE: [2012-11-29 星期四 20:18]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: git
+#+PERMALINK: git-intro
+#+TITLE: git简介
+我对于git，08年就大闻其名，却一直不敢尝试。只因为svn已经够我用了。所以即使googlecode已经支持git，我还是坚持使用svn。
+
+但是最近googlecode老连接不上，真纠结。这使我不得不放弃它，投奔github，借此机会体会git的魅力。
+
+无法否认，命令行的东西，入门门槛高。所幸我用的是windows，有界面可用。
+
+* git的优势
+git比起传统的版本控制系统，有如下的优势：
+ - 分布式版本控制系统
+ - 协作开放变得轻松自然
+ - 减少开发人员沟通的开销
+
+* github
+上 [[https://github.com][github]] 注册一个新帐号，在 github 上，我们可以免费创建开源项目。
+
+* 工具（windows）
+
+** github for windows
+到 [[http://windows.github.com][这里]] 下载windows的github客户端。
+
+** tortoisegit
+使用过程中我觉得 *github for windows* 并不好用，所以我找到了另外一个工具。
+
+svn 有一个工具叫 tortoisesvn ，那么 git 也有它的 [[https://code.google.com/p/tortoisegit/][tortoisegit]] 。
+
+** msysgit
+tortoisegit的官网告诉我们，它还依赖于 [[https://code.google.com/p/msysgit/][msysgit]] 。msysgit是核心程序，tortoisegit只是它的皮而已。
+
+值得注意的是，先安装tortoisegit，再安装msysgit。
+
+* 参考资料
+[[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub 使用指南]]
+
+#+begin_quote
+本文由吴遥编写，转载请注明出处。
+文章链接：[[http://www.wuyao721.com/git-intro.html]]
+#+end_quote
