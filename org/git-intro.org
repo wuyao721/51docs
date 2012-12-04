@@ -13,6 +13,9 @@
 
 无法否认，命令行的东西，入门门槛高。所幸我用的是windows，有界面可用。
 
+* 观念的转变
+像我这种以前没有用过分布式版本管理系统的程序员，学习git不算是特别难的事情，但是也需要一个学习的过程。最主要是观念的转变，我一开始就想把git当做svn来用，但实际上不这样的。
+
 * git的优势
 git比起传统的版本控制系统，有如下的优势：
  - 分布式版本控制系统
@@ -38,7 +41,11 @@ tortoisegit的官网告诉我们，它还依赖于 [[https://code.google.com/p/msysgit/][msys
 值得注意的是，先安装tortoisegit，再安装msysgit。
 
 * 参考资料
-[[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub 使用指南]]
+  - [[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub 使用指南]]
+  - [[https://github.com/anurse/git-credential-winstore#i-have-another-question][git-credential-winstore]]
+  - [[http://www.cnblogs.com/dudu/archive/2011/07/06/git_save_username_password.html][终于解决“Git Windows客户端保存用户名与密码”的问题]]
+  - [[http://stackoverflow.com/questions/6031214/git-how-to-use-netrc-file-on-windows-to-save-user-and-password][Git - How to use .netrc file on windows to save user and password]]
+
 
 #+begin_quote
 本文由吴遥编写，转载请注明出处。

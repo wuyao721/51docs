@@ -1,0 +1,58 @@
+#+POSTID: 174
+#+DATE: [2012-12-05 星期三 00:01]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: goplus, 51docs, 51dotemacs
+#+PERMALINK: project-list
+#+TITLE: 项目列表
+
+* 我的项目
+
+** [[https://goplus.googlecode.com/svn/trunk/][goplus]]
+一个围棋外挂程序，可以自动下围棋，支持 *QQ围棋* 和 *弈城围棋* 。由于没什么动力，现不再维护更新。
+
+** [[https://51lordplus.googlecode.com/svn/trunk/][51lordplus]]
+本来是想做一个斗地主外挂的，后来研究了一下，发现很多同类的工具，就没做了。闭源项目地址在 [[https://free.svnspot.com/wuyao721.51lordplus/trunk][这里]] 。
+
+** [[https://github.com/wuyao721/51docs][51docs]]
+存放我写的大部分文档，包括本文。原来是放在googlecode( [[https://51docs.googlecode.com/svn/trunk/][在这里]] )上的，后来忍不了googlecode的速度，终于换github。
+
+** [[https://github.com/wuyao721/51dotemacs][51dotemacs]]
+存放我的emacs配置文件。原来也是放在googlecode( [[https://51dotemacs.googlecode.com/svn/trunk][在这里]] )上的。
+
+** [[https://free.svnspot.com/wuyao721.al][al]]
+一个自动登录的工具，特点用SpiderMonkey库，可以执行js代码，模拟浏览器行为。不开源。
+
+* 其它项目
+
+** C++ 库/工具
+  - poco http://pocoproject.org/
+  - protobuf http://code.google.com/p/protobuf/
+  - zeromq http://www.zeromq.org/
+  - ace http://www.cs.wustl.edu/~schmidt/ACE.html
+  - premake4 http://premake.sourceforge.net/
+
+** 人工智能
+  - tesseract-ocr http://code.google.com/p/tesseract-ocr/
+  - leptonica http://code.google.com/p/leptonica/
+
+** web应用
+  - weebly http://www.weebly.com/
+  - sencha http://www.sencha.com/
+  - xming http://sourceforge.net/projects/xming/
+  - wordpress http://cn.wordpress.org/
+  - sencha http://www.sencha.com/
+  - bottle http://bottlepy.org
+
+** 其它
+  - emacs for windows http://code.google.com/p/emacs-for-windows/
+  - orgmode http://orgmode.org
+  - sqlite http://www.sqlite.org/
+  - scintilla http://www.scintilla.org/
+  - postgresql http://www.postgresql.org/
+  - putty http://www.putty.org/
+
+** 网络安全
+  - ironbee https://www.ironbee.com/
+  - naxsi http://code.google.com/p/naxsi/
