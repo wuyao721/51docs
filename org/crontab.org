@@ -1,0 +1,27 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: crontab
+#+TAGS: crontab, cron
+#+DESCRIPTION:
+#+TITLE: crontab 格式
+
+* 
+| 分 | 小时     | 天(月) | 月 | 天（周） | 用户 | 命令                                        |
+|----+----------+--------+----+----------+------+---------------------------------------------|
+| 17 | *        | *      | *  | *        | root | cd / && run-parts --report /etc/cron.hourly |
+| 17 | */1      | *      | *  | *        | root | cd / && run-parts --report /etc/cron.hourly |
+| 17 | [0-59]/1 | *      | *  | *        | root | cd / && run-parts --report /etc/cron.hourly |
+|    |          |        |    |          |      |                                             |
+
+* 参数格式
+  - 分钟: 0-59
+  - 小时: 0-23
+  - 天（月）: 1-31
+  - 月: 1-12
+  - 天（周）: 0~6，0为星期天
+
+#+begin_quote
+本文由吴遥编写，转载请注明出处。
+文章链接：[[http://www.wuyao721.com/crontab.html]]
+#+end_quote
