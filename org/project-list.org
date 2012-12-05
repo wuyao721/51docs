@@ -1,7 +1,7 @@
 #+POSTID: 174
 #+DATE: [2012-12-05 星期三 00:01]
 #+BLOG: wuyao721
-#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
 #+CATEGORY: 
 #+TAGS: goplus, 51docs, 51dotemacs
 #+PERMALINK: project-list
@@ -9,20 +9,29 @@
 
 * 我的项目
 
-** [[https://goplus.googlecode.com/svn/trunk/][goplus]]
-一个围棋外挂程序，可以自动下围棋，支持 *QQ围棋* 和 *弈城围棋* 。由于没什么动力，现不再维护更新。
-
-** [[https://51lordplus.googlecode.com/svn/trunk/][51lordplus]]
-本来是想做一个斗地主外挂的，后来研究了一下，发现很多同类的工具，就没做了。闭源项目地址在 [[https://free.svnspot.com/wuyao721.51lordplus/trunk][这里]] 。
-
 ** [[https://github.com/wuyao721/51docs][51docs]]
 存放我写的大部分文档，包括本文。原来是放在googlecode( [[https://51docs.googlecode.com/svn/trunk/][在这里]] )上的，后来忍不了googlecode的速度，终于换github。
 
 ** [[https://github.com/wuyao721/51dotemacs][51dotemacs]]
 存放我的emacs配置文件。原来也是放在googlecode( [[https://51dotemacs.googlecode.com/svn/trunk][在这里]] )上的。
 
+** [[https://goplus.googlecode.com/svn/trunk/][goplus]]
+一个围棋外挂程序，可以自动下围棋，支持 *QQ围棋* 和 *弈城围棋* 。由于没什么动力，现不再维护更新。
+
+** [[https://51lordplus.googlecode.com/svn/trunk/][51lordplus]]
+本来是想做一个斗地主外挂的，后来研究了一下，发现很多同类的工具，就没做了。闭源项目地址在 [[https://free.svnspot.com/wuyao721.51lordplus/trunk][这里]] 。
+
 ** [[https://free.svnspot.com/wuyao721.al][al]]
-一个自动登录的工具，特点用SpiderMonkey库，可以执行js代码，模拟浏览器行为。不开源。
+一个自动登录的工具，特点用SpiderMonkey库，可以执行js代码，模拟浏览器行为。不开源。闭源项目地址在 [[https://free.svnspot.com/wuyao721.al/trunk][这里]] 。
+
+** [[https://code.google.com/p/51lottery/][51lottery]]
+一个简单的抽奖器，用vb做的，读excel文档，随机读取其中一行。原来是做给朋友的，给她公司抽奖用的。现已不再维护。
+
+** [[http://blog.csdn.net/wuyao721][csdn博客]]
+这是我的另一个技术博客，csdn编辑文档方式还是挺让我纠结的。
+
+** [[http://weibo.com/wuyao721][新浪微博]]
+我的新浪微博。
 
 * 其它项目
 
