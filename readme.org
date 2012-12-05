@@ -1,0 +1,10 @@
+#+TAGS: org-mode, github
+#+TITLE: 项目说明
+
+这个项目存放我的大部分的文档。文档都发布到我的个人网站 [[www.wuyao721.com]] 。
+
+* org-mode
+我用emacs的org-mode来编写文档，感觉效率挺高的，不必关注排版问题。
+
+* org2blog
+org文档可以通过 *org2blog* 发送到 *wordpress* 网站。
