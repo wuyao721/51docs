@@ -26,6 +26,9 @@
 
 * wordpress
 
+** 下载
+到wordpress官网下载，可以选择中文版的 [[http://cn.wordpress.org/][wordpress]] 。
+
 ** wordpress配置文件
 将wp-config-sample.php重命名为wp-config.php，并编辑，设置数据库配置信息
 
