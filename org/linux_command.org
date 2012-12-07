@@ -38,7 +38,30 @@ Linux常用命令
 ** apt-cache 
 
 ** apt-file
-   apt-file可用于查出某个文件属于哪个文件包
+apt-file可用于查出某个文件属于哪个软件包。
+
+有时候会很好用，例如有一次我编译skipfish的时候，编译没通过：
+
+: root@ubuntu:/root/software/skipfish-2.09b# make
+: cc -L/usr/local/lib/ -L/opt/local/lib src/skipfish.c -o skipfish \
+:         -O3 -Wno-format -Wall -funsigned-char -g -ggdb -I/usr/local/include/ -I/opt/local/include/  -DVERSION=\"2.09b\" src/htt\
+: p_client.c src/database.c src/crawler.c src/analysis.c src/report.c src/checks.c src/signatures.c src/auth.c -lcrypto -lssl -li\
+: dn -lz -lpcre
+: src/skipfish.c: In function ‘main’:
+: src/skipfish.c:275:24: warning: variable ‘has_fake’ set but not used [-Wunused-but-set-variable]
+: src/http_client.c:40:18: fatal error: idna.h: No such file or directory
+: compilation terminated.
+: 
+: make: *** [skipfish] Error 1
+
+出错提示没找到 *idna.h* ，那么通过 *apt-file* 就能快速找出应该要安装哪个软件包了。
+
+: root@ubuntu:/root/software/skipfish-2.09b# apt-file search idna.h
+: libicu-dev: /usr/include/unicode/idna.h
+: libicu-dev: /usr/include/unicode/uidna.h
+: libidn11-dev: /usr/include/idna.h
+
+稍微猜测一下，我大概可以确定是少了库 *libidn11-dev* 。实际上我装上这个库后就编译通过了。
 
 *** 安装&设置
 : root@twomoon:~# apt-get install apt-file
