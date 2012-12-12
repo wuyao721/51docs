@@ -1,4 +1,7 @@
 #+BLOG: wuyao721
+#+POSTID: 206
+#+DATE: [2012-12-12 星期三 16:19]
+#+BLOG: wuyao721
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
 #+CATEGORY: 
 #+PERMALINK: ssh-proxy

@@ -1,6 +1,4 @@
 #+BLOG: wuyao721
-#+POSTID: 40
-#+DATE: [2012-11-22 ÐÇÆÚËÄ 17:56]
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
 #+TAGS: emacs, screen

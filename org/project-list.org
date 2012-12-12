@@ -13,7 +13,7 @@
 工作以外，我个人参与的项目。
 
 ** [[https://github.com/wuyao721/51docs][51docs]]
-存放我写的大部分文档，包括本文。原来是放在googlecode( [[https://51docs.googlecode.com/svn/trunk/][在这里]] )上的，后来忍不了googlecode的速度，终于换github。
+存放我写的大部分文档，原来是放在googlecode( [[https://51docs.googlecode.com/svn/trunk/][在这里]] )上的，后来忍不了googlecode的速度，终于换github。
 
 访客请用这个地址下载：
 : git clone git://github.com/wuyao721/51docs.git
