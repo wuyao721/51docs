@@ -15,6 +15,10 @@
 
 假设我们有两台主机，一台是windows系统，ip为192.168.1.11；第二台linux系统(ubuntu 10)，ip为192.168.1.21。请按照下文的顺序一步步完成设置。
 
+#+begin_html
+<!--more--> 
+#+end_html
+
 * windows设置
 在windows下，我们需要的工具包括XMing、putty和plink。
 

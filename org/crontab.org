@@ -11,6 +11,10 @@
 
 crontab常见于Unix和类Unix的操作系统之中，用于设置周期性被执行的指令。
 
+#+begin_html
+<!--more--> 
+#+end_html
+
 编辑文件 */etc/crontab* ，添加要周期执行的命令，格式如下：
 : 0-59/1 * * * * root    /bin/watchdog.sh
 

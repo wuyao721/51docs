@@ -6,12 +6,16 @@
 #+CATEGORY: 
 #+PERMALINK: ssh-proxy
 #+TAGS: ssh, plink, proxy
-#+DESCRIPTION:
+#+DESCRIPTION: ssh代理说明
 #+TITLE: ssh代理
 
 ssh是标准的linux远程登录工具，用以代替以往的rlogin，rsh，telnet等工具。它可在不安全的网络上建立安全加密的通道。
 
 除此以外，ssh还能充当socks代理服务器。
+
+#+begin_html
+<!--more--> 
+#+end_html
 
 * 生成ssh证书（可选）
 如果不想每次都输入密码，那么可以选择证书登录。以下是linux平台生成证书的方法。

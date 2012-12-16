@@ -14,6 +14,10 @@ Emacs Org 是什么，这里就不介绍了。
 
 本文只关注于使用Emacs Org生成PDF文档（尤其是中文显示问题），并假设读者对Emacs以及Emacs Org有一定的使用经历。
 
+#+begin_html
+<!--more--> 
+#+end_html
+
 * 工具包
 
 ** Linux(Emacs + texlive + gbk2uni)
