@@ -1,8 +1,8 @@
 #+BLOG: wuyao721
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
-#+TAGS: ubuntu, linux, screen, emacs
-#+PERMALINK: linux-ubuntu-setup
+#+TAGS: ubuntu, linux, emacs
+#+PERMALINK: ubuntu-setup
 #+TITLE: ubuntu服务器环境搭建
 
 * windows的ssh工具
@@ -60,15 +60,19 @@ XShell默认会跟emacs抢按键的，可以通过设置XShell解决这个问题。
 : LC_ALL="zh_CN.UTF-8"
 
 
-
-
 * 必备工具
 
 ** apt
-** emacs
-git clone git://github.com/wuyao721/51dotemacs.git
-** screen
+: /etc/apt/sources.list
+: root@ubuntu:~# apt-get install emacs23-nox git -y
 
+** emacs
+: root@ubuntu:~# git clone git://github.com/wuyao721/51dotemacs.git
+: root@ubuntu:~# cp 51dotemacs/.emacs .
+: root@ubuntu:~# cp 51dotemacs/.srceenrc .
+: root@ubuntu:~# cp -r 51dotemacs/.emacs.d .
+
+** screen
 
 * web服务器
 
@@ -89,5 +93,5 @@ git clone git://github.com/wuyao721/51dotemacs.git
 
 #+begin_quote
 本文由吴遥编写，转载请注明出处。
-文章链接：[[http://www.wuyao721.com/linux-setup.html]]
+文章链接：[[http://www.wuyao721.com/ubuntu-setup.html]]
 #+end_quote
