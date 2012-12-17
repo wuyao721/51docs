@@ -9,6 +9,10 @@
 
 shipfish是谷歌公司研发的一个扫描网站的漏洞的工具，与其相关的另一个工具是 [[https://code.google.com/p/ratproxy/][ratproxy]] 。
 
+#+begin_html
+<!--more--> 
+#+end_html
+
 我使用的skipfish版本是 *2.09* 。
 
 以下是简单的使用方法：

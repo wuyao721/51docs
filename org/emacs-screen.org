@@ -11,6 +11,10 @@
 
 screen能够解决这样问题，它就好像一个容器一样把进程都装在里面。连接断开了没关系，下次再登录进来，您的程序还在运行。那么为什么说到emacs呢？因为emacs牛叉到把整个linux系统都装在里面。
 
+#+begin_html
+<!--more--> 
+#+end_html
+
 * 更改screen快捷键，避免和emacs冲突
 修改配置文件.screenrc，添加以下两行：
 : defflow off

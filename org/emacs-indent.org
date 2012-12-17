@@ -11,6 +11,10 @@
 
 对于C/C++、java等语言，emacs默认的缩进方法有点特别，在团队开发时显得不合群。
 
+#+begin_html
+<!--more--> 
+#+end_html
+
 以下是我的缩进配置，一个tab占4个空格。应该算是比较通用的了。
 
 : (c-set-style "ellemtel")
