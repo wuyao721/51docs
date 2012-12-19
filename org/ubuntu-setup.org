@@ -9,7 +9,7 @@
 我用 [[http://www.netsarang.com/products/xsh_overview.html][XShell 4]] 做为windows的ssh工具，比起其它同类ssh工具，他有如下优点：
  - 学校和家用免费
  - 支持多标签
- - 能记住密码
+ - 能记住密码，支持证书登录
  - 支持UTF-8字符编码
  - 可设置工具颜色、风格
 
@@ -48,7 +48,7 @@ XShell默认会跟emacs抢按键的，可以通过设置XShell解决这个问题。
 : LC_ALL="zh_CN.UTF-8"
 
 ***  /var/lib/locales/supported.d/local
-确认第一行是 *zh_CN.UTF-8* 。
+确认第一行是 *zh_CN.UTF-8 UTF-8* 。
 : root@ubuntu:~# cat /var/lib/locales/supported.d/local
 : zh_CN.UTF-8 UTF-8
 : en_US.UTF-8 UTF-8
@@ -63,33 +63,24 @@ XShell默认会跟emacs抢按键的，可以通过设置XShell解决这个问题。
 * 必备工具
 
 ** apt
-: /etc/apt/sources.list
-: root@ubuntu:~# apt-get install emacs23-nox git -y
+修改文件 */etc/apt/sources.list* ，并执行 *apt-get update*
 
 ** emacs
+安装emacs
+: root@ubuntu:~# apt-get install emacs23-nox -y
+
+下载emacs配置文件
+: root@ubuntu:~# apt-get install git -y
 : root@ubuntu:~# git clone git://github.com/wuyao721/51dotemacs.git
 : root@ubuntu:~# cp 51dotemacs/.emacs .
-: root@ubuntu:~# cp 51dotemacs/.srceenrc .
+: root@ubuntu:~# cp 51dotemacs/.screenrc .
 : root@ubuntu:~# cp -r 51dotemacs/.emacs.d .
 
 ** screen
+可以参考我这篇文章 [[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] 
 
-* web服务器
-
-** 数据库
-
-** web服务器
-
-** php
-
-** python
-
-: apt-get install nginx php5 php5-fpm php-gd php-curl
-
-
-* 安装emacs 
-
-
+* 个人博客
+可以参考我这篇文章 [[http://www.wuyao721.com/wordpress-quick-setup.html][wordpress环境快速搭建]] 
 
 #+begin_quote
 本文由吴遥编写，转载请注明出处。

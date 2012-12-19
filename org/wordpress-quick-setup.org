@@ -10,30 +10,78 @@
 #+TITLE: wordpress环境快速搭建
 
 * 运行环境
-我的运行环境是ubuntu + nginx + php + mysql。（ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始就不用自己去编译源码，环境搭建变得很容易)
+我的运行环境是 *ubuntu* + *nginx* + *php5-fpm* + *mysql*
+: apt-get install nginx php5-fpm php5-mysql mysql-server mysql-client
 
-** 数据库（mysql）
+ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始就不用自己去编译源码，环境搭建变得很容易
+
+
+* 安装wordpress
+
+** 创建数据库
 创建单独的数据库给wordpress使用
 : CREATE DATABASE dbname;
 : CREATE USER ‘username’@'localhost’ IDENTIFIED BY ‘password’;
 : GRANT ALL ON dbname.* TO ‘username’@'localhost’;
 
-** webserver（nginx）
-下载、解压wordpress到网站目录下，并修改webserver（apache、nginx等）的配置文件，之后重启webserver
-: chown www-data:www-data /var/www -R
+** 配置nginx
+修改nginx的配置文件
 : vi /etc/nginx/nginx.conf
 : /etc/init.d/nginx restart
 
-* wordpress
-
-** 下载
-到wordpress官网下载，可以选择中文版的 [[http://cn.wordpress.org/][wordpress]] 。
+** 下载wordpress
+到wordpress官网下载，可以选择中文版的 [[http://cn.wordpress.org/][wordpress]] 。之后解压到nginx对应的目录下：
+: chown www-data:www-data /var/www -R
 
 ** wordpress配置文件
 将wp-config-sample.php重命名为wp-config.php，并编辑，设置数据库配置信息
 
 ** 页面安装wordpress
 打开http://example.com/wp-admin/install.php，开始安装wordpress
+
+
+* 修改页面风格
+主要是修改文件 *style.css*
+
+** 字体设置
+: body, input, textarea {
+:         color: #373737;
+:         font: 15px "Helvetica Neue",Helvetica,STheiti,微软雅黑,黑体,Arial,Tahoma,sans-serif,serif;
+:         font-weight: 300;
+:         line-height: 1.625;
+: }
+
+** 标题风格
+: .entry-content h1,
+: .entry-content h2,
+: .comment-content h1,
+: .comment-content h2 {
+: 	color: #000;
+:       font-size: 20px;
+: 	font-weight: bold;
+: 	letter-spacing: 0.1em;
+: 	line-height: 2.6em;
+:       border: 3pt solid #666;
+:       border-left: #666 6px solid;
+: }
+: .entry-content h3,
+: .comment-content h3 {
+: 	font-size: 17px;
+: 	font-weight: bold;
+: 	letter-spacing: 0.1em;
+: 	line-height: 2.4em;
+:       border: 2pt solid #666;
+:       border-left: #666 4px solid;
+: }
+: .entry-content h4,
+: .comment-content h4 {
+: 	font-size: 13px;
+: 	font-weight: bold;
+: 	letter-spacing: 0.1em;
+: 	line-height: 2.0em;
+:       border-left: #666 4px solid;
+: }
+
 
 #+begin_quote
 本文由吴遥编写，转载请注明出处。
