@@ -82,6 +82,37 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 :       border-left: #666 4px solid;
 : }
 
+** 表格风格
+: .entry-content th,
+: .comment-content th {
+:         color: #666;
+:         /*font-size: 10px;*/
+:         font-weight: 500;
+:         letter-spacing: 0.1em;
+:         line-height: 2.6em;
+:         text-transform: uppercase;
+:         background: #DED;
+:         /*border-left: ButtonHighlight 1px solid;*/
+:         border-right: ButtonShadow 1px solid;
+:         /*border-top: ButtonHighlight 1px solid;*/
+:         border-bottom: ButtonShadow 1px solid;
+:         padding-left: 3px;
+:         padding-right: 2px;
+: }
+: .entry-content td,
+: .comment-content td {
+:         border-top: 1px solid #DDD;
+:         padding: 6px 10px 6px 0;
+:         font-size: 14px;
+:         border-left: ButtonHighlight 1px solid;
+:         border-right: ButtonShadow 1px solid;
+:         border-top: ButtonHighlight 1px solid;
+:         border-bottom: ButtonShadow 1px solid;
+:         padding-left: 3px;
+:         padding-right: 2px;
+:         overflow: hidden;
+:         background: #DEF;
+: }
 
 #+begin_quote
 本文由吴遥编写，转载请注明出处。
