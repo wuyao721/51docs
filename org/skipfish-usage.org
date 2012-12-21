@@ -30,6 +30,5 @@ shipfish是谷歌公司研发的一个扫描网站的漏洞的工具，与其相关的另一个工具是 [[https
 https://code.google.com/p/skipfish/
 
 #+begin_quote
-本文由吴遥编写，转载请注明出处。
-文章链接：[[http://www.wuyao721.com/skipfish-usage.html]]
+转载请注明出处：[[http://www.wuyao721.com/skipfish-usage.html]]
 #+end_quote

@@ -49,6 +49,5 @@ screen能够解决这样问题，它就好像一个容器一样把进程都装在里面。连接断开了没关系，
  - [[http://www.ibm.com/developerworks/cn/linux/l-cn-screen/][使用screen管理你的远程会话]]
 
 #+begin_quote
-本文由吴遥编写，转载请注明出处。
-文章链接：[[http://www.wuyao721.com/emacs-screen.html]]
+转载请注明出处：[[http://www.wuyao721.com/emacs-screen.html]]
 #+end_quote

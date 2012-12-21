@@ -83,6 +83,5 @@ plink也可以使用证书登录，不过需要的格式有点不一样。这时
   - ssh man手册 
 
 #+begin_quote
-本文由吴遥编写，转载请注明出处。
-文章链接：[[http://www.wuyao721.com/ssh-proxy.html]]
+转载请注明出处：[[http://www.wuyao721.com/ssh-proxy.html]]
 #+end_quote
