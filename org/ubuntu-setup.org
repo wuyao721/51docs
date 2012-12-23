@@ -8,7 +8,38 @@
 #+PERMALINK: ubuntu-setup
 #+TITLE: ubuntu服务器环境搭建
 
-* windows的ssh工具
+比起其它操作系统，用linux搭建服务器最适合草根用户。原因有多个： 
+  - 价格低廉，甚至免费
+  - 开源普及
+  - 硬件需求低
+  - 安全稳定
+
+本文介绍作者自己如何设置ubuntu服务器环境，对于其它linux操作系统也可以作为参考。
+
+#+html: <!--more-->
+
+* 安装系统
+网上的安装ubuntu的资料很多。这里就不再介绍。
+
+
+* 远程登录
+服务器通常用ssh远程登录。
+
+** 取消sudo输入密码
+服务器一般都要禁止root直接登录，能更好的防止暴力破解密码。但是如果让管理员每次执行sudo的时候都要输入密码，那真的是一件痛苦的事情。所以我们需要取消输入密码。这可以通过修改配置文件 */etc/sudoer* 来做到，在里面加上这一行：
+: ubuntu ALL=(ALL) NOPASSWD:ALL
+这里ubuntu是指用户名。
+
+值得注意的是，我们必须按照以下步骤来做：
+ 1. 切换成root用户
+ 2. 增加 */etc/sudoers* 写的权限
+ 3. 修改文件 */etc/sudoers* 
+ 4. 去除 */etc/sudoers* 写的权限
+
+** 证书登录
+ssh支持证书登录，我的文章 [[http://www.wuyao721.com/ssh-proxy.html][ssh代理]] 里有提到如何生成证书。
+
+** windows的ssh工具（可选）
 我用 [[http://www.netsarang.com/products/xsh_overview.html][XShell 4]] 做为windows的ssh工具，比起其它同类ssh工具，他有如下优点：
  - 学校和家用免费
  - 支持多标签
@@ -16,7 +47,8 @@
  - 支持UTF-8字符编码
  - 可设置工具颜色、风格
 
-XShell默认会跟emacs抢按键的，可以通过设置XShell解决这个问题。
+XShell默认会跟emacs/vim抢按键的，可以通过设置XShell解决这个问题。[fn:1]
+
 
 * linux中文环境（可选）
 如果不涉及中文化，可以忽略。
@@ -66,13 +98,16 @@ XShell默认会跟emacs抢按键的，可以通过设置XShell解决这个问题。
 * 必备工具
 
 ** apt
-修改文件 */etc/apt/sources.list* ，并执行 *apt-get update*
+修改文件 */etc/apt/sources.list* ，并执行 *apt-get update* 。国内推荐使用163的源地址。
 
-** emacs
-安装emacs
+** emacs/vim
+我主要是用emacs，vim则作为临时的工具。
+
+*** 安装nox版emacs
 : root@ubuntu:~# apt-get install emacs23-nox -y
 
-下载emacs配置文件
+*** 下载emacs配置文件
+我把自己的emacs配置文件都在github上
 : root@ubuntu:~# apt-get install git -y
 : root@ubuntu:~# git clone git://github.com/wuyao721/51dotemacs.git
 : root@ubuntu:~# cp 51dotemacs/.emacs .
@@ -80,11 +115,17 @@ XShell默认会跟emacs抢按键的，可以通过设置XShell解决这个问题。
 : root@ubuntu:~# cp -r 51dotemacs/.emacs.d .
 
 ** screen
-可以参考我这篇文章 [[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] 
+可以这样说，如果linux用在服务器上，那么screen是必须知道的工具。参考我这篇文章 [[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] 。
+
 
 * 个人博客
-可以参考我这篇文章 [[http://www.wuyao721.com/wordpress-quick-setup.html][wordpress环境快速搭建]] 
+服务器用途之一便是搭建网站，我的这个博客就是这么弄的。可以参考我这篇文章 [[http://www.wuyao721.com/wordpress-quick-setup.html][wordpress环境快速搭建]] 。
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/ubuntu-setup.html]]
 #+end_quote
+
+
+* Footnotes
+
+[fn:1] 实际上emacs有些按键还是用不上了，比如说按键 *C-M-f* 被屏蔽了，又比如按键 *M-DEL* 被转成 *C-M-h* 。哪个大牛帮我解决这个问题。

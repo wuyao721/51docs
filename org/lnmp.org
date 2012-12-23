@@ -1,8 +1,13 @@
-nginx+php+mysql搭建web服务器
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: linux, nginx, mysql, php
+#+PERMALINK: lnmp
+#+TITLE: 使用LNMP搭建网站
 
-#+OPTIONS: ^:nil
+*LNMP* 即是 Linux + nginx + mysql + php 。
 
-本文讲述如何用nginx+php+mysql搭建web服务器，操作系统为ubuntu 10.10
+本文讲述如何使用LNMP搭建web服务器
 
 * 下载
 ** 下载开发包
@@ -13,7 +18,6 @@ nginx+php+mysql搭建web服务器
 
 ** 下载php源码(http://www.php.net)
 : root@ubuntu:~/software# wget http://cn2.php.net/get/php-5.4.3.tar.bz2/from/this/mirror -O php-5.4.3.tar.bz2
-
 
 * 编译&安装
 ** nginx
@@ -122,51 +126,12 @@ http {
         #    deny  all;
         #}
     }
-
-
-    # another virtual host using mix of IP-, name-, and port-based configuration
-    #
-    #server {
-    #    listen       8000;
-    #    listen       somename:8080;
-    #    server_name  somename  alias  another.alias;
-
-    #    location / {
-    #        root   html;
-    #        index  index.html index.htm;
-    #    }
-    #}
-
-
-    # HTTPS server
-    #
-    #server {
-    #    listen       443;
-    #    server_name  localhost;
-
-    #    ssl                  on;
-    #    ssl_certificate      cert.pem;
-    #    ssl_certificate_key  cert.key;
-
-    #    ssl_session_timeout  5m;
-
-    #    ssl_protocols  SSLv2 SSLv3 TLSv1;
-    #    ssl_ciphers  HIGH:!aNULL:!MD5;
-    #    ssl_prefer_server_ciphers   on;
-
-    #    location / {
-    #        root   html;
-    #        index  index.html index.htm;
-    #    }
-    #}
-
 }
 
 #+end_example
-** php.ini(可选)
+
 ** 设置目录权限
 : root@ubuntu:~# chown nobody:nogroup /usr/local/nginx/html -R
-
 
 * 运行
 ** 运行nginx
