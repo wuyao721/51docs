@@ -114,6 +114,26 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 :         background: #DEF;
 : }
 
+* 统计
+访问统计可通过插件 *WP-PostViews* ，也可以通过php代码读数据库：
+#+begin_example
+文章：<?php $count_posts = wp_count_posts(); echo $published_posts = $count_posts->publish; ?> 篇
+浏览：<?php get_totalviews(true, true, true); ?> 次
+评论：<?php $total_comments = get_comment_count(); echo $total_comments['approved'];?> 条
+会员：<?php $users = $wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users"); echo $users; ?> 个
+链接：<?php $link = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->links WHERE link_visible = 'Y'"); echo $link; ?> 个
+更新：<?php $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");$last = date('Y年n月j日', strtotime($last[0]->MAX_m));echo $last; ?>
+页面：<?php $count_pages = wp_count_posts('page'); echo $page_posts = $count_pages->publish; ?> 个
+草稿：<?php $count_posts = wp_count_posts(); echo $draft_posts = $count_posts->draft; ?> 篇
+分类：<?php echo $count_categories = wp_count_terms('category'); ?> 个
+标签：<?php echo $count_tags = wp_count_terms('post_tag'); ?> 个
+#+end_example
+
+还可以可以选择使用第三方的统计 *CNZZ*， *Google Analytics* ， *百度统计* ， *51LA* 等等。
+
+* 参考资料
+ - [[http://tangchuanyao.com/20120608844/][wordpress统计总访问量]]
+
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/wordpress-quick-setup.html]]
 #+end_quote
