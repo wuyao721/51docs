@@ -1,14 +1,14 @@
 #+POSTID: 184
-#+DATE: [2012-12-05 ÐÇÆÚÈý 20:04]
+#+DATE: [2012-12-05 æ˜ŸæœŸä¸‰ 20:04]
 #+BLOG: wuyao721
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
 #+TAGS: about
 #+PERMALINK: about
-#+TITLE: ¹ØÓÚ
+#+TITLE: å…³äºŽ
 
-»¶Ó­£¡ÎÒ½ÐÎâÒ££¬ÊÇ¸ö³ÌÐòÔ±£¬ÕâÊÇÎÒµÄ¼¼Êõ²©¿Í¡£ÎÒµÄÐÂÀËÎ¢²©ÊÇ *weibo.com/wuyao721* ¡£
+æ¬¢è¿Žï¼æˆ‘å«å´é¥ï¼Œæ˜¯ä¸ªç¨‹åºå‘˜ï¼Œè¿™æ˜¯æˆ‘çš„æŠ€æœ¯åšå®¢ã€‚æˆ‘çš„æ–°æµªå¾®åšæ˜¯ *weibo.com/wuyao721* ã€‚
 
-ÎÒ×îÏ²»¶ÓÃµÄ¿ª·¢¹¤¾ßÊÇ *emacs* £¬×îÏ²»¶µÄ²Ù×÷ÏµÍ³ÊÇ *ubuntu* £¬×îÏ²»¶µÄ±à³ÌÓïÑÔÊÇ *python* ¡£
+æˆ‘æœ€å–œæ¬¢ç”¨çš„å¼€å‘å·¥å…·æ˜¯ *emacs* ï¼Œæœ€å–œæ¬¢çš„æ“ä½œç³»ç»Ÿæ˜¯ *ubuntu* ï¼Œæœ€å–œæ¬¢çš„ç¼–ç¨‹è¯­è¨€æ˜¯ *python* ã€‚
 
-ÎÒ×¡ÔÚÌì³¯µÄ¹ãÖÝ¡£
+æˆ‘ä½åœ¨å¤©æœçš„å¹¿å·žã€‚

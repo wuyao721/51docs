@@ -1,53 +1,51 @@
 #+BLOG: wuyao721
 #+POSTID: 40
-#+DATE: [2012-11-22 ������ 17:56]
-#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+DATE: [2012-11-22 星期四 17:56]
 #+CATEGORY: 
 #+TAGS: emacs, screen
 #+PERMALINK: emacs-screen
-#+TITLE: һ��emacser��screen
+#+LaTeX_CLASS: cjk-article
+#+TITLE: 一个emacser的screen
 
-��ʱ��������ҪԶ�̵�¼��linuxһ�αȽϳ���ʱ�䡣��ʹ�ù��������粻�ã����ӶϿ��ˡ����ǵĹ������ж��ˣ��ֵ���ͷ���������ᡣ
+有时候，我们需要远程登录到linux一段比较长的时间。在使用过程中网络不好，连接断开了。我们的工作被中断了，又得重头再来，纠结。
 
-screen�ܹ�����������⣬���ͺ���һ������һ���ѽ��̶�װ�����档���ӶϿ���û��ϵ���´��ٵ�¼���������ĳ��������С���ôΪʲô˵��emacs�أ���Ϊemacsţ�浽������linuxϵͳ��װ�����档
+screen能够解决这样问题，它就好像一个容器一样把进程都装在里面。连接断开了没关系，下次再登录进来，您的程序还在运行。那么为什么说到emacs呢？因为emacs牛叉到把整个linux系统都装在里面。
 
-#+begin_html
-<!--more--> 
-#+end_html
+#+html: <!--more--> 
 
-* ����screen��ݼ��������emacs��ͻ
-�޸������ļ�.screenrc�������������У�
+* 更改screen快捷键，避免和emacs冲突
+修改配置文件.screenrc，添加以下两行：
 : defflow off
 : escape ^Zz
-��һ�йر������ƣ�ȡ��screen�Ŀ�ݼ�C-s������emacs�г�ͻ�����ڶ��н�C-a�滻ΪC-z��ǰ����emacs�г�ͻ��������û�С�
+第一行关闭流控制，取消screen的快捷键C-s（它与emacs有冲突）；第二行将C-a替换为C-z，前者与emacs有冲突，后者则没有。
 
-* ����emacs
-�����Ƽ�ֻ��һ��screen��һ��screen�Ϳ���װ�������(����)�ˡ�̫���screen�������ҡ�
+* 运行emacs
+这里推荐只用一个screen，一个screen就可以装多个进程(窗口)了。太多的screen反而更乱。
 : screen emacs
 
-** ���ӶϿ����ٴ�emacs
+** 连接断开后再打开emacs
 : screen -r
 
-* ��ؿ���Ȩ
-��ʱ��emacs�Ѿ���screenռ�У�Attached���������Ǹ�screen���ܿ����ˡ���ʱ��Ҫ��screenɱ�ˣ�����emacs��
-  1. �ҳ�screen��pid��ps a | grep screen
-  2. ɱ�����screen��kill XXX
-  3. ȡ�����ǵĽ��̣�screen -D -RR
+** 夺回控制权
+有时候emacs已经被screen占有（Attached），但是那个screen不受控制了。这时就要把screen杀了，抢回emacs。
+  1. 找出screen的pid：ps a | grep screen
+  2. 杀了这个screen：kill XXX
+  3. 取回我们的进程：screen -D -RR
 
-* screen���ÿ�ݼ�
-����emacser��˵��screenֻ����������emacs���ҵ��Ĺ��ߡ����Ծ���screen�Ŀ�ݼ����٣���������ֻҪ��ס���������ˣ�ʵ������ֻ�õ�ǰ��������C-z��emacs����û�б��õ��ģ����Բ�����ͻ��
-| ��ݼ� | ����                                      |
+* screen常用快捷键
+对于emacser来说，screen只是用来保护emacs不挂掉的工具。所以尽管screen的快捷键不少，但是我们只要记住几个就行了，实际上我只用到前两个。（C-z在emacs里是没有被用到的，所以并不冲突）
+| 快捷键 | 描述                                      |
 |--------+-------------------------------------------|
-| C-z c  | ����һ���µ�����shell�Ĵ��ڲ��л����ô��� |
-| C-z n  | �л�����һ������                          |
-| C-z d  | ��ʱ�Ͽ�screen�Ự                        |
-| C-z k  | ɱ����ǰ����                              |
-| C-z w  | ��ʾ���д����б�                          |
+| C-z c  | 创建一个新的运行shell的窗口并切换到该窗口 |
+| C-z n  | 切换到下一个窗口                          |
+| C-z d  | 暂时断开screen会话                        |
+| C-z k  | 杀掉当前窗口                              |
+| C-z w  | 显示所有窗口列表                          |
 
-* �ο�����
- - [[http://blog.csdn.net/circleexpandor/article/details/5808258][Screen��Emacs���������]]
- - [[http://www.ibm.com/developerworks/cn/linux/l-cn-screen/][ʹ��screen�������Զ�̻Ự]]
+* 参考资料
+ - [[http://blog.csdn.net/circleexpandor/article/details/5808258][Screen和Emacs的完美结合]]
+ - [[http://www.ibm.com/developerworks/cn/linux/l-cn-screen/][使用screen管理你的远程会话]]
 
 #+begin_quote
-ת����ע��������[[http://www.wuyao721.com/emacs-screen.html]]
+转载请注明出处：[[http://www.wuyao721.com/emacs-screen.html]]
 #+end_quote

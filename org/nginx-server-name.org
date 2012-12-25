@@ -1,50 +1,50 @@
 #+BLOG: wuyao721
 #+POSTID: 304
-#+DATE: [2012-12-25 ĞÇÆÚ¶ş 19:54]
+#+DATE: [2012-12-25 æ˜ŸæœŸäºŒ 19:54]
 #+BLOG: wuyao721
-#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
 #+TAGS: nginx
 #+PERMALINK: nginx-server-name
-#+TITLE: nginx server_name ÃüÃû¹æÔò
+#+LaTeX_CLASS: cjk-article
+#+TITLE: nginx server_name å‘½åè§„åˆ™
 
-Ö¸Áî *server_name* Í¨³£ÔÚÖ¸Áî¿é *server { ... }* ÀïÊ¹ÓÃ¡£ËüÓÃÀ´ÓëhttpÍ·µÄ×Ö¶Î *Host* ×ö±È½Ï£¬Ö®ºóÑ¡ÔñºÏÊÊµÄnginxÅäÖÃÎÄ¼ş¿é¡£Õâ¾ÍÊÇÎÒÃÇÍ¨³£ËùËµµÄ *ĞéÄâÖ÷»ú* (*virual servers*) ¡£
+æŒ‡ä»¤ *server_name* é€šå¸¸åœ¨æŒ‡ä»¤å— *server { ... }* é‡Œä½¿ç”¨ã€‚å®ƒç”¨æ¥ä¸httpå¤´çš„å­—æ®µ *Host* åšæ¯”è¾ƒï¼Œä¹‹åé€‰æ‹©åˆé€‚çš„nginxé…ç½®æ–‡ä»¶å—ã€‚è¿™å°±æ˜¯æˆ‘ä»¬é€šå¸¸æ‰€è¯´çš„ *è™šæ‹Ÿä¸»æœº* (*virual servers*) ã€‚
 
 #+html: <!--more--> 
 
-Ö÷»úÃû°´ÕÕÒÔÏÂÓÅÏÈ¼¶Æ¥Åä£º
-  1. ÍêÈ«Æ¥Åä£¬ Èç£º www.example.com
-  2. ÒÔÍ¨Åä·ûºÅ¿ªÊ¼µÄÖ÷»úÃû£¬ Èç£º*.example.com
-  3. ÒÔÍ¨Åä·û½áÊøµÄÖ÷»úÃû£¬ Èç£ºwww.example.*
-  4. ÕıÔò±í´ïÊ½
+ä¸»æœºåæŒ‰ç…§ä»¥ä¸‹ä¼˜å…ˆçº§åŒ¹é…ï¼š
+  1. å®Œå…¨åŒ¹é…ï¼Œ å¦‚ï¼š www.example.com
+  2. ä»¥é€šé…ç¬¦å·å¼€å§‹çš„ä¸»æœºåï¼Œ å¦‚ï¼š*.example.com
+  3. ä»¥é€šé…ç¬¦ç»“æŸçš„ä¸»æœºåï¼Œ å¦‚ï¼šwww.example.*
+  4. æ­£åˆ™è¡¨è¾¾å¼
  
-Èç¹ûÒÔÉÏµÄ¶¼Ã»ÓĞÆ¥Åäµ½, ÄÇÃ´¾ÍÊÇ°²×°Ë³ĞòÊ¹ÓÃÒÔÏÂµÄÖ¸Áî¿é *server { ... }*
-  1. Ö¸Áî¿é *server { ... }* Ã÷È·Ê¹ÓÃÁËÖ¸Áî *listen*£¬²¢´øÓĞ²ÎÊı  *[default|default_server]*
-  2. µÚÒ»¸öÊ¹ÓÃÁË Ö¸Áî *listen*µÄ Ö¸Áî¿é *server { ... }* (°üÀ¨ÒşÊ½ÉùÃ÷ listen 80;)
+å¦‚æœä»¥ä¸Šçš„éƒ½æ²¡æœ‰åŒ¹é…åˆ°, é‚£ä¹ˆå°±æ˜¯å®‰è£…é¡ºåºä½¿ç”¨ä»¥ä¸‹çš„æŒ‡ä»¤å— *server { ... }*
+  1. æŒ‡ä»¤å— *server { ... }* æ˜ç¡®ä½¿ç”¨äº†æŒ‡ä»¤ *listen*ï¼Œå¹¶å¸¦æœ‰å‚æ•°  *[default|default_server]*
+  2. ç¬¬ä¸€ä¸ªä½¿ç”¨äº† æŒ‡ä»¤ *listen*çš„ æŒ‡ä»¤å— *server { ... }* (åŒ…æ‹¬éšå¼å£°æ˜ listen 80;)
 
- *Àı×Ó1* £º
+ *ä¾‹å­1* ï¼š
 : server {
 :  server_name   example.com  www.example.com;
 : }
 
- *Àı×Ó2* £º
+ *ä¾‹å­2* ï¼š
 : server {
 :   server_name   example.com  *.example.com;
 : }
 
- *Àı×Ó3* £¬µÈÍ¬ÓÚ *Àı×Ó2* £º
+ *ä¾‹å­3* ï¼Œç­‰åŒäº *ä¾‹å­2* ï¼š
 : server {
 :   server_name  .example.com;
 : }
 
- *Àı×Ó4* £¬Ê¹ÓÃÁËÕıÔò±í´ïÊ½ £º
+ *ä¾‹å­4* ï¼Œä½¿ç”¨äº†æ­£åˆ™è¡¨è¾¾å¼ ï¼š
 : server {
 :   server_name   www.example.com   ~^www\d+\.example\.com$;
 : }
 
-²Î¿¼×ÊÁÏ£º
+å‚è€ƒèµ„æ–™ï¼š
  - [[http://wiki.nginx.org/HttpCoreModule#server_name]]
 
 #+begin_quote
-×ªÔØÇë×¢Ã÷³ö´¦£º[[http://www.wuyao721.com/nginx-server-name.html]]
+è½¬è½½è¯·æ³¨æ˜å‡ºå¤„ï¼š[[http://www.wuyao721.com/nginx-server-name.html]]
 #+end_quote

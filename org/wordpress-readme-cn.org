@@ -1,53 +1,53 @@
-#+DATE: [2012-11-23 ÐÇÆÚÎå 13:59]
+#+DATE: [2012-11-23 æ˜ŸæœŸäº” 13:59]
 #+TITLE: Org2blog Readme
 #+Options: num:nil
 #+STARTUP: odd
 #+Style: <style> h1,h2,h3 {font-family: arial, helvetica, sans-serif} </style>
 
-* ¸Å¿ö
-  org2blog/wp ÊÇÒ»¸ö·¢²¼¹¤¾ß£¬ËüÄÜ½« Emacs µÄ org-mode ÎÄµµ·¢²¼µ½
-  [[http://wordpress.org/][WordPress]] ²©¿Í.  org2blog/wp ÊÇ org2blog µÄÆäÖÐÒ»¸öÈí¼þ°ü¡£
-  ÁíÍâÒ»¸öÊÇ [[http://tehom-blog.blogspot.com/][Tom Breton]] µÄ [[http://repo.or.cz/r/org2blog.git/][org2blog/atom]] .
+* æ¦‚å†µ
+  org2blog/wp æ˜¯ä¸€ä¸ªå‘å¸ƒå·¥å…·ï¼Œå®ƒèƒ½å°† Emacs çš„ org-mode æ–‡æ¡£å‘å¸ƒåˆ°
+  [[http://wordpress.org/][WordPress]] åšå®¢.  org2blog/wp æ˜¯ org2blog çš„å…¶ä¸­ä¸€ä¸ªè½¯ä»¶åŒ…ã€‚
+  å¦å¤–ä¸€ä¸ªæ˜¯ [[http://tehom-blog.blogspot.com/][Tom Breton]] çš„ [[http://repo.or.cz/r/org2blog.git/][org2blog/atom]] .
 
-  ´ÓÉè¼ÆÉÏ½²£¬ org2blog/wp ÄÜ¹»ÔËÐÐÓÚÈÎÒâÖ§³Ö xml-rpc µÄÆ½Ì¨£¬
-  µ«ÊÇÊµ¼ÊÉÏÓÐÒ»Ð© wordpress ÌØÐÔ Ã»ÓÐÕý³£ÔËÐÐ.
+  ä»Žè®¾è®¡ä¸Šè®²ï¼Œ org2blog/wp èƒ½å¤Ÿè¿è¡ŒäºŽä»»æ„æ”¯æŒ xml-rpc çš„å¹³å°ï¼Œ
+  ä½†æ˜¯å®žé™…ä¸Šæœ‰ä¸€äº› wordpress ç‰¹æ€§ æ²¡æœ‰æ­£å¸¸è¿è¡Œ.
 
-  org2blog Áé¸ÐÀ´ÓÚ²¢ÇÒ»ùÓÚ [[http://paste.lisp.org/display/69993][wordpress posting client for
-  muse-mode]] £¬ ËûµÄ×÷ÕßÊÇ [[http://www.emacswiki.org/emacs/AshishShukla][Ashish Shukla]] .
+  org2blog çµæ„Ÿæ¥äºŽå¹¶ä¸”åŸºäºŽ [[http://paste.lisp.org/display/69993][wordpress posting client for
+  muse-mode]] ï¼Œ ä»–çš„ä½œè€…æ˜¯ [[http://www.emacswiki.org/emacs/AshishShukla][Ashish Shukla]] .
 
-  org2blog ÊÚÈ¨ÓÚ GPLv3
+  org2blog æŽˆæƒäºŽ GPLv3
 
-* °²×°
+* å®‰è£…
 
-  ´Ó GitHub »òÕß Marmalade ÉÏ ÏÂÔØ org2blog 
+  ä»Ž GitHub æˆ–è€… Marmalade ä¸Š ä¸‹è½½ org2blog 
 
   : git clone http://github.com/punchagan/org2blog.git
 
   : http://marmalade-repo.org/packages/org2blog
 
-  ½« org2blog µÄÄ¿Â¼ ¼ÓÈë emacs ÅäÖÃµÄ load path
+  å°† org2blog çš„ç›®å½• åŠ å…¥ emacs é…ç½®çš„ load path
 
   : (setq load-path (cons "~/.emacs.d/org2blog/" load-path))
   : (require 'org2blog-autoloads)
 
-*** ÒÀÀµ
-    1. org2blog ÒÀÀµÓÚ /xml-rpc/ £¨¿ÉÒÔÔÚ [[http://launchpad.net/xml-rpc-el][Launchpad]] ÉÏÕÒµ½£©¡£  
-       ÏÈ½«ËüÒ²¼ÓÈë /load-path/¡£
+*** ä¾èµ–
+    1. org2blog ä¾èµ–äºŽ /xml-rpc/ ï¼ˆå¯ä»¥åœ¨ [[http://launchpad.net/xml-rpc-el][Launchpad]] ä¸Šæ‰¾åˆ°ï¼‰ã€‚  
+       å…ˆå°†å®ƒä¹ŸåŠ å…¥ /load-path/ã€‚
 
-    2. È·ÈÏÄú°²×°ÁË×îÐÂµÄ org-mode ¡£ org2blogÖ§³Ö °æ±¾ºÅ´óÓÚ7µÄ org-mode£¬
-       µ«×îºÃ»¹ÊÇÄÃ×îÐÂ org-mode¡£
+    2. ç¡®è®¤æ‚¨å®‰è£…äº†æœ€æ–°çš„ org-mode ã€‚ org2blogæ”¯æŒ ç‰ˆæœ¬å·å¤§äºŽ7çš„ org-modeï¼Œ
+       ä½†æœ€å¥½è¿˜æ˜¯æ‹¿æœ€æ–° org-modeã€‚
 
-* Ê¹ÓÃ·½·¨
-*** org2blogÅäÖÃ
+* ä½¿ç”¨æ–¹æ³•
+*** org2blogé…ç½®
 
     *Note* - This setup works only for org2blog version >=0.3. For
      lower versions of org2blog check the README from the commit
      e37126e
 
-    ÄúÓ¦¸ÃÏÈ¸æËß org2blog ÄúµÄ²©¿ÍµØÖ·¡¢ÓÃ»§Ãû£¬ÒÔ¼°Ò»Ð©¿ÉÑ¡µÄÊôÐÔ¡£
-    Êµ¼ÊÉÏÖ»ÒªÉèÖÃ =org2blog/wp-blog-alist= µÄÖµ¾Í¿ÉÒÔÁË¡£
+    æ‚¨åº”è¯¥å…ˆå‘Šè¯‰ org2blog æ‚¨çš„åšå®¢åœ°å€ã€ç”¨æˆ·åï¼Œä»¥åŠä¸€äº›å¯é€‰çš„å±žæ€§ã€‚
+    å®žé™…ä¸Šåªè¦è®¾ç½® =org2blog/wp-blog-alist= çš„å€¼å°±å¯ä»¥äº†ã€‚
 
-    Àý×ÓÈçÏÂ:
+    ä¾‹å­å¦‚ä¸‹:
     : (setq org2blog/wp-blog-alist
     :       '(("wordpress"
     :          :url "http://username.wordpress.com/xmlrpc.php"
@@ -59,16 +59,16 @@
     :          :url "http://username.server.com/xmlrpc.php"
     :          :username "admin")))
 
-    ÒÔÉÏ¶¨ÒåÁËÁ½¸ö²©¿Í·Ö±ðÊÇ =wordpress= ºÍ =my-blog= ¡£
-    =url= and =username= ÊÇ±ØÌîµÄ£¬ÆäËüÊÇ¿ÉÑ¡µÄ. 
+    ä»¥ä¸Šå®šä¹‰äº†ä¸¤ä¸ªåšå®¢åˆ†åˆ«æ˜¯ =wordpress= å’Œ =my-blog= ã€‚
+    =url= and =username= æ˜¯å¿…å¡«çš„ï¼Œå…¶å®ƒæ˜¯å¯é€‰çš„. 
 
-    ÄúÒ²¿ÉÒÔÊ¹ÓÃ =.netrc= ÎÄ¼þÀ´±£´æÓÃ»§ÃûºÍÃÜÂë¡£
+    æ‚¨ä¹Ÿå¯ä»¥ä½¿ç”¨ =.netrc= æ–‡ä»¶æ¥ä¿å­˜ç”¨æˆ·åå’Œå¯†ç ã€‚
 
-    ÄúµÄ =.netrc= ¿´ÆðÀ´Ó¦¸ÃÊÇÕâÑùµÄ£º
+    æ‚¨çš„ =.netrc= çœ‹èµ·æ¥åº”è¯¥æ˜¯è¿™æ ·çš„ï¼š
 
     : machine myblog login myusername password myrealpassword
 
-    ÕâÑù£¬ÄúµÄ =dot emacs= ÒªÕâÃ´Ð´£º
+    è¿™æ ·ï¼Œæ‚¨çš„ =dot emacs= è¦è¿™ä¹ˆå†™ï¼š
 
     : (setq blog (netrc-machine (netrc-parse "~/.netrc") "myblog" t))
     : (setq org2blog/wp-blog-alist
@@ -78,28 +78,28 @@
     :          :password (netrc-get blog "password"))))
 
 
-    ¿ÉÒÔÍ¨¹ý =customize group function= ²é¿´»òÕß×Ô¶¨ÒåÆäËü±äÁ¿¡£
+    å¯ä»¥é€šè¿‡ =customize group function= æŸ¥çœ‹æˆ–è€…è‡ªå®šä¹‰å…¶å®ƒå˜é‡ã€‚
 
     : M-x customize-group org2blog/wp RET
 
-*** µÇÂ¼²©¿Í
-    Ê¹ÓÃÃüÁî *M-x org2blog/wp-login* £¬ org2blog »áÑ¯ÎÊÄúµÇÂ¼ 
-    =org2blog/wp-blog-alist= ÀïµÄÄÄ¸ö²©¿Í£¬È»ºóÑ¯ÎÊÄúµÄÃÜÂë¡£
-    ÓëÆä¶ÔÓ¦µÄÃüÁîÊÇ *M-x org2blog/wp-logout*, ÓÃÓÚµÇ³ö²©¿Í¡£
+*** ç™»å½•åšå®¢
+    ä½¿ç”¨å‘½ä»¤ *M-x org2blog/wp-login* ï¼Œ org2blog ä¼šè¯¢é—®æ‚¨ç™»å½• 
+    =org2blog/wp-blog-alist= é‡Œçš„å“ªä¸ªåšå®¢ï¼Œç„¶åŽè¯¢é—®æ‚¨çš„å¯†ç ã€‚
+    ä¸Žå…¶å¯¹åº”çš„å‘½ä»¤æ˜¯ *M-x org2blog/wp-logout*, ç”¨äºŽç™»å‡ºåšå®¢ã€‚
 
-*** Ð´Ò»ÆªÐÂÎÄÕÂ
-    Ê¹ÓÃÃüÁî *M-x org2blog/wp-new-entry*.
-     - ¶à¸ö =±êÇ©= »ò =Àà±ð= ÓÃÓ¢ÎÄ¶ººÅ»ò¿Õ¸ñ·Ö¿ª.
-       ÓÃ *C-c t* ²¹È«±êÇ©»òÀà±ð£¬Ìí¼ÓÐÂÀà±ðÊ±»áÓÐÌáÊ¾¡£
-     - ÔÚ =#+DESCRIPTION= ºóÌîÐ´ÎÄÕÂÕªÂ¼
-     - ÔÚ =#+PERMALINK= ºóÌîÐ´ÎÄÕÂÁ´½Ó
-     - ÔÚ =#+PARENT= ºóÌîÐ´ÎÄÕÂµÄ¸¸ÎÄÕÂ£¬ÓÃ *C-c t* Ò²¿ÉÒÔ²¹È«Ò³ÃæÃû³Æ¡£
+*** å†™ä¸€ç¯‡æ–°æ–‡ç« 
+    ä½¿ç”¨å‘½ä»¤ *M-x org2blog/wp-new-entry*.
+     - å¤šä¸ª =æ ‡ç­¾= æˆ– =ç±»åˆ«= ç”¨è‹±æ–‡é€—å·æˆ–ç©ºæ ¼åˆ†å¼€.
+       ç”¨ *C-c t* è¡¥å…¨æ ‡ç­¾æˆ–ç±»åˆ«ï¼Œæ·»åŠ æ–°ç±»åˆ«æ—¶ä¼šæœ‰æç¤ºã€‚
+     - åœ¨ =#+DESCRIPTION= åŽå¡«å†™æ–‡ç« æ‘˜å½•
+     - åœ¨ =#+PERMALINK= åŽå¡«å†™æ–‡ç« é“¾æŽ¥
+     - åœ¨ =#+PARENT= åŽå¡«å†™æ–‡ç« çš„çˆ¶æ–‡ç« ï¼Œç”¨ *C-c t* ä¹Ÿå¯ä»¥è¡¥å…¨é¡µé¢åç§°ã€‚
 
-*** ·¢²¼Ä£°æ
-    Í¨¹ýÐÞ¸Ä±äÁ¿ =org2blog/wp-buffer-template= 
-    ºÍº¯Êý =org2blog/wp-buffer-format-function= À´×Ô¶¨Òå·¢²¼Ä£°æ¡£
+*** å‘å¸ƒæ¨¡ç‰ˆ
+    é€šè¿‡ä¿®æ”¹å˜é‡ =org2blog/wp-buffer-template= 
+    å’Œå‡½æ•° =org2blog/wp-buffer-format-function= æ¥è‡ªå®šä¹‰å‘å¸ƒæ¨¡ç‰ˆã€‚
     
-    Àý×ÓÈçÏÂ£º
+    ä¾‹å­å¦‚ä¸‹ï¼š
 
     : (setq org2blog/wp-buffer-template
     :  "-----------------------
@@ -113,26 +113,26 @@
     :            (format-time-string "%d-%m-%Y" (current-time)))))
     : (setq org2blog/wp-buffer-format-function 'my-format-function)
 
-    ÕâÑùÓÃÃüÁî =org2blog/wp-new-entry= ¿ÉÒÔ´´½¨Ê¹ÓÃÄ£°æµÄÎÄÕÂ£¬ËüÓÐ×ÅÄ¬ÈÏµÄ±êÌâºÍÊ±¼ä¡£
+    è¿™æ ·ç”¨å‘½ä»¤ =org2blog/wp-new-entry= å¯ä»¥åˆ›å»ºä½¿ç”¨æ¨¡ç‰ˆçš„æ–‡ç« ï¼Œå®ƒæœ‰ç€é»˜è®¤çš„æ ‡é¢˜å’Œæ—¶é—´ã€‚
 
-*** ¸üÐÂÒ»ÆªÏÖ³ÉµÄÎÄÕÂ
-    ÏëÒª¸üÐÂÒ»ÆªÏÖÔÚµÄÎÄÕÂ, ÄúÖ»ÐèÒª°ÑÎÄÕÂ¸Ä³ÉÄãÒªµÄÑù×Ó£¬È»ºóÓÃ ~org2blog~ ·¢²¼¡£
-    Í¨³£ =POSTID= ÒÑ¾­±£´æÔÚÎÄ¼þÀï£¬ËüÓÃÀ´È·±£Äã·¢²¼µÄÊÇÕâÒ»ÆªÎÄÕÂ£¬¶ø²»ÊÇÐÂµÄÒ»Æª¡£
+*** æ›´æ–°ä¸€ç¯‡çŽ°æˆçš„æ–‡ç« 
+    æƒ³è¦æ›´æ–°ä¸€ç¯‡çŽ°åœ¨çš„æ–‡ç« , æ‚¨åªéœ€è¦æŠŠæ–‡ç« æ”¹æˆä½ è¦çš„æ ·å­ï¼Œç„¶åŽç”¨ ~org2blog~ å‘å¸ƒã€‚
+    é€šå¸¸ =POSTID= å·²ç»ä¿å­˜åœ¨æ–‡ä»¶é‡Œï¼Œå®ƒç”¨æ¥ç¡®ä¿ä½ å‘å¸ƒçš„æ˜¯è¿™ä¸€ç¯‡æ–‡ç« ï¼Œè€Œä¸æ˜¯æ–°çš„ä¸€ç¯‡ã€‚
 
-*** ·¢²¼Ö¸Áî
-    | ·¢²¼ÎÄÕÂ£¨×÷Îª²Ý¸å£©     | *C-c d* | *M-x     org2blog/wp-post-buffer*         |
-    | ·¢²¼ÎÄÕÂ                 | *C-c p* | *C-u M-x org2blog/wp-post-buffer*         |
-    | ·¢²¼ÎÄÕÂ£¨×÷ÎªÒ³Ãæ²Ý¸å£© | *C-c D* | *M-x     org2blog/wp-post-buffer-as-page* |
-    | ·¢²¼ÎÄÕÂ£¨×÷ÎªÒ³Ãæ²Ý¸å£© | *C-c P* | *C-u M-x org2blog/wp-post-buffer-as-page* |
+*** å‘å¸ƒæŒ‡ä»¤
+    | å‘å¸ƒæ–‡ç« ï¼ˆä½œä¸ºè‰ç¨¿ï¼‰     | *C-c d* | *M-x     org2blog/wp-post-buffer*         |
+    | å‘å¸ƒæ–‡ç«                  | *C-c p* | *C-u M-x org2blog/wp-post-buffer*         |
+    | å‘å¸ƒæ–‡ç« ï¼ˆä½œä¸ºé¡µé¢è‰ç¨¿ï¼‰ | *C-c D* | *M-x     org2blog/wp-post-buffer-as-page* |
+    | å‘å¸ƒæ–‡ç« ï¼ˆä½œä¸ºé¡µé¢è‰ç¨¿ï¼‰ | *C-c P* | *C-u M-x org2blog/wp-post-buffer-as-page* |
 
-*** ·¢²¼ÒÑÓÐµÄorgÎÄµµ
-    - Ìí¼ÓÕâÐ©Ö¸Áîµ½ÎÄ¼þÀï =#+TITLE=, =#+OPTIONS=, =#+TAGS=, =#+CATEGORY=,
-          =#+DESCRIPTION=, =#+DATE=,   (È«²¿¶¼ÊÇ¿ÉÑ¡µÄ£©
-    - Ìí¼Ó =#+POSTID= µ½Ò»¸öÒÑ¾­·¢²¼µÄÎÄ¼þ
-    - Ê¹ÓÃÉÏÃæËµµ½µÄ·¢²¼Ö¸Áî·¢±íÎÄÕÂ
-*** ·¢²¼Ò»¸ö×ÓÊ÷
-    - Ê¹ÓÃÖ¸Áî *M-x org2blog/wp-post-subtree*.
-    - ×ÓÊ÷µÄ±êÇ©»á³ÉÎªÎÄÕÂµÄ±êÇ©
+*** å‘å¸ƒå·²æœ‰çš„orgæ–‡æ¡£
+    - æ·»åŠ è¿™äº›æŒ‡ä»¤åˆ°æ–‡ä»¶é‡Œ =#+TITLE=, =#+OPTIONS=, =#+TAGS=, =#+CATEGORY=,
+          =#+DESCRIPTION=, =#+DATE=,   (å…¨éƒ¨éƒ½æ˜¯å¯é€‰çš„ï¼‰
+    - æ·»åŠ  =#+POSTID= åˆ°ä¸€ä¸ªå·²ç»å‘å¸ƒçš„æ–‡ä»¶
+    - ä½¿ç”¨ä¸Šé¢è¯´åˆ°çš„å‘å¸ƒæŒ‡ä»¤å‘è¡¨æ–‡ç« 
+*** å‘å¸ƒä¸€ä¸ªå­æ ‘
+    - ä½¿ç”¨æŒ‡ä»¤ *M-x org2blog/wp-post-subtree*.
+    - å­æ ‘çš„æ ‡ç­¾ä¼šæˆä¸ºæ–‡ç« çš„æ ‡ç­¾
     - Other properties can be set using a property drawer.  The
       properties use the same names as the buffer variables.
     - =POST_DATE= sets the date to be used for the post. If it is not

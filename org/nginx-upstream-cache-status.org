@@ -5,15 +5,15 @@
 #+CATEGORY: 
 #+TAGS: nginx, proxy
 #+PERMALINK: nginx-upstream-cache-status
-#+TITLE: nginx´úÀíÁ÷Á¿Í³¼Æ
+#+TITLE: nginxä»£ç†æµé‡ç»Ÿè®¡
 
-  1. ÔÚÅäÖÃÎÄ¼şÀïµÄlog_formatÀï¼ÓÉÏ $upstream_cache_status
-  2. ĞŞ¸ÄawstatsµÈ¹¤¾ßµÄ½âÊÍÈÕÖ¾·½·¨
-  3. ±äÁ¿$upstream_cache_statusÓĞ3ÖÖ¿ÉÄÜÇé¿ö
-       - *-*     ²»×ß´úÀí
-       - *MISS*  ×ß´úÀí£¬Ã»ÓĞÖĞ»º´æ
-       - *HIT*   ×ß´úÀí£¬ÖĞ»º´æ
+  1. åœ¨é…ç½®æ–‡ä»¶é‡Œçš„log_formaté‡ŒåŠ ä¸Š $upstream_cache_status
+  2. ä¿®æ”¹awstatsç­‰å·¥å…·çš„è§£é‡Šæ—¥å¿—æ–¹æ³•
+  3. å˜é‡$upstream_cache_statusæœ‰3ç§å¯èƒ½æƒ…å†µ
+       - *-*     ä¸èµ°ä»£ç†
+       - *MISS*  èµ°ä»£ç†ï¼Œæ²¡æœ‰ä¸­ç¼“å­˜
+       - *HIT*   èµ°ä»£ç†ï¼Œä¸­ç¼“å­˜
 
 #+begin_quote
-×ªÔØÇë×¢Ã÷³ö´¦£º[[http://www.wuyao721.com/nginx-upstream-cache-status.html]]
+è½¬è½½è¯·æ³¨æ˜å‡ºå¤„ï¼š[[http://www.wuyao721.com/nginx-upstream-cache-status.html]]
 #+end_quote

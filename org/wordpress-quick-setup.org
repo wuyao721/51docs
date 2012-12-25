@@ -50,6 +50,9 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 :         font-weight: 300;
 :         line-height: 1.625;
 : }
+: strong, b {
+:         font-weight: bold;
+: }
 
 ** 标题风格
 : .entry-content h1,

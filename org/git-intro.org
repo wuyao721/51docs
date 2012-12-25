@@ -1,93 +1,93 @@
 #+BLOG: wuyao721
 #+POSTID: 170
-#+DATE: [2012-11-29 ������ 20:18]
+#+DATE: [2012-11-29 星期四 20:18]
 #+BLOG: wuyao721
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
 #+TAGS: git
 #+PERMALINK: git-intro
-#+TITLE: git���
-�Ҷ���git��08��ʹ���������ȴһֱ���ҳ��ԡ�ֻ��Ϊsvn�Ѿ��������ˡ����Լ�ʹgooglecode�Ѿ�֧��git���һ��Ǽ��ʹ��svn��
+#+TITLE: git简介
+我对于git，08年就大闻其名，却一直不敢尝试。只因为svn已经够我用了。所以即使googlecode已经支持git，我还是坚持使用svn。
 
-�������googlecode�����Ӳ��ϣ�����ᡣ��ʹ�Ҳ��ò���������Ͷ��github����˻������git��������
+但是最近googlecode老连接不上，真纠结。这使我不得不放弃它，投奔github，借此机会体会git的魅力。
 
-�޷����ϣ������еĶ����������ż��ߡ��������õ���windows���н�����á�
+无法否认，命令行的东西，入门门槛高。所幸我用的是windows，有界面可用。
 
 #+begin_html
 <!--more--> 
 #+end_html
 
-* git������
-git����ͳ�İ汾����ϵͳ�������µ����ƣ�
- - �ֲ�ʽ�汾����ϵͳ
- - Э�����ű��������Ȼ
- - ���ٿ�����Ա��ͨ�Ŀ���
+* git的优势
+git比起传统的版本控制系统，有如下的优势：
+ - 分布式版本控制系统
+ - 协作开放变得轻松自然
+ - 减少开发人员沟通的开销
 
 * github
- [[https://github.com][github]] ��һ����վ��ͬʱҲ��һ����Ŀ�ֿ⡣����ֻҪ����վ��ע��һ���ʺţ�Ȼ��Ϳ�����������Ѵ�����Դ��Ŀ������git����ֲ�ʽ�汾����ϵͳ�����ǿ���������������˹�ע���������ǵ���Ŀ��
+ [[https://github.com][github]] 是一个网站，同时也是一个项目仓库。我们只要在网站上注册一个帐号，然后就可以在上面免费创建开源项目。利用git这个分布式版本管理系统，我们可以吸引到更多的人关注，加入我们的项目。
 
-github�ķ����ٶ�ͦ��ģ���Ҳ��Խ��Խ����ʹ������ԭ��
+github的访问速度挺快的，这也是越来越多人使用它的原因。
 
-* ���ߣ�windows��
+* 工具（windows）
 
 ** github for windows
-�� [[http://windows.github.com][����]] ����windowsƽ̨��github�ͻ��ˡ�
+到 [[http://windows.github.com][这里]] 下载windows平台的github客户端。
 
 ** tortoisegit
-ʹ�ù������Ҿ��� *github for windows* �������ã��������ҵ�������һ�����ߡ�
+使用过程中我觉得 *github for windows* 并不好用，所以我找到了另外一个工具。
 
-svn ��һ�����߽� tortoisesvn ����ô git Ҳ������ [[https://code.google.com/p/tortoisegit/][tortoisegit]] ��
+svn 有一个工具叫 tortoisesvn ，那么 git 也有它的 [[https://code.google.com/p/tortoisegit/][tortoisegit]] 。
 
 ** msysgit
-tortoisegit�Ĺ����������ǣ����������� [[https://code.google.com/p/msysgit/][msysgit]] ��msysgit�Ǻ��ĳ���tortoisegitֻ������Ƥ���ѡ�
+tortoisegit的官网告诉我们，它还依赖于 [[https://code.google.com/p/msysgit/][msysgit]] 。msysgit是核心程序，tortoisegit只是它的皮而已。
 
-ֵ��ע����ǣ��Ȱ�װtortoisegit���ٰ�װmsysgit��
+值得注意的是，先安装tortoisegit，再安装msysgit。
 
 ** git-credential-winstore
-���˾������tortoisegitû�����Ͷ�Ҫ��д�û��������롣��������˵�� *_netrc* ����¼�û������룬���Թ��ǿ��еġ�
+令人纠结的是tortoisegit没次推送都要填写用户名和密码。网上有人说用 *_netrc* 来记录用户名密码，我试过是可行的。
 
-*_netrc* �����ĵģ��ᱩ¶�û���Ϣ������������һ������취�������� [[https://github.com/anurse/git-credential-winstore][git-credential-winstore]] �������ֿ��Բ²⵽����git��windows�����洢�û�������Ĺ��ߡ������������� *Windows XP* �� *Windows 7* ��
+*_netrc* 是明文的，会暴露用户信息，还好有另外一个解决办法。它就是 [[https://github.com/anurse/git-credential-winstore][git-credential-winstore]] ，从名字可以猜测到这是git在windows用来存储用户名密码的工具。它可适用用于 *Windows XP* 和 *Windows 7* 。
 
-* tortoisegit���� && �����ת��
+* tortoisegit操作 && 观念的转变
 
-windowsƽ̨�£��ҵ�ʹ�ø�����tortoisegit�ȽϺ��á���������Ĳ��������tortoisegit��˵�ġ�
+windows平台下，我的使用感受是tortoisegit比较好用。所以这里的操作是针对tortoisegit来说的。
 
-����������ǰû���ù��ֲ�ʽ�汾����ϵͳ�ĳ���Ա��ѧϰgit�������ر��ѵ����飬����Ҳ��Ҫһ��ѧϰ�Ĺ��̡�����Ҫ�ǹ����ת�䣬�Ҵ�һ��ʼ�����git����svn���ã������õĺܲ�ϰ�ߡ�
+像我这种以前没有用过分布式版本管理系统的程序员，学习git不算是特别难的事情，但是也需要一个学习的过程。最主要是观念的转变，我从一开始就想把git当做svn来用，所以用的很不习惯。
 
-** ���صİ汾��
-��git�������ÿ�����صĴ���ⶼ��һ��������gitϵͳ��ʹ��tortoisegit�ύ����(commit)����ʵֻ���ύ�����ص�git�汾�⡣
+** 本地的版本库
+在git的世界里，每个本地的代码库都是一个完整的git系统。使用tortoisegit提交代码(commit)，其实只是提交到本地的git版本库。
 
-** github�İ汾��
-���±��ذ汾������ǾͿ��Խ����͵�Զ�̰汾�⣨�������õ�github�����ϲ���master����������֧��
+** github的版本库
+更新本地版本库后，我们就可以将推送到远程版本库（例如我用的github），合并到master或者其它分支。
 
-** ���ò���
-��������г���һЩ������tortoisegit�÷�����Ҫ���ǲ����Ҽ������Ĳ˵���
+** 常用操作
+我在这个列出了一些常见的tortoisegit用法，主要就是操作右键弹出的菜单。
 
-| ָ�Ӣ�İ棩 | ָ����İ棩       | ����˵��                                               | ��ע                    |
+| 指令（英文版） | 指令（中文版）       | 功能说明                                               | 备注                    |
 |----------------+----------------------+--------------------------------------------------------+-------------------------|
-| git clone ..   | git ��¡ ..          | ��¡һ����Ŀ����⵽���أ���Ӧ��svn��checkout��        | �ڷǰ汾��Ŀ¼���Ҽ�    |
-| git create ..  | git �����ﴴ���°汾 |                                                        | �ڷǰ汾��Ŀ¼���Ҽ�    |
-| git sync ..    | git ͬ�� ..          | �����Ի�������ͬ�������汾��                         | �ڰ汾��Ŀ¼���Ҽ�      |
-| pull           | ��ȡ                 | ��Զ�̰汾���������ذ汾��                             | *git sync* �����ĶԻ��� |
-| push           | ����                 | �����ذ汾�����͵�Զ�̰汾��                           | *git sync* �����ĶԻ��� |
-| git commit ..  | git �ύ ..          | �ύ�����ذ汾�⣬�ɹ��󵯳��Ի���������͵�Զ�̰汾�� | �ڰ汾��Ŀ¼���Ҽ� |
-| TortoiseGit    | TortoiseGit          | ��������˵�����tortoisesvn����                        | �ڰ汾��Ŀ¼���Ҽ�      |
+| git clone ..   | git 克隆 ..          | 克隆一个项目代码库到本地（对应于svn的checkout）        | 在非版本库目录下右键    |
+| git create ..  | git 在这里创建新版本 |                                                        | 在非版本库目录下右键    |
+| git sync ..    | git 同步 ..          | 弹出对话框，用于同步两个版本库                         | 在版本库目录下右键      |
+| pull           | 拉取                 | 将远程版本库拉到本地版本库                             | *git sync* 弹出的对话框 |
+| push           | 推送                 | 将本地版本库推送到远程版本库                           | *git sync* 弹出的对话框 |
+| git commit ..  | git 提交 ..          | 提交到本地版本库，成功后弹出对话框可以推送到远程版本库 | 在版本库目录下右键 |
+| TortoiseGit    | TortoiseGit          | 弹出更多菜单，跟tortoisesvn类似                        | 在版本库目录下右键      |
 
-** ��tortoisesvn��ͬ���÷�
-���� *clone* �� *pull* �� *push* ��Щָ��֮�⣬tortoisegit���÷��ϸ�tortoisesvn�ǲ��ġ�
+** 和tortoisesvn相同的用法
+除了 *clone* ， *pull* ， *push* 这些指令之外，tortoisegit在用法上跟tortoisesvn是差不多的。
 
-* ���ߣ�linux��
-linux���õĻ��٣�Ŀǰֻ��������
+* 工具（linux）
+linux的用的还少，目前只会这样：
 : git clone https://github.com/wuyao721/51docs.git
 
 
-* �ο�����
-  - [[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub ʹ��ָ��]]
+* 参考资料
+  - [[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub 使用指南]]
   - [[https://github.com/anurse/git-credential-winstore#i-have-another-question][git-credential-winstore]]
-  - [[http://www.cnblogs.com/dudu/archive/2011/07/06/git_save_username_password.html][���ڽ����Git Windows�ͻ��˱����û��������롱������]]
+  - [[http://www.cnblogs.com/dudu/archive/2011/07/06/git_save_username_password.html][终于解决“Git Windows客户端保存用户名与密码”的问题]]
   - [[http://stackoverflow.com/questions/6031214/git-how-to-use-netrc-file-on-windows-to-save-user-and-password][Git - How to use .netrc file on windows to save user and password]]
 
 
 #+begin_quote
-ת����ע��������[[http://www.wuyao721.com/git-intro.html]]
+转载请注明出处：[[http://www.wuyao721.com/git-intro.html]]
 #+end_quote

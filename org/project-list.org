@@ -1,71 +1,71 @@
 #+POSTID: 174
-#+DATE: [2012-12-05 ĞÇÆÚÈı 00:01]
+#+DATE: [2012-12-05 æ˜ŸæœŸä¸‰ 00:01]
 #+BLOG: wuyao721
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
 #+CATEGORY: 
 #+TAGS: goplus, 51docs, 51dotemacs
 #+PERMALINK: project-list
-#+TITLE: ÏîÄ¿ÁĞ±í
+#+TITLE: é¡¹ç›®åˆ—è¡¨
 
-¹¤×÷ºÃ¼¸ÄêÁË£¬½Ó´¥µ½ÁËÍ¦¶àµÄ¿ªÔ´ÏîÄ¿¡£ÏÖ°ÑËüÃÇ¶¼ÁĞ³öÀ´£¬·½±ãÒÔºó²éÕÒ¡£
+å·¥ä½œå¥½å‡ å¹´äº†ï¼Œæ¥è§¦åˆ°äº†æŒºå¤šçš„å¼€æºé¡¹ç›®ã€‚ç°æŠŠå®ƒä»¬éƒ½åˆ—å‡ºæ¥ï¼Œæ–¹ä¾¿ä»¥åæŸ¥æ‰¾ã€‚
 
-* ÎÒµÄÏîÄ¿
-¹¤×÷ÒÔÍâ£¬ÎÒ¸öÈË²ÎÓëµÄÏîÄ¿¡£
+* æˆ‘çš„é¡¹ç›®
+å·¥ä½œä»¥å¤–ï¼Œæˆ‘ä¸ªäººå‚ä¸çš„é¡¹ç›®ã€‚
 
 ** [[https://github.com/wuyao721/51docs][51docs]]
-´æ·ÅÎÒĞ´µÄ´ó²¿·ÖÎÄµµ£¬Ô­À´ÊÇ·ÅÔÚgooglecode( [[https://51docs.googlecode.com/svn/trunk/][ÔÚÕâÀï]] )ÉÏµÄ£¬ºóÀ´ÈÌ²»ÁËgooglecodeµÄËÙ¶È£¬ÖÕÓÚ»»github¡£
+å­˜æ”¾æˆ‘å†™çš„å¤§éƒ¨åˆ†æ–‡æ¡£ï¼ŒåŸæ¥æ˜¯æ”¾åœ¨googlecode( [[https://51docs.googlecode.com/svn/trunk/][åœ¨è¿™é‡Œ]] )ä¸Šçš„ï¼Œåæ¥å¿ä¸äº†googlecodeçš„é€Ÿåº¦ï¼Œç»ˆäºæ¢githubã€‚
 
-·Ã¿ÍÇëÓÃÕâ¸öµØÖ·ÏÂÔØ£º
+è®¿å®¢è¯·ç”¨è¿™ä¸ªåœ°å€ä¸‹è½½ï¼š
 : git clone git://github.com/wuyao721/51docs.git
 
-ÎÒ×Ô¼ºÓÃÕâ¸ö£º
+æˆ‘è‡ªå·±ç”¨è¿™ä¸ªï¼š
 : git clone git@github.com:wuyao721/51docs.git
 
 ** [[https://github.com/wuyao721/51dotemacs][51dotemacs]]
-´æ·ÅÎÒµÄemacsÅäÖÃÎÄ¼ş¡£Ô­À´Ò²ÊÇ·ÅÔÚgooglecode( [[https://51dotemacs.googlecode.com/svn/trunk][ÔÚÕâÀï]] )ÉÏµÄ¡£
+å­˜æ”¾æˆ‘çš„emacsé…ç½®æ–‡ä»¶ã€‚åŸæ¥ä¹Ÿæ˜¯æ”¾åœ¨googlecode( [[https://51dotemacs.googlecode.com/svn/trunk][åœ¨è¿™é‡Œ]] )ä¸Šçš„ã€‚
 
-·Ã¿ÍÇëÓÃÕâ¸öµØÖ·ÏÂÔØ£º
+è®¿å®¢è¯·ç”¨è¿™ä¸ªåœ°å€ä¸‹è½½ï¼š
 : git clone git://github.com/wuyao721/51dotemacs.git
 
-ÎÒ×Ô¼ºÓÃÕâ¸ö£º
+æˆ‘è‡ªå·±ç”¨è¿™ä¸ªï¼š
 : git clone git@github.com:wuyao721/51dotemacs.git
 
 ** [[https://goplus.googlecode.com/svn/trunk/][goplus]]
-Ò»¸öÎ§ÆåÍâ¹Ò³ÌĞò£¬¿ÉÒÔ×Ô¶¯ÏÂÎ§Æå£¬Ö§³Ö *QQÎ§Æå* ºÍ *ŞÄ³ÇÎ§Æå* ¡£ÓÉÓÚÃ»Ê²Ã´¶¯Á¦£¬ÏÖ²»ÔÙÎ¬»¤¸üĞÂ¡£
+ä¸€ä¸ªå›´æ£‹å¤–æŒ‚ç¨‹åºï¼Œå¯ä»¥è‡ªåŠ¨ä¸‹å›´æ£‹ï¼Œæ”¯æŒ *QQå›´æ£‹* å’Œ *å¼ˆåŸå›´æ£‹* ã€‚ç”±äºæ²¡ä»€ä¹ˆåŠ¨åŠ›ï¼Œç°ä¸å†ç»´æŠ¤æ›´æ–°ã€‚
 
 ** [[https://51lordplus.googlecode.com/svn/trunk/][51lordplus]]
-±¾À´ÊÇÏë×öÒ»¸ö¶·µØÖ÷Íâ¹ÒµÄ£¬ºóÀ´ÑĞ¾¿ÁËÒ»ÏÂ£¬·¢ÏÖºÜ¶àÍ¬ÀàµÄ¹¤¾ß£¬¾ÍÃ»×öÁË¡£±ÕÔ´ÏîÄ¿µØÖ·ÔÚ [[https://free.svnspot.com/wuyao721.51lordplus/trunk][ÕâÀï]] ¡£
+æœ¬æ¥æ˜¯æƒ³åšä¸€ä¸ªæ–—åœ°ä¸»å¤–æŒ‚çš„ï¼Œåæ¥ç ”ç©¶äº†ä¸€ä¸‹ï¼Œå‘ç°å¾ˆå¤šåŒç±»çš„å·¥å…·ï¼Œå°±æ²¡åšäº†ã€‚é—­æºé¡¹ç›®åœ°å€åœ¨ [[https://free.svnspot.com/wuyao721.51lordplus/trunk][è¿™é‡Œ]] ã€‚
 
 ** [[https://free.svnspot.com/wuyao721.al][al]]
-Ò»¸ö×Ô¶¯µÇÂ¼µÄ¹¤¾ß£¬ÌØµãÓÃSpiderMonkey¿â£¬¿ÉÒÔÖ´ĞĞjs´úÂë£¬Ä£Äâä¯ÀÀÆ÷ĞĞÎª¡£²»¿ªÔ´¡£±ÕÔ´ÏîÄ¿µØÖ·ÔÚ [[https://free.svnspot.com/wuyao721.al/trunk][ÕâÀï]] ¡£
+ä¸€ä¸ªè‡ªåŠ¨ç™»å½•çš„å·¥å…·ï¼Œç‰¹ç‚¹ç”¨SpiderMonkeyåº“ï¼Œå¯ä»¥æ‰§è¡Œjsä»£ç ï¼Œæ¨¡æ‹Ÿæµè§ˆå™¨è¡Œä¸ºã€‚ä¸å¼€æºã€‚é—­æºé¡¹ç›®åœ°å€åœ¨ [[https://free.svnspot.com/wuyao721.al/trunk][è¿™é‡Œ]] ã€‚
 
 ** [[https://code.google.com/p/51lottery/][51lottery]]
-Ò»¸ö¼òµ¥µÄ³é½±Æ÷£¬ÓÃvb×öµÄ£¬¶ÁexcelÎÄµµ£¬Ëæ»ú¶ÁÈ¡ÆäÖĞÒ»ĞĞ¡£Ô­À´ÊÇ×ö¸øÅóÓÑµÄ£¬¸øËı¹«Ë¾³é½±ÓÃµÄ¡£ÏÖÒÑ²»ÔÙÎ¬»¤¡£
+ä¸€ä¸ªç®€å•çš„æŠ½å¥–å™¨ï¼Œç”¨vbåšçš„ï¼Œè¯»excelæ–‡æ¡£ï¼Œéšæœºè¯»å–å…¶ä¸­ä¸€è¡Œã€‚åŸæ¥æ˜¯åšç»™æœ‹å‹çš„ï¼Œç»™å¥¹å…¬å¸æŠ½å¥–ç”¨çš„ã€‚ç°å·²ä¸å†ç»´æŠ¤ã€‚
 
 ** weixinrobots
-Î¢ĞÅFAQÁÄÌì¹¤¾ß£¬Ë½ÓĞÏîÄ¿¡£µØÖ·ÊÇ *git@git.wuyao721.com:weixinrobots.git* ¡£
+å¾®ä¿¡FAQèŠå¤©å·¥å…·ï¼Œç§æœ‰é¡¹ç›®ã€‚åœ°å€æ˜¯ *git@git.wuyao721.com:weixinrobots.git* ã€‚
 
-** [[http://blog.csdn.net/wuyao721][csdn²©¿Í]]
-ÕâÊÇÎÒµÄÁíÒ»¸ö¼¼Êõ²©¿Í£¬csdn±à¼­ÎÄµµ·½Ê½»¹ÊÇÍ¦ÈÃÎÒ¾À½áµÄ¡£
+** [[http://blog.csdn.net/wuyao721][csdnåšå®¢]]
+è¿™æ˜¯æˆ‘çš„å¦ä¸€ä¸ªæŠ€æœ¯åšå®¢ï¼Œcsdnç¼–è¾‘æ–‡æ¡£æ–¹å¼è¿˜æ˜¯æŒºè®©æˆ‘çº ç»“çš„ã€‚
 
-** [[http://weibo.com/wuyao721][ĞÂÀËÎ¢²©]]
-ÎÒµÄĞÂÀËÎ¢²©¡£
+** [[http://weibo.com/wuyao721][æ–°æµªå¾®åš]]
+æˆ‘çš„æ–°æµªå¾®åšã€‚
 
 
-* ÆäËüÏîÄ¿
+* å…¶å®ƒé¡¹ç›®
 
-** C/C++ ¿â/¹¤¾ß
+** C/C++ åº“/å·¥å…·
   - poco http://pocoproject.org/
   - protobuf http://code.google.com/p/protobuf/
   - zeromq http://www.zeromq.org/
   - ace http://www.cs.wustl.edu/~schmidt/ACE.html
   - premake4 http://premake.sourceforge.net/
 
-** ÈË¹¤ÖÇÄÜ
+** äººå·¥æ™ºèƒ½
   - tesseract-ocr http://code.google.com/p/tesseract-ocr/
   - leptonica http://code.google.com/p/leptonica/
 
-** webÓ¦ÓÃ
+** webåº”ç”¨
   - weebly http://www.weebly.com/
   - sencha http://www.sencha.com/
   - xming http://sourceforge.net/projects/xming/
@@ -78,14 +78,14 @@
   - orgmode http://orgmode.org
   - git-emacs https://github.com/tsgates/git-emacs
 
-** ÆäËü
+** å…¶å®ƒ
   - sqlite http://www.sqlite.org/
   - scintilla http://www.scintilla.org/
   - postgresql http://www.postgresql.org/
   - putty http://www.putty.org/
   - gitosis https://github.com/res0nat0r/gitosis
 
-** ÍøÂç°²È«
+** ç½‘ç»œå®‰å…¨
   - ironbee https://www.ironbee.com/
   - naxsi http://code.google.com/p/naxsi/
   - skipfish https://code.google.com/p/skipfish/

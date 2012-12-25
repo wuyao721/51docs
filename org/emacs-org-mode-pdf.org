@@ -1,7 +1,6 @@
 #+DATE: [2012-11-26 星期一 02:36]
 #+POSTID: 160
 #+BLOG: wuyao721
-#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
 #+TAGS: emacs, org-mode
 #+PERMALINK: emacs-org-mode-pdf
@@ -12,11 +11,9 @@ Emacs Org 是什么，这里就不介绍了。
 
 记得前不久我还用muse做笔记的，而现在就要用org，还是相当的纠结的。制作PDF最烦的就是中文显示了，周六用一整天折腾，终于搞定，现将过程记录下来。（仅在windows下测试通过，linux还未测试。）
 
-本文只关注于使用Emacs Org生成PDF文档（尤其是中文显示问题），并假设读者对Emacs以及Emacs Org有一定的使用经历。
+本文只关注于使用Emacs Org生成PDF文档（尤其是中文显示问题），并假设读者对Emacs以及Emacs Org有一定的了解。
 
-#+begin_html
-<!--more--> 
-#+end_html
+#+html: <!--more--> 
 
 * 工具包
 
@@ -111,6 +108,7 @@ latex默认的文档类型有article, report, book和beamer，我们这里要新
 参考函数org-export-latex-make-header和org-export-as-latex，我们可以看到要插入=\begin{CJK*}{UTF8}{gbsn}=这样的tex代码的正确的位置，还是比较麻烦的。[fn:2] 所以，我们要对这两个函数做小小的修改。（修改的el配置在后面贴出）
 
 ** 配置汇总(org-hack.el)
+除了下面列出所有配置，还可以通过的github下载到配置文件—— [[https://github.com/wuyao721/51dotemacs/blob/master/.emacs.d/elisp/misc-org.el][misc-org.el]] 。
 #+begin_example
 (require 'org)
 (require 'org-latex)
@@ -466,6 +464,15 @@ when PUB-DIR is set, use this as the publishing directory."
 	  (current-buffer))
       (set-window-configuration wcf))))
 #+end_example
+
+
+* 写作 & 发布
+接下来就继续我们的org-mode写作，记得在 *.org* 文件里指明使用的文档风格：
+: #+LaTeX_CLASS: cjk-article
+这里的风格 *cjk-article* 在列表 *org-export-latex-classes* 可以找到。
+
+在 *org-mode* 里用快捷键 *C-c C-e p* 将文本发布成pdf文档。
+
 
 * 注意要点
 如果你怎么整都是乱码的pdf，那么考虑以下几点

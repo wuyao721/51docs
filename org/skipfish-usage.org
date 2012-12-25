@@ -5,30 +5,30 @@
 #+CATEGORY: 
 #+TAGS: skipfish
 #+PERMALINK: skipfish-usage
-#+TITLE: skipfishÓÃ·¨
+#+TITLE: skipfishç”¨æ³•
 
-shipfishÊÇ¹È¸è¹«Ë¾ÑĞ·¢µÄÒ»¸öÉ¨ÃèÍøÕ¾µÄÂ©¶´µÄ¹¤¾ß£¬ÓëÆäÏà¹ØµÄÁíÒ»¸ö¹¤¾ßÊÇ [[https://code.google.com/p/ratproxy/][ratproxy]] ¡£
+shipfishæ˜¯è°·æ­Œå…¬å¸ç ”å‘çš„ä¸€ä¸ªæ‰«æç½‘ç«™çš„æ¼æ´çš„å·¥å…·ï¼Œä¸å…¶ç›¸å…³çš„å¦ä¸€ä¸ªå·¥å…·æ˜¯ [[https://code.google.com/p/ratproxy/][ratproxy]] ã€‚
 
 #+begin_html
 <!--more--> 
 #+end_html
 
-ÎÒÊ¹ÓÃµÄskipfish°æ±¾ÊÇ *2.09* ¡£
+æˆ‘ä½¿ç”¨çš„skipfishç‰ˆæœ¬æ˜¯ *2.09* ã€‚
 
-ÒÔÏÂÊÇ¼òµ¥µÄÊ¹ÓÃ·½·¨£º
+ä»¥ä¸‹æ˜¯ç®€å•çš„ä½¿ç”¨æ–¹æ³•ï¼š
 : ./skipfish -o wuyao721 -S dictionaries/minimal.wl -L -Y -C JSESSIONID=77de6268-b041-49ba-9547-bd1db5ecc797 http://www.wuyao721.com
 
-| ²ÎÊı | ËµÃ÷                 |
+| å‚æ•° | è¯´æ˜                 |
 |----+----------------------|
-| -o | Êä³öÄ¿Â¼             |
-| -S | ¶ÁÒ»¸öÖ»¶ÁµÄwordlist |
-| -L | È¡ÏûÑ§Ï°Ä£Ê½         |
-| -C | ÉèÖÃcookie           |
-| -Y | È¡ÏûÄ£ºıÎÄ¼şÃûºó×º   |
+| -o | è¾“å‡ºç›®å½•             |
+| -S | è¯»ä¸€ä¸ªåªè¯»çš„wordlist |
+| -L | å–æ¶ˆå­¦ä¹ æ¨¡å¼         |
+| -C | è®¾ç½®cookie           |
+| -Y | å–æ¶ˆæ¨¡ç³Šæ–‡ä»¶ååç¼€   |
 
-²Î¿¼×ÊÁÏ£º
+å‚è€ƒèµ„æ–™ï¼š
 https://code.google.com/p/skipfish/
 
 #+begin_quote
-×ªÔØÇë×¢Ã÷³ö´¦£º[[http://www.wuyao721.com/skipfish-usage.html]]
+è½¬è½½è¯·æ³¨æ˜å‡ºå¤„ï¼š[[http://www.wuyao721.com/skipfish-usage.html]]
 #+end_quote

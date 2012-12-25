@@ -1,23 +1,23 @@
 #+BLOG: wuyao721
 #+POSTID: 47
-#+DATE: [2012-11-22 ĞÇÆÚËÄ 17:56]
+#+DATE: [2012-11-22 æ˜ŸæœŸå›› 17:56]
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: 
 #+TAGS: gdb, nginx
 #+PERMALINK: gdb-nginx
-#+TITLE: gdbµ÷ÊÔnginxÒªµã
+#+TITLE: gdbè°ƒè¯•nginxè¦ç‚¹
 
-* Ô´Âë±àÒë
-Éú³ÉMakefileºó£¬ĞŞ¸Äobjs/Makefile ½«-O¸Ä³É-g3
+* æºç ç¼–è¯‘
+ç”ŸæˆMakefileåï¼Œä¿®æ”¹objs/Makefile å°†-Oæ”¹æˆ-g3
 
-* ĞŞ¸ÄnginxÅäÖÃÎÄ¼ş
-ÔÚnginx.confÉÏ¼ÓÉÏÕâÁ½¾ä
+* ä¿®æ”¹nginxé…ç½®æ–‡ä»¶
+åœ¨nginx.confä¸ŠåŠ ä¸Šè¿™ä¸¤å¥
 : daemon off;
 : master_process off;
 
-* gdbµ÷ÊÔ
+* gdbè°ƒè¯•
 : gdb nginx
 
 #+begin_quote
-×ªÔØÇë×¢Ã÷³ö´¦£º[[http://www.wuyao721.com/gdb-nginx.html]]
+è½¬è½½è¯·æ³¨æ˜å‡ºå¤„ï¼š[[http://www.wuyao721.com/gdb-nginx.html]]
 #+end_quote
