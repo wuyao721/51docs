@@ -1,0 +1,50 @@
+#+BLOG: wuyao721
+#+POSTID: 304
+#+DATE: [2012-12-25 星期二 19:54]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: nginx
+#+PERMALINK: nginx-server-name
+#+TITLE: nginx server_name 命名规则
+
+指令 *server_name* 通常在指令块 *server { ... }* 里使用。它用来与http头的字段 *Host* 做比较，之后选择合适的nginx配置文件块。这就是我们通常所说的 *虚拟主机* (*virual servers*) 。
+
+#+html: <!--more--> 
+
+主机名按照以下优先级匹配：
+  1. 完全匹配， 如： www.example.com
+  2. 以通配符号开始的主机名， 如：*.example.com
+  3. 以通配符结束的主机名， 如：www.example.*
+  4. 正则表达式
+ 
+如果以上的都没有匹配到, 那么就是安装顺序使用以下的指令块 *server { ... }*
+  1. 指令块 *server { ... }* 明确使用了指令 *listen*，并带有参数  *[default|default_server]*
+  2. 第一个使用了 指令 *listen*的 指令块 *server { ... }* (包括隐式声明 listen 80;)
+
+ *例子1* ：
+: server {
+:  server_name   example.com  www.example.com;
+: }
+
+ *例子2* ：
+: server {
+:   server_name   example.com  *.example.com;
+: }
+
+ *例子3* ，等同于 *例子2* ：
+: server {
+:   server_name  .example.com;
+: }
+
+ *例子4* ，使用了正则表达式 ：
+: server {
+:   server_name   www.example.com   ~^www\d+\.example\.com$;
+: }
+
+参考资料：
+ - [[http://wiki.nginx.org/HttpCoreModule#server_name]]
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/nginx-server-name.html]]
+#+end_quote
