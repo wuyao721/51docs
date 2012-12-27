@@ -1,0 +1,78 @@
+#+BLOG: wuyao721
+#+POSTID: 310
+#+DATE: [2012-12-27 星期四 18:27]
+#+BLOG: wuyao721
+#+CATEGORY: 
+#+LaTeX_CLASS: cjk-article
+#+TAGS: emacs
+#+PERMALINK: emacs-quick-setup
+#+TITLE: 快速搭建emacs环境
+
+本文介绍如何快速搭建emacs环境
+
+#+html: <!--more--> 
+
+* Windows平台下快速搭建Emacs
+
+** 下载emacs
+到 [[https://code.google.com/p/emacs-for-windows][这里]] 下载编译好的emacs，将其解压到 *C:/Emacs* 目录下。
+
+也就是说emacs的安装目录是 *C:/Emacs* ，这一点很重要，如果你不想装在这里，那么就要自己修改注册表文件 *quick\_open.reg* 和 *set\_path.reg* 。
+
+** emacs配置
+  - 下载 [[https://github.com/wuyao721/51dotemacs]] 的打包文件master.zip，将内容解压到emacs安装目录下
+  - 将目录 *C:/Emacs/.emacs.d/elisp* 下的 *XXX.example.el* 该名为 *XXX.el* ，并酌情修改，主要是设置环境变量
+  - 按照你的喜好修改 *.emacs* 文件（可选）
+
+** Caps Lock & Ctrl
+可以通过注册表修改键盘按键，而我用的是一个小工具—— [[http://www.mympc.org][键盘映射工具]] 。
+
+** 右键打开文件
+导入 *quick\_open.reg* 到注册表，要保持与emacs的安装目录一致。
+
+** 设置Emacs的HOME目录
+导入 *set\_path.reg* 到注册表，要保持与emacs的安装目录一致。
+
+** 字体设置
+一直都没搞明白为什么emacs在windows下字体会这么丑，试了不少的字体，最后选择了一个 *雅黑consolas字体库* ，文件名大概是 *YaHei.Consolas.1.11b.ttf* ，上网搜搜就能找到。对应的配置是：
+: (set-default-font "-outline-YaHei Consolas Hybrid-normal-normal-normal-sans-19-*-*-*-p-*-iso8859-1")
+
+
+* Linux平台快速搭建Emacs
+我用的linux系统是ubuntu，其它linux系统方法类似。
+
+** 安装emacs
+这里推荐使用emacs23以上版本，emacs23以下版本对utf-8的支持不是特别好。
+
+*** emacs23
+这个是gtk版本，也就是用了gtk的ui库。
+: apt-get install emacs23
+
+*** emacs23-lucid
+这个是 *x\-window* 版本，ui库比其gtk简单些吧。
+: apt-get install emacs23-lucid
+
+*** emacs23-nox
+这个版本是不支持 *x-window* 的，服务器可以选择装这个。
+: apt-get install emacs23-nox
+
+** emacs配置文件
+安顺序执行以下的指令，就可以使用我的emacs配置。
+: root@ubuntu:~# cd ~/
+: root@ubuntu:~# git clone git://github.com/wuyao721/51dotemacs.git
+: root@ubuntu:~# cp 51dotemacs/.emacs ~/
+: root@ubuntu:~# cp -r 51dotemacs/.emacs.d ~/
+
+** .screenrc
+服务器版的emacs还须配上一个screen（可以参考我这篇文章——[[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] ），把 *.screenrc* 也拷到HOME目录即可。
+: cp 51dotemacs/.screenrc ~/
+
+
+* 参考资料
+ - [[http://www.mympc.org][键盘映射工具下载地址]]
+ - [[https://code.google.com/p/emacs-for-windows]]
+ - https://github.com/wuyao721/51dotemacs
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/emacs-quick-setup.html]]
+#+end_quote
