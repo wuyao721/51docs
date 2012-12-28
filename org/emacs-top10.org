@@ -1,0 +1,15 @@
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: emacs-top10
+#+TAGS: emacs
+#+DESCRIPTION:
+#+TITLE: emacs十大必用模式之: 
+
+
+* 参考资料
+ - [[http://www.oschina.net/news/25874/why-i-am-still-using-emacs][为什么我还在使用 Emacs ？]]
+
+#+begin_quote
+本文由吴遥编写，转载请注明出处。
+文章链接：[[http://www.wuyao721.com/emacs-top10.html]]
+#+end_quote

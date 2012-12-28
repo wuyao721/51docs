@@ -1,4 +1,3 @@
-#+BLOG: wuyao721
 #+POSTID: 170
 #+DATE: [2012-11-29 星期四 20:18]
 #+BLOG: wuyao721
@@ -11,11 +10,7 @@
 
 但是最近googlecode老连接不上，真纠结。这使我不得不放弃它，投奔github，借此机会体会git的魅力。
 
-无法否认，命令行的东西，入门门槛高。所幸我用的是windows，有界面可用。
-
-#+begin_html
-<!--more--> 
-#+end_html
+#+html: <!--more--> 
 
 * git的优势
 git比起传统的版本控制系统，有如下的优势：
@@ -48,7 +43,20 @@ tortoisegit的官网告诉我们，它还依赖于 [[https://code.google.com/p/m
 
 *_netrc* 是明文的，会暴露用户信息，还好有另外一个解决办法。它就是 [[https://github.com/anurse/git-credential-winstore][git-credential-winstore]] ，从名字可以猜测到这是git在windows用来存储用户名密码的工具。它可适用用于 *Windows XP* 和 *Windows 7* 。
 
-* tortoisegit操作 && 观念的转变
+怎么使用？只要双击运行它就可以了。
+
+** 证书登录
+当然也可以用证书登录，原理跟ssh证书登录一样。
+
+值得注意的是，它是不支持https的方法的，举个例子，我的一个项目 [[https://github.com/wuyao721/51docs]] ，
+这个连接可以通过证书做push，pull等操作：
+: git@github.com:wuyao721/51docs.git
+而下面这个连接证书是不起作用的，必须输入用户名和密码：
+: https://github.com/wuyao721/51docs.git
+
+用puttygen来生成证书，通过pageant来管理证书。它们都集成在tortoisegit里。
+
+* tortoisegit操作 & 观念的转变
 
 windows平台下，我的使用感受是tortoisegit比较好用。所以这里的操作是针对tortoisegit来说的。
 
@@ -86,6 +94,8 @@ linux的用的还少，目前只会这样：
   - [[https://github.com/anurse/git-credential-winstore#i-have-another-question][git-credential-winstore]]
   - [[http://www.cnblogs.com/dudu/archive/2011/07/06/git_save_username_password.html][终于解决“Git Windows客户端保存用户名与密码”的问题]]
   - [[http://stackoverflow.com/questions/6031214/git-how-to-use-netrc-file-on-windows-to-save-user-and-password][Git - How to use .netrc file on windows to save user and password]]
+  - [[http://blog.chinaunix.net/uid-26185912-id-3327885.html][github生成SSH公钥]]
+  - [[http://hi.baidu.com/anonymas/item/2ee393d0e95c5a1fe0f46fb6][git/ TortoiseGit如何使用证书登录]]
 
 
 #+begin_quote

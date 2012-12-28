@@ -1,12 +1,25 @@
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
 #+CATEGORY: 
-#+PERMALINK: emacs-top10
+#+PERMALINK: emacs-top10-calc
 #+TAGS: emacs
 #+DESCRIPTION:
-#+TITLE: emacs十大必用模式之: 
+#+TITLE: emacs十大必用模式之: calc
 
+: M-x calc
+
+习惯了那种windows自带的计算器。
+
+堆栈模式
+
+* 常用快捷键
+| 按键 |   |
+|------+---|
+| d0   |   |
+| d2   |   |
+| d6   |   |
+|      |   |
 
 #+begin_quote
 本文由吴遥编写，转载请注明出处。
-文章链接：[[http://www.wuyao721.com/emacs-top10.html]]
+文章链接：[[http://www.wuyao721.com/emacs-top10-calc.html]]
 #+end_quote
