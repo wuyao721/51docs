@@ -40,7 +40,9 @@
 ssh支持证书登录，我的文章 [[http://www.wuyao721.com/ssh-proxy.html][ssh代理]] 里有提到如何生成证书。
 
 ** windows的ssh工具（可选）
-我用 [[http://www.netsarang.com/products/xsh_overview.html][XShell 4]] 做为windows的ssh工具，比起其它同类ssh工具，他有如下优点：
+
+*** XShell
+我用 [[http://www.netsarang.com/products/xsh_overview.html][XShell]] 做为windows主要的ssh工具，比起其它同类ssh工具，他有如下优点：
  - 学校和家用免费
  - 支持多标签
  - 能记住密码，支持证书登录
@@ -49,6 +51,19 @@ ssh支持证书登录，我的文章 [[http://www.wuyao721.com/ssh-proxy.html][s
 
 XShell默认会跟emacs/vim抢按键的，可以通过设置XShell解决这个问题。[fn:1]
 
+*** putty
+putty也是我常用的ssh，如下优点：
+ - 无需安装，特别适合在外时使用
+ - 免费使用
+ - 支持证书登录（可跟pageant配合使用）
+ - 支持UTF-8字符编码
+
+当然，它的缺点也不少，如下：
+ - 不能记住密码
+ - 不支持多标签
+ - 依赖于windows的程序 *cmd.exe* ，因而界面太简单了
+
+可以看看这篇文章—— [[http://www.cnblogs.com/hnrainll/archive/2011/08/11/2135315.html][putty详细使用说明]] ，讲得很细。
 
 * linux中文环境（可选）
 如果不涉及中文化，可以忽略。
