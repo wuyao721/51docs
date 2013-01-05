@@ -77,6 +77,7 @@
   - emacs for windows http://code.google.com/p/emacs-for-windows/
   - orgmode http://orgmode.org
   - git-emacs https://github.com/tsgates/git-emacs
+  - magit https://github.com/magit/magit
 
 ** 其它
   - sqlite http://www.sqlite.org/
