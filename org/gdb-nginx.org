@@ -8,7 +8,7 @@
 #+TITLE: gdb调试nginx要点
 
 * 源码编译
-生成Makefile后，修改objs/Makefile 将 *-O* 改成 *-g3*
+生成Makefile后，修改objs/Makefile 将-O改成-g3
 
 * 修改nginx配置文件
 在nginx.conf上加上这两句

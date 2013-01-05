@@ -18,14 +18,13 @@ shipfish是谷歌公司研发的一个扫描网站的漏洞的工具，与其相
 以下是简单的使用方法：
 : ./skipfish -o wuyao721 -S dictionaries/minimal.wl -L -Y -C JSESSIONID=77de6268-b041-49ba-9547-bd1db5ecc797 http://www.wuyao721.com
 
-| 参数 | 说明                                                   |
-|------+--------------------------------------------------------|
-| -o   | 输出目录                                               |
-| -S   | 读一个只读的wordlist                                   |
-| -L   | 取消学习模式                                           |
-| -C   | 设置cookie                                             |
-| -Y   | 取消模糊文件名后缀                                     |
-| -F   | 绑定域名和IP，如 *-F www.wuyao721.com=123.123.123.123* |
+| 参数 | 说明                 |
+|----+----------------------|
+| -o | 输出目录             |
+| -S | 读一个只读的wordlist |
+| -L | 取消学习模式         |
+| -C | 设置cookie           |
+| -Y | 取消模糊文件名后缀   |
 
 参考资料：
 https://code.google.com/p/skipfish/

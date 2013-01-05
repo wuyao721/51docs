@@ -88,8 +88,6 @@ windows平台下，我的使用感受是tortoisegit比较好用。所以这里�
 linux的用的还少，目前只会这样：
 : git clone https://github.com/wuyao721/51docs.git
 
-** emacs + git-emacs + magit
-
 
 * 参考资料
   - [[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub 使用指南]]
