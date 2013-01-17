@@ -1,0 +1,37 @@
+#+POSTID: 329
+#+DATE: [2013-01-07 星期一 22:00]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+TAGS: it, emacs, blog
+#+PERMALINK: it-websites
+#+TITLE: 网站列表
+
+这里收集了一些IT相关的资讯网站，平时有空就可以看看，提高个人IT修养~.~。
+
+* 知名IT类网站/博客
+一些知名的IT技术博客，内容专业并且丰富。好多国外的翻译。
+ - [[http://www.aqee.net/][外刊IT评论网]] （都是外文翻译）
+ - [[http://www.36kr.com/][36氪]]  （介绍IT界的新鲜事，比如互联网创业，估计好多也是翻译来的）
+ - [[http://blog.jobbole.com/][伯乐在线]] （综合性IT博客）
+ - [[http://www.ctocio.com/][IT经理网]] （说是针对 CTO/CIO，个人感觉翻译挺多的，主要是前沿技术）
+ - [[http://rdc.taobao.com/blog/cs/][淘宝核心系统团队博客]] （淘宝技术团队既创造了价值，还能传授经验，赞）
+ - [[http://www.guokr.com][果壳网]] （泛科技兴趣社区）
+ - [[http://blog.cloudfence.cn/][云防线博客]] （我的项目组技术博客 -.- ）
+
+
+* 个人博客
+杂七杂八的个人博客，相当有意思。
+ - [[http://www.ruanyifeng.com/blog/][阮一峰的网络日志]]
+ - [[http://myfairland.net/][小骆驼商队]] 
+ - [[http://www.pubyun.com/blog][公云网博客]] 
+ - [[http://opengg.me/][鲁夫的爱]]
+ - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （关于javascripts的技术博客）
+
+
+* emacs
+我用并喜爱emacs
+ - [[http://emacser.com/][emacs中文网]]
+ - [[http://www.emacswiki.org/][emacswiki]]
+ - [[http://ann77.emacser.com/Emacs/EmacsIndex.html][王纯业的Emacs]]
+ - [[http://www.dotemacs.de/][dotemacs]]

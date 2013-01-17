@@ -2,10 +2,14 @@
 #+POSTID: 10
 #+DATE: [2012-11-08 17:56]
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
-#+CATEGORY: 
+#+CATEGORY: nginx
 #+TAGS: nginx, proxy
 #+PERMALINK: nginx-upstream-cache-status
 #+TITLE: nginx代理流量统计
+
+nginx代理流量统计
+
+#+html: <!--more--> 
 
   1. 在配置文件里的log_format里加上 $upstream_cache_status
   2. 修改awstats等工具的解释日志方法

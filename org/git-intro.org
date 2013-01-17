@@ -1,10 +1,11 @@
 #+POSTID: 170
 #+DATE: [2012-11-29 星期四 20:18]
 #+BLOG: wuyao721
-#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+OPTIONS: toc:nil ^:nil
 #+CATEGORY: 
-#+TAGS: git
+#+TAGS: git, emacs
 #+PERMALINK: git-intro
+#+LaTeX_CLASS: cjk-article
 #+TITLE: git简介
 我对于git，08年就大闻其名，却一直不敢尝试。只因为svn已经够我用了。所以即使googlecode已经支持git，我还是坚持使用svn。
 
@@ -18,10 +19,20 @@ git比起传统的版本控制系统，有如下的优势：
  - 协作开放变得轻松自然
  - 减少开发人员沟通的开销
 
+
 * github
  [[https://github.com][github]] 是一个网站，同时也是一个项目仓库。我们只要在网站上注册一个帐号，然后就可以在上面免费创建开源项目。利用git这个分布式版本管理系统，我们可以吸引到更多的人关注，加入我们的项目。
 
 github的访问速度挺快的，这也是越来越多人使用它的原因。
+
+** 证书登录
+当然也可以用证书登录，原理跟ssh证书登录一样。参考我这篇文章 [[http://www.wuyao721.com/ssh-proxy.html][ssh证书]] 。
+
+使用证书登录，它是不支持https的方法的，举个例子，我的一个项目 [[https://github.com/wuyao721/51docs]] ，
+这个地址可以通过证书做push，pull等操作：
+: git@github.com:wuyao721/51docs.git
+而下面这个地址证书是不起作用的，必须使用用户名和密码：
+: https://github.com/wuyao721/51docs.git
 
 * 工具（windows）
 
@@ -45,16 +56,7 @@ tortoisegit的官网告诉我们，它还依赖于 [[https://code.google.com/p/m
 
 怎么使用？只要双击运行它就可以了。
 
-** 证书登录
-当然也可以用证书登录，原理跟ssh证书登录一样。
 
-值得注意的是，它是不支持https的方法的，举个例子，我的一个项目 [[https://github.com/wuyao721/51docs]] ，
-这个连接可以通过证书做push，pull等操作：
-: git@github.com:wuyao721/51docs.git
-而下面这个连接证书是不起作用的，必须输入用户名和密码：
-: https://github.com/wuyao721/51docs.git
-
-用puttygen来生成证书，通过pageant来管理证书。它们都集成在tortoisegit里。
 
 * tortoisegit操作 & 观念的转变
 
@@ -84,9 +86,25 @@ windows平台下，我的使用感受是tortoisegit比较好用。所以这里�
 ** 和tortoisesvn相同的用法
 除了 *clone* ， *pull* ， *push* 这些指令之外，tortoisegit在用法上跟tortoisesvn是差不多的。
 
+
 * 工具（linux）
-linux的用的还少，目前只会这样：
+首先，从服务器上下载版本库：
 : git clone https://github.com/wuyao721/51docs.git
+
+** emacs + [[https://github.com/tsgates/git-emacs][git-emacs]] 
+emacs用户可以通过插件 *git-emacs* 来操作git版本库。把下面的代码加入 *emacs* 配置文件：
+: (global-set-key (kbd "C-c p v g") 'git-status)
+: (autoload 'git-status "git-status" "subversion interface for emacs" t)
+
+也可以使用 [[https://github.com/magit/magit][magit]] ，它也是emacs的插件。
+
+
+* FAQ
+** Key is already in use
+说明这个key已经被某些用户或项目使用了。先查一下是被谁用了：
+: ssh -T -i ~/.ssh/id_rsa git@github.com
+如果这个key被自己的某个项目使用了，那么将它添加在用户设置里而不是项目设置。
+如果这个key给其它人用了，那么就换个key吧。
 
 
 * 参考资料
@@ -96,7 +114,12 @@ linux的用的还少，目前只会这样：
   - [[http://stackoverflow.com/questions/6031214/git-how-to-use-netrc-file-on-windows-to-save-user-and-password][Git - How to use .netrc file on windows to save user and password]]
   - [[http://blog.chinaunix.net/uid-26185912-id-3327885.html][github生成SSH公钥]]
   - [[http://hi.baidu.com/anonymas/item/2ee393d0e95c5a1fe0f46fb6][git/ TortoiseGit如何使用证书登录]]
-
+  - [[http://stackoverflow.com/questions/10281368/key-is-already-in-use-when-trying-to-add-ssh-key-to-github][key-is-already-in-use-when-trying-to-add-ssh-key-to-github]]
+  - [[https://help.github.com/articles/error-key-already-in-use][Error: Key already in use]]
+  - [[https://help.github.com/articles/managing-deploy-keys][Managing deploy keys]]
+  - [[http://alexott.net/en/writings/emacs-vcs/EmacsGit.html][Working with Git from Emacs]]
+  - [[http://www.cnblogs.com/holbrook/archive/2012/04/26/2470923.html][在Emacs中使用git]]
+  - [[http://www.aqee.net/5-fundamental-differences-between-git-svn/][GIT和SVN之间的五个基本区别]]
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/git-intro.html]]

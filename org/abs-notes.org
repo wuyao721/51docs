@@ -1,0 +1,25 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: bash, abs
+#+PERMALINK: abs-notes
+#+TITLE: 《高级 Bash 脚本编程指南》读书笔记
+
+工作中用bash写脚本的情况不少，不过很多时候都是不求甚解，拿来主义。
+
+几个月后，我又要写新的脚本，遗憾的是我连个if测试都忘记如何写了。重新查找资料的时候，我开始反思，为什么我没能记住这貌似简单的bash语法。
+
+《高级 Bash 脚本编程指南》这本书帮了我好多，但是内容太多了，所以我记下一些我认为重要的，并加入我自己的见解。
+
+#+HTML: <!--more--> 
+
+* bash用来干嘛的
+
+* 变量
+
+* 测试
+
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/abs-notes.html]]
+#+end_quote

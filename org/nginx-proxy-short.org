@@ -2,16 +2,14 @@
 #+POSTID: 28
 #+DATE: [2012-11-09 17:56]
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
-#+CATEGORY: 
+#+CATEGORY: nginx
 #+TAGS: nginx, proxy
 #+PERMALINK: nginx-proxy-short
 #+TITLE: nginx正向代理的不足
 
 用nignx做正向代理，可以用来代理浏览网页。但是却不能代理QQ等应用，这是为什么呢？
 
-#+begin_html
-<!--more--> 
-#+end_html
+#+HTML: <!--more--> 
 
 我们来分析一下，抓包的第一行是这样的：
 : CONNECT http.tencent.com:443 HTTP/1.1

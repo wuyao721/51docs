@@ -15,9 +15,7 @@
 
 假设我们有两台主机，一台是windows系统，ip为192.168.1.11；第二台linux系统(ubuntu 10)，ip为192.168.1.21。请按照下文的顺序一步步完成设置。
 
-#+begin_html
-<!--more--> 
-#+end_html
+#+HTML: <!--more--> 
 
 * windows设置
 在windows下，我们需要的工具包括XMing、putty和plink。
@@ -42,6 +40,7 @@ XMing默认不支持局域网连接，因此要修改XMing的运行参数（在X
 *** 运行
 创建一个plink.bat（与plink.exe放在同一个目录，当然也可以设置PATH），内容如下：
 : start plink 192.168.1.21 -l root -pw 123456 -ssh DISPLAY=192.168.1.11:0.0 LC_ALL=zh_CN.UTF-8 LANG=zh_CN.UTF-8 emacs -T s21
+
 
 * linux设置
 在部署完成之前，我们需要一个临时的登录工具，比如说putty。我们使用putty登录到linux上，做一些设置。
@@ -86,7 +85,7 @@ XMing默认不支持局域网连接，因此要修改XMing的运行参数（在X
 * 使用
 好了，现在万事俱备，可以开始使用。
  1. 双击Xming图标，运行X Window
- 2. 双击plink.bat，将emacs或其它程序映射到windows桌面
+ 2. 双击plink.bat，将linux的emacs程序显示到windows桌面
 
 
 #+begin_quote

@@ -1,0 +1,26 @@
+#+BLOG: wuyao721
+#+POSTID: 381
+#+DATE: [2013-01-16 三 11:16]
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+TAGS: 
+#+PERMALINK: wadethomas-mencius
+#+LaTeX_CLASS: cjk-article
+#+TITLE: 韦氏拼音与常凯申
+
+以前在坐地铁8号线的时候经常听到 *Sun Yat-sen* ，那时就很奇怪，为什么不叫 *Sun Yi-Xian* 或 *Sun Zhong-Shan* 呢？同样奇怪的是清华大学叫 *Tsinghua University* ，而不是中文的拼音。
+
+#+html: <!--more--> 
+
+后来无意中在网上读到一篇文章 [[http://www.byhard.com/wade-giles-romanization.html][蒋介石与“常凯申”]] ，才懂得个中缘由。[[http://baike.baidu.com/view/472945.htm][威妥玛拼音]] ，也称韦氏拼音，是一个叫威妥玛的外国人发明的，用罗马字母来给汉字注音（那时才19世纪，还没有汉语拼音）。
+
+解放后，推广 [[http://baike.baidu.com/view/104414.htm][汉语拼音]] ，韦氏拼音就慢慢不用了，不过已有的还是会沿用下去，所以才会有常凯申、桑卒等笑话。话又说回来，看笑话还是蛮有趣的。
+
+再说另外一个翻译的笑话，跟韦氏拼音没有关系，不过更有趣。门修斯（Mencius）这个人是谁，如果第一次看到，绝对不会想到是孟子，参考百度百科的 [[http://baike.baidu.com/view/2501207.htm][门修斯]] ，有一段是这样的：
+: 孔子曰：天无二日，民无二王。（《孟子·万章章句上》）
+外国镀金后就是这样的：
+: 门修斯（Mencius）的格言‘普天之下只有一个太阳，居于民众之上的也只有一个帝王’
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/wadethomas-mencius.html]]
+#+end_quote

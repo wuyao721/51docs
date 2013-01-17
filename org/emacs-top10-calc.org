@@ -1,5 +1,5 @@
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
-#+CATEGORY: 
+#+CATEGORY: emacs
 #+PERMALINK: emacs-top10-calc
 #+TAGS: emacs
 #+DESCRIPTION:

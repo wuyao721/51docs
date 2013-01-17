@@ -1,6 +1,5 @@
+#+OPTIONS: toc:nil ^:nil
 nginx搭建反向代理服务器和web防火墙
-
-#+OPTIONS: ^:nil
 
 本文讲述如何用nginx搭建代理服务器和web防火墙，操作系统为ubuntu 10.10
 

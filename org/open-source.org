@@ -1,3 +1,4 @@
+#+OPTIONS: toc:nil ^:nil
 我所知道的开源世界
 
 * 我为什么要写

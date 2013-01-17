@@ -1,15 +1,15 @@
 #+BLOG: wuyao721
 #+POSTID: 12
 #+DATE: [2012-11-08 12:21]
-#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
-#+CATEGORY: 
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: emacs
 #+PERMALINK: emacs-indent
 #+TAGS: emacs
 #+LaTeX_CLASS: cjk-article
 #+DESCRIPTION:
-#+TITLE: emacs缩进配置
+#+TITLE: emacs缩进
 
-对于C/C++、java等语言，emacs默认的缩进方法有点特别，在团队开发时显得不合群。
+对于C/C++、java等语言，emacs默认的缩进方法有点特别，在团队开发时显得不合群，因此要做一点小的修改。
 
 #+html: <!--more--> 
 

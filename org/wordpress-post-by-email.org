@@ -7,6 +7,9 @@
 #+PERMALINK: wordpress-post-by-email
 #+TITLE: 用邮件发布wordpress博客
 
+用邮件发布wordpress博客
+#+HTML: <!--more--> 
+
 * 配置邮箱地址
 在wordpress发布系统上设置如下：
   - 邮件服务器地址：pop.163.com
@@ -15,8 +18,10 @@
   - 密码：xxx
   - 默认邮件分类：未分类
 
+
 * 发邮件
 以文本格式写邮件发给xxx@163.com（邮件的主题行作为日志标题，邮件正文作为日志正文）
+
 
 * 让wordpress收邮件
 打开 http://www.example.com/wp-mail.php ， 让wordpress读取邮箱，并发布文章。

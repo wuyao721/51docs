@@ -9,6 +9,10 @@
 #+DESCRIPTION:
 #+TITLE: wordpress环境快速搭建
 
+wordpress环境快速搭建
+
+#+HTML: <!--more--> 
+
 * 运行环境
 我的运行环境是 *ubuntu* + *nginx* + *php5-fpm* + *mysql*
 : apt-get install nginx php5-fpm php5-mysql mysql-server mysql-client
@@ -21,8 +25,8 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 ** 创建数据库
 创建单独的数据库给wordpress使用
 : CREATE DATABASE dbname;
-: CREATE USER ‘username’@'localhost’ IDENTIFIED BY ‘password’;
-: GRANT ALL ON dbname.* TO ‘username’@'localhost’;
+: CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+: GRANT ALL ON dbname.* TO 'username'@'localhost';
 
 ** 配置nginx
 修改nginx的配置文件
@@ -37,7 +41,7 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 将wp-config-sample.php重命名为wp-config.php，并编辑，设置数据库配置信息
 
 ** 页面安装wordpress
-打开http://example.com/wp-admin/install.php，开始安装wordpress
+打开 [[http://example.com/wp-admin/install.php]] ，开始安装wordpress
 
 
 * 修改页面风格
@@ -117,6 +121,7 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 :         background: #DEF;
 : }
 
+
 * 统计
 访问统计可通过插件 *WP-PostViews* ，也可以通过php代码读数据库：
 #+begin_example
@@ -133,6 +138,7 @@ ubuntu从10.04版本由于没有php-fpm，需要编译php。从10.10版本开始
 #+end_example
 
 还可以可以选择使用第三方的统计 *CNZZ*， *Google Analytics* ， *百度统计* ， *51LA* 等等。
+
 
 * 参考资料
  - [[http://tangchuanyao.com/20120608844/][wordpress统计总访问量]]

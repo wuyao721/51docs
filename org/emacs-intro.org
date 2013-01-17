@@ -1,6 +1,6 @@
 #+BLOG: wuyao721
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
-#+CATEGORY: 
+#+CATEGORY: emacs
 #+TAGS: emacs, screen
 #+PERMALINK: emacs-screen
 #+TITLE: emacs简介

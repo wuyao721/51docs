@@ -55,39 +55,46 @@
 * 其它项目
 
 ** C/C++ 库/工具
-  - poco http://pocoproject.org/
-  - protobuf http://code.google.com/p/protobuf/
-  - zeromq http://www.zeromq.org/
-  - ace http://www.cs.wustl.edu/~schmidt/ACE.html
-  - premake4 http://premake.sourceforge.net/
+  - [[http://pocoproject.org/][poco]]
+  - [[http://code.google.com/p/protobuf/][protobuf]]
+  - [[http://www.zeromq.org/][zeromq]]
+  - [[http://www.cs.wustl.edu/~schmidt/ACE.html][ace]]
+  - [[http://premake.sourceforge.net/][premake4]]
 
 ** 人工智能
-  - tesseract-ocr http://code.google.com/p/tesseract-ocr/
-  - leptonica http://code.google.com/p/leptonica/
+  - [[http://code.google.com/p/tesseract-ocr/][tesseract-ocr]]
+  - [[http://code.google.com/p/leptonica/][leptonica]]
 
 ** web应用
-  - weebly http://www.weebly.com/
-  - sencha http://www.sencha.com/
-  - xming http://sourceforge.net/projects/xming/
-  - wordpress http://cn.wordpress.org/
-  - sencha http://www.sencha.com/
-  - bottle http://bottlepy.org
+  - [[http://www.weebly.com/][weebly]]
+  - [[http://www.sencha.com/][sencha]]
+  - [[http://sourceforge.net/projects/xming/][xming]]
+  - [[http://cn.wordpress.org/][wordpress]]
+  - [[http://www.sencha.com/][sencha]]
+  - [[http://bottlepy.org][bottle]]
+  - [[http://docs.kissyui.com/][kissy]] 
+  - [[http://jsbeautifier.org/][jsbeautifier]] （美化js代码，主要是排版美化，便于阅读）
 
 ** emacs
-  - emacs for windows http://code.google.com/p/emacs-for-windows/
-  - orgmode http://orgmode.org
-  - git-emacs https://github.com/tsgates/git-emacs
-  - magit https://github.com/magit/magit
+  - [[http://code.google.com/p/emacs-for-windows/][emacs for windows]]
+  - [[http://code.google.com/p/dea/][dea]]
+  - [[http://orgmode.org][orgmode]]
+  - [[https://github.com/tsgates/git-emacs][git-emacs]]
+  - [[https://github.com/magit/magit][magit]]
 
 ** 其它
-  - sqlite http://www.sqlite.org/
-  - scintilla http://www.scintilla.org/
-  - postgresql http://www.postgresql.org/
-  - putty http://www.putty.org/
-  - gitosis https://github.com/res0nat0r/gitosis
+  - [[http://www.sqlite.org/][sqlite]]
+  - [[http://www.scintilla.org/][scintilla]]
+  - [[http://www.postgresql.org/][postgresql]]
+  - [[http://www.putty.org/][putty]]
+  - [[https://github.com/res0nat0r/gitosis][gitosis]]
+  - [[https://chrome.google.com/webstore/detail/openggcleanplayer/doleffkdbkfeokcanjaagploacdflcff/related][OpenGG.Clean.Player]] （去除优酷和土豆的广告，哈哈）
 
 ** 网络安全
-  - ironbee https://www.ironbee.com/
-  - naxsi http://code.google.com/p/naxsi/
-  - skipfish https://code.google.com/p/skipfish/
-  - ratproxy https://code.google.com/p/ratproxy/
+  - [[https://www.ironbee.com/][ironbee]]
+  - [[http://code.google.com/p/naxsi/][naxsi]]
+  - [[https://code.google.com/p/skipfish/][skipfish]]
+  - [[https://code.google.com/p/ratproxy/][ratproxy]]
+** 云计算
+  - [[http://docs.openstack.org/developer/nova/][Nova]]
+

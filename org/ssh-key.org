@@ -1,0 +1,45 @@
+#+BLOG: wuyao721
+#+POSTID: 341
+#+DATE: [2013-01-07 一 22:24]
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+PERMALINK: ssh-key
+#+TAGS: ssh, rsa, linux, puttygen
+#+DESCRIPTION: 
+#+TITLE: ssh证书
+
+ssh是标准的linux远程登录工具，用以代替以往的rlogin，rsh，telnet等工具。
+
+ssh证书其实就是RSA的密匙对（可以认为是两个文件），私匙给客户端保存，公匙则给服务器保存。
+登录的时候就通过这样的密匙对做认证。
+
+使用证书使得登录更加自动化，前提是证书不能弄丢了。
+
+#+html: <!--more--> 
+
+* 生成ssh证书（linux）
+: ssh-keygen -t rsa -C "your name or computer or email"
+这条命令将会生成 *~/.ssh/id_rsa* 和 *~/.ssh/id_rsa.pub* 两文件，分别对应私匙和公匙。
+
+** 将公匙传到linux服务器
+通过任何方法将 *id_rsa.pub* 传到服务器上，并追加到文件 *~/.ssh/authorized_keys* 里。
+一个命令就能搞定：
+: ssh-copy-id user@ssh-server 
+
+
+* 生成ssh证书（windows）
+运行程序 *puttygen.exe* （它是 [[http://www.putty.org/][putty]] 的一部分），按照以下顺序操作来生成证书：
+ 1. 点菜单 *key*
+ 2. 点 *Generator key pair*
+ 3. 鼠标在对话框的空白区随机滑动，直到进度完成
+ 4. 修改 *key comment* 的内容（可选）
+ 5. 点按钮 *save private key* 保存私匙
+ 6. 点按钮 *save public key* 保存公匙
+
+
+* 参考资料
+  - ssh man手册 
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/ssh-key.html]]
+#+end_quote

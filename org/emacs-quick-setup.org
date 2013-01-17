@@ -1,8 +1,9 @@
 #+BLOG: wuyao721
 #+POSTID: 310
 #+DATE: [2012-12-27 星期四 18:27]
+#+OPTIONS: toc:nil ^:nil
 #+BLOG: wuyao721
-#+CATEGORY: 
+#+CATEGORY: emacs
 #+LaTeX_CLASS: cjk-article
 #+TAGS: emacs
 #+PERMALINK: emacs-quick-setup
@@ -17,7 +18,7 @@
 ** 下载emacs
 到 [[https://code.google.com/p/emacs-for-windows][这里]] 下载编译好的emacs，将其解压到 *C:/Emacs* 目录下。
 
-也就是说emacs的安装目录是 *C:/Emacs* ，这一点很重要，如果你不想装在这里，那么就要自己修改注册表文件 *quick\_open.reg* 和 *set\_path.reg* 。
+也就是说emacs的安装目录是 *C:/Emacs* ，这一点很重要，如果你不想装在这里，那么就要自己修改注册表文件 *quick_open.reg* 和 *set_path.reg* 。
 
 ** emacs配置
   - 下载 [[https://github.com/wuyao721/51dotemacs]] 的打包文件master.zip，将内容解压到emacs安装目录下
@@ -28,10 +29,10 @@
 可以通过注册表修改键盘按键，而我用的是一个小工具—— [[http://www.mympc.org][键盘映射工具]] 。
 
 ** 右键打开文件
-导入 *quick\_open.reg* 到注册表，要保持与emacs的安装目录一致。
+导入 *quick_open.reg* 到注册表，要保持与emacs的安装目录一致。
 
 ** 设置Emacs的HOME目录
-导入 *set\_path.reg* 到注册表，要保持与emacs的安装目录一致。
+导入 *set_path.reg* 到注册表，要保持与emacs的安装目录一致。
 
 ** 字体设置
 一直都没搞明白为什么emacs在windows下字体会这么丑，试了不少的字体，最后选择了一个 *雅黑consolas字体库* ，文件名大概是 *YaHei.Consolas.1.11b.ttf* ，上网搜搜就能找到。对应的配置是：
