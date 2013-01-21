@@ -130,6 +130,20 @@ putty也是我常用的ssh工具，如下优点：
 : /etc/init.d/whoopsie stop
 
 
+* 停止无用的服务
+
+** /sbin/getty
+用 *ps* 等命令，可以看到有这样一些进程 */sbin/getty -8 38400 tty1* ，实际上不大需要它们，保留一个就行了。这些程序由 *init* 程序守护着，用 *kill* 命令是杀不死的，只能用 *initctl* 来停止。
+: initctl stop tty2
+: initctl stop tty3
+: initctl stop tty4
+: initctl stop tty5
+: initctl stop tty6
+
+** rsyslog
+*rsyslog* 用来传输远程系统日志，如果不需要这个功能，也可以停止它。
+: initctl stop rsyslog
+
 * 必备工具
 
 ** apt
