@@ -13,6 +13,7 @@
 一些知名的IT技术博客，内容专业并且丰富。好多国外的翻译。
  - [[http://www.aqee.net/][外刊IT评论网]] （都是外文翻译）
  - [[http://www.36kr.com/][36氪]]  （介绍IT界的新鲜事，比如互联网创业，估计好多也是翻译来的）
+ - [[http://www.oschina.net/][开源中国社区]]
  - [[http://blog.jobbole.com/][伯乐在线]] （综合性IT博客）
  - [[http://www.ctocio.com/][IT经理网]] （说是针对 CTO/CIO，个人感觉翻译挺多的，主要是前沿技术）
  - [[http://rdc.taobao.com/blog/cs/][淘宝核心系统团队博客]] （淘宝技术团队既创造了价值，还能传授经验，赞）
@@ -26,6 +27,11 @@
  - [[http://myfairland.net/][小骆驼商队]] 
  - [[http://www.pubyun.com/blog][公云网博客]] 
  - [[http://opengg.me/][鲁夫的爱]]
+ - [[http://shuyz.com][树叶的BLOG]]
+ - [[http://www.paulgraham.com][Paul Graham's blog]]
+ - [[http://www.theequitykicker.com][The Equity Kicker]]
+ - [[http://www.catonmat.net/][Peteris Krumins' blog]]
+ - [[http://www.igvita.com/][Ilya Grigorik's blog]]
  - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （关于javascripts的技术博客）
 
 

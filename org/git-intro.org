@@ -13,6 +13,12 @@
 
 #+html: <!--more--> 
 
+#+begin_quote
+2013-01-21更新：今天一早就在微博上看到github被墙了，一看，果真如此，子域名都访问不了。立此纪念。
+2013-01-22更新：github完全访问不了，域名被劫持了。
+#+end_quote
+
+
 * git的优势
 git比起传统的版本控制系统，有如下的优势：
  - 分布式版本控制系统
@@ -25,6 +31,14 @@ git比起传统的版本控制系统，有如下的优势：
 
 github的访问速度挺快的，这也是越来越多人使用它的原因。
 
+由于域名被劫持了，请将以下文件加入host文件里。windows是 *c:/WINDOWS/system32/drivers/etc/hosts* ，linux是 */etc/hosts* 。
+: 207.97.227.243    raw.github.com
+: 207.97.227.243    www.github.com
+: 207.97.227.243    github.com
+: 207.97.227.243    gist.github.com
+: 207.97.227.252    nodeload.github.com
+: 204.232.175.78    documentcloud.github.com
+
 ** 证书登录
 当然也可以用证书登录，原理跟ssh证书登录一样。参考我这篇文章 [[http://www.wuyao721.com/ssh-proxy.html][ssh证书]] 。
 
@@ -33,6 +47,7 @@ github的访问速度挺快的，这也是越来越多人使用它的原因。
 : git@github.com:wuyao721/51docs.git
 而下面这个地址证书是不起作用的，必须使用用户名和密码：
 : https://github.com/wuyao721/51docs.git
+
 
 * 工具（windows）
 
@@ -94,7 +109,7 @@ windows平台下，我的使用感受是tortoisegit比较好用。所以这里�
 ** emacs + [[https://github.com/tsgates/git-emacs][git-emacs]] 
 emacs用户可以通过插件 *git-emacs* 来操作git版本库。把下面的代码加入 *emacs* 配置文件：
 : (global-set-key (kbd "C-c p v g") 'git-status)
-: (autoload 'git-status "git-status" "subversion interface for emacs" t)
+: (autoload 'git-status "git-status" "git interface for emacs" t)
 
 也可以使用 [[https://github.com/magit/magit][magit]] ，它也是emacs的插件。
 

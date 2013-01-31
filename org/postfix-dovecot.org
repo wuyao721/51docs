@@ -1,0 +1,25 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: 
+#+TAGS: postfix, dovecot
+#+PERMALINK: postfix-dovecot
+#+TITLE: postfix+dovecot搭建邮件系统
+
+postfix+dovecot搭建邮件系统
+
+#+html: <!--more--> 
+
+* 安装
+: apt-get install postfix dovecot-postfix
+
+* 配置
+: dpkg-reconfigure postfix
+
+* 参考
+ - [[http://forum.ubuntu.org.cn/viewtopic.php?f=54&t=170026][Postfix+Dovecot邮件服务器架设傻瓜版指南]]
+ - [[https://help.ubuntu.com/12.04/serverguide/email-services.html][Ubuntu Server Guide: Email Services]]
+ - [[http://wiki.ubuntu.org.cn/MailServer%EF%BC%88%E5%9F%BA%E4%BA%8EUbuntu%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97%EF%BC%89][MailServer（基于Ubuntu的电子邮件服务器设置指南）]]
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/postfix-dovecot.html]]
+#+end_quote
