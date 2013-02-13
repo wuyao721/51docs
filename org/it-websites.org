@@ -26,12 +26,16 @@
  - [[http://www.ruanyifeng.com/blog/][阮一峰的网络日志]]
  - [[http://myfairland.net/][小骆驼商队]] 
  - [[http://www.pubyun.com/blog][公云网博客]] 
+ - [[http://shawphy.com/][走走停停看看]]
+ - [[http://www.keakon.net][keakon的涂鸦馆]]
  - [[http://opengg.me/][鲁夫的爱]]
  - [[http://shuyz.com][树叶的BLOG]]
  - [[http://www.paulgraham.com][Paul Graham's blog]]
  - [[http://www.theequitykicker.com][The Equity Kicker]]
  - [[http://www.catonmat.net/][Peteris Krumins' blog]]
  - [[http://www.igvita.com/][Ilya Grigorik's blog]]
+ - [[http://www.wall.org/~larry/][Larry Wall's Very Own Home Page]]
+ - [[http://stallman.org/][Richard Stallman's Personal Site]]
  - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （关于javascripts的技术博客）
 
 
