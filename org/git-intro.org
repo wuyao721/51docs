@@ -11,6 +11,8 @@
 
 但是最近googlecode老连接不上，真纠结。这使我不得不放弃它，投奔github，借此机会体会git的魅力。
 
+[[file:../images/github.jpg]]
+
 #+html: <!--more--> 
 
 #+begin_quote
@@ -139,3 +141,5 @@ emacs用户可以通过插件 *git-emacs* 来操作git版本库。把下面的�
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/git-intro.html]]
 #+end_quote
+
+#+../images/github.jpg http://www.wuyao721.com/wp-content/uploads/2013/02/wpid-github.jpg

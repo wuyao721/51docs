@@ -28,15 +28,21 @@
  - [[http://www.pubyun.com/blog][公云网博客]] 
  - [[http://shawphy.com/][走走停停看看]]
  - [[http://www.keakon.net][keakon的涂鸦馆]]
- - [[http://opengg.me/][鲁夫的爱]]
+ - [[http://opengg.me/][鲁夫的爱]]  （优酷土豆去广告插件作者）
  - [[http://shuyz.com][树叶的BLOG]]
+ - [[http://evilcos.me][EVILCOS]] （web安全）
+ - [[http://taosay.net][道哥的黑板报]] （web安全）
+ - [[http://quke.org][趣客（放糖的绿豆汤）]]
+ - [[http://www.au92.com/][爱游开源]]
+ - [[http://pjack1981.blogspot.com/][Pjack's blog]]
  - [[http://www.paulgraham.com][Paul Graham's blog]]
  - [[http://www.theequitykicker.com][The Equity Kicker]]
  - [[http://www.catonmat.net/][Peteris Krumins' blog]]
  - [[http://www.igvita.com/][Ilya Grigorik's blog]]
  - [[http://www.wall.org/~larry/][Larry Wall's Very Own Home Page]]
- - [[http://stallman.org/][Richard Stallman's Personal Site]]
- - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （关于javascripts的技术博客）
+ - [[http://stallman.org/][Richard Stallman's Personal Site]] （大名顶顶的stallman）
+ - [[http://blog.sina.com.cn/u/1995001121][露露的博客]] （python基础进阶）
+ - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （javascripts技术博客）
 
 
 * emacs
