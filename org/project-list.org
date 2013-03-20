@@ -42,8 +42,8 @@
 ** [[https://code.google.com/p/51lottery/][51lottery]]
 一个简单的抽奖器，用vb做的，读excel文档，随机读取其中一行。原来是做给朋友的，给她公司抽奖用的。现已不再维护。
 
-** weixinrobots
-微信FAQ聊天工具，私有项目。地址是 *git@git.wuyao721.com:weixinrobots.git* 。
+** [[https://bitbucket.org/wuyao721/weixinrobots][weixinrobots]]
+微信FAQ聊天工具，私有项目。 地址是 *git@git.wuyao721.com:weixinrobots.git* 。
 
 ** [[http://blog.csdn.net/wuyao721][csdn博客]]
 这是我的另一个技术博客，csdn编辑文档方式还是挺让我纠结的。
@@ -74,6 +74,7 @@
   - [[http://bottlepy.org][bottle]]
   - [[http://docs.kissyui.com/][kissy]] 
   - [[http://jsbeautifier.org/][jsbeautifier]] （美化js代码，主要是排版美化，便于阅读）
+  - [[https://github.com/taobao/nginx-book][nginx-book]] （Nginx开发从入门到精通）
 
 ** emacs
   - [[http://code.google.com/p/emacs-for-windows/][emacs for windows]]

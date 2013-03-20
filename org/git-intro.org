@@ -123,6 +123,11 @@ emacs用户可以通过插件 *git-emacs* 来操作git版本库。把下面的�
 如果这个key被自己的某个项目使用了，那么将它添加在用户设置里而不是项目设置。
 如果这个key给其它人用了，那么就换个key吧。
 
+** git push throws error: RPC failed; result=22, HTTP code = 411
+默认上次文件最大是1M，也可以修改这个默认值：
+: git config http.postBuffer 524288000 # 最大改为 500M
+参考这个链接 [[https://www.openshift.com/kb/kb-e1035-git-push-throws-error-rpc-failed-result22-http-code-411][git push throws error: RPC failed; result=22, HTTP code = 411]]
+
 
 * 参考资料
   - [[http://hi.baidu.com/tp100/item/b48debf7f6fa8909d99e7253][TortoiseGit + GitHub 使用指南]]

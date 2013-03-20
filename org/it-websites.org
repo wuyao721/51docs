@@ -18,6 +18,8 @@
  - [[http://www.ctocio.com/][IT经理网]] （说是针对 CTO/CIO，个人感觉翻译挺多的，主要是前沿技术）
  - [[http://rdc.taobao.com/blog/cs/][淘宝核心系统团队博客]] （淘宝技术团队既创造了价值，还能传授经验，赞）
  - [[http://www.guokr.com][果壳网]] （泛科技兴趣社区）
+ - [[http://www.huxiu.com/][虎嗅网]]
+ - [[http://www.leiphone.com][雷锋网]]
  - [[http://blog.cloudfence.cn/][云防线博客]] （我的项目组技术博客 -.- ）
 
 
