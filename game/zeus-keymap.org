@@ -1,0 +1,47 @@
+#+BLOG: wuyao721
+#+POSTID: 405
+#+DATE: [2013-02-05 二 14:16]
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: game
+#+PERMALINK: zeus-keymap
+#+TAGS: zeus
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: 宙斯众神之王快捷键
+
+[[file:../images/zeus.jpg]]
+
+#+html: <!--more--> 
+
+ | 按键         | 作用                         |
+ |--------------+------------------------------|
+ | 1            | 人口标签                     |
+ | 2            | 农业标签                     |
+ | 3            | 工业标签                     |
+ | 4            | 储存与销售标签               |
+ | 5            | 卫生与安全标签               |
+ | 6            | 管理标签                     |
+ | 7            | 文化标签                     |
+ | 8            | 神话标签                     |
+ | 9            | 军事标签                     |
+ | 10           | 环境标签                     |
+ | 11           | 总览标签                     |
+ | CTRL+(F1-F4) | 地区编号                     |
+ | F1-F4        | 回到地区编号                 |
+ | F5           | 窗口模式                     |
+ | F6           | 分辨率800*600                |
+ | F7           | 分辨率1024*768               |
+ | PRINT SCREEN | 把当前画面保存到剪贴板       |
+ | P            | 暂停游戏（再按一次继续游戏） |
+ | 空格键       | 转换特殊显示和普通显示       |
+ | HOME         | 地图转为上北下南模式         |
+ | PAGEUP       | 逆时针旋转                   |
+ | PAGEDOWN     | 顺时针旋转                   |
+ | 方向键       | 移动地图                     |
+ | TAB          | 显示小地图或信息区           |
+ | [            | 减慢游戏速度                 |
+ | ]            | 加快游戏速度                 |
+ | R            | 建筑转向                     |
+ | ALT-X        | 退出游戏                     |
+
+#+../images/zeus.jpg http://www.wuyao721.com/wp-content/uploads/2013/02/wpid-zeus.jpg
