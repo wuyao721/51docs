@@ -1,0 +1,47 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: nginx
+#+TAGS: nginx, proxy
+#+PERMALINK: nginx-building-windows
+#+TITLE: windows平台下编译nginx
+
+本文讲述如何在windows下编译nginx，参考这篇文章 [[http://nginx.org/en/docs/howto_build_on_win32.html][Building nginx on the Win32 platform with Visual C]] ，它已经讲得比较详细了，但是实际操作过程中总有很多细节问题，在这里记录下来。
+
+#+HTML: <!--more--> 
+
+* 常见问题
+我使用的VS版本是VS2008，遇到了以下问题。
+
+** 获取指定版本
+有时候我们需要的不是最新版本，比如我要下载1.20版本的nignx，首先，我 [[http://trac.nginx.org/nginx/browser/nginx][这里]] 找1.20的版本号码，很快我找到是f582d662cc408eb7a132c21f4b298b71d0701abb，以下执行顺序就可以拿到指定版本：
+# hg clone http://hg.nginx.org/nginx
+# cd nginx
+# hg co f582d662cc408eb7a132c21f4b298b71d0701abb
+
+** openssl路径出错
+执行 *nmake -f objs/Makefile* 的时候，可能会出现这样的问题，说openssl路径出错，我们看到这样的路径（objs/lib/openssl-1.0.1e/openssl/include）。其实是没有的，办法就是将openssl-1.0.1e/openssl改成openssl-1.0.1e。
+# cd nginx/objs
+# vi Makefile
+
+** "stdint.h": No such file or directory
+这个问题好办，下载缺少的头文件就行了。 https://code.google.com/p/msinttypes/
+解压后将头文件目录 *C:\Program Files\Microsoft Visual Studio 9.0\VC\include* 下面（或者类似的目录）。
+
+** 无法打开文件 "objs/lib/openssl-1.0.1e/lib/ssleay32.lib"
+不知道nginx项目为什么不生成openssl的库，我通过单独编译生成openssl来解决这个问题。步骤如下：
+ - 安装perl（我用ActivePerl）
+ - 解压openssl到C盘，cd C:\openssl-1.0.1e
+ - 执行perl Configure VC-WIN32
+ - 运行cmd，将 *C:\Program Files\Microsoft Visual Studio 9.0\VC\VCVARS32.BAT* 拉到cmd里运行
+ - cmd内执行 ms\do_ms
+ - cmd内执行 nmake -f ms\ntdll.mak
+
+好了，将手工生成的 *libeay32.lib* 和 *ssleay32.lib* 放到目录 *nginx/objs/lib/openssl-1.0.1e* 下。问题解决。
+
+参考资料：
+[[http://www.metsky.com/archives/536.html][Windows下OpenSSL安装配置]]
+
+#+begin_quote
+本文由吴遥编写，转载请注明出处。
+文章链接：[[http://www.wuyao721.com/nginx-building-windows.html]]
+#+end_quote
