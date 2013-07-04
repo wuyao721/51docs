@@ -1,4 +1,6 @@
+#+DATE: [2013-07-04 星期四 16:10]
 #+BLOG: wuyao721
+#+POSTID: 467
 #+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
 #+CATEGORY: nginx
 #+TAGS: nginx, proxy
