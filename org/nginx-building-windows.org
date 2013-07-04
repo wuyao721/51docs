@@ -35,7 +35,7 @@
  - 安装perl（我用ActivePerl）
  - 解压openssl到C盘，cd C:\openssl-1.0.1e
  - 执行perl Configure VC-WIN32
- - 运行cmd，将 *C:\Program Files\Microsoft Visual Studio 9.0\VC\VCVARS32.BAT* 拉到cmd里运行
+ - 运行cmd，将 *"C:\Program Files\Microsoft Visual Studio 9.0\VC\vcvarsall.BAT"* 拉到cmd里运行
  - cmd内执行 ms\do_ms
  - cmd内执行 nmake -f ms\ntdll.mak
 

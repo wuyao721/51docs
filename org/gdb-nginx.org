@@ -14,6 +14,9 @@ gdb调试nginx要点
 * 源码编译
 生成Makefile后，修改objs/Makefile 将 *-O* 改成 *-g3*
 
+** windows的nginx 
+windows的话得编辑文件 *auto/cc/msvc* ， 将这行 *CFLAGS="$CFLAGS -O2"* 注释掉。
+
 * 修改nginx配置文件
 在nginx.conf上加上这两句
 : daemon off;
