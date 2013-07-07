@@ -144,6 +144,7 @@ putty也是我常用的ssh工具，如下优点：
 *rsyslog* 用来传输远程系统日志，如果不需要这个功能，也可以停止它。
 : initctl stop rsyslog
 
+
 * 必备工具
 
 ** apt
@@ -171,6 +172,11 @@ putty也是我常用的ssh工具，如下优点：
 服务器用途之一便是搭建网站，我的这个博客就是这么弄的。可以参考我这篇文章 [[http://www.wuyao721.com/wordpress-quick-setup.html][wordpress环境快速搭建]] 。
 
 
+* 常见问题
+** Failed to fetch bzip2:/****  Hash Sum mismatch
+如果系统所在的网络使用了缓存，可能会导致文件过期，使用代理更新apt源能解决这个问题：
+# apt-get -o Acquire::http::proxy="http://127.0.0.1:8087/" update
+  
 * 参考资料
  - [[http://askubuntu.com/questions/135540/what-is-the-whoopsie-process-and-how-can-i-remove-it][What is the 'whoopsie' process and how can I remove it?]]
 
