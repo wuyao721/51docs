@@ -16,9 +16,9 @@
 
 ** 获取指定版本
 有时候我们需要的不是最新版本，比如我要下载1.20版本的nignx，首先，我 [[http://trac.nginx.org/nginx/browser/nginx][这里]] 找1.20的版本号码，很快我找到是f582d662cc408eb7a132c21f4b298b71d0701abb，以下执行顺序就可以拿到指定版本：
-# hg clone http://hg.nginx.org/nginx
-# cd nginx
-# hg co f582d662cc408eb7a132c21f4b298b71d0701abb
+: hg clone http://hg.nginx.org/nginx
+: cd nginx
+: hg co f582d662cc408eb7a132c21f4b298b71d0701abb
 
 ** "stdint.h": No such file or directory
 这个问题好办，下载缺少的头文件就行了。 https://code.google.com/p/msinttypes/
@@ -26,11 +26,11 @@
 
 ** “openssl/ssl.h”: No such file or directory
 执行 *nmake -f objs/Makefile* 的时候，可能会出现这样的问题。我们看到这样的路径（objs/lib/openssl-1.0.1e/openssl/include），其实是没有的。办法就是将openssl-1.0.1e/openssl改成openssl-1.0.1e。
-# vi nginx/objs/Makefile
+: vi nginx/objs/Makefile
 
 或者直接修改生成Makefile的配置
-# vi auto/lib/openssl/conf
-# vi auto/lib/openssl/make
+: vi auto/lib/openssl/conf
+: vi auto/lib/openssl/make
 
 ** 无法打开文件 "objs/lib/openssl-1.0.1e/lib/ssleay32.lib"
 不知道nginx项目为什么不生成openssl的库，我通过单独编译生成openssl来解决这个问题。步骤如下：
@@ -45,15 +45,15 @@
 
 ** error C2220: 警告被视为错误 - 没有生成“object”文件
 将 *CFLAGS* 的 *-WX* 字段去掉，然后重新生成Makefile以及重新编译
-# vi auto/cc/msvc
-# #CFLAGS="$CFLAGS -WX"
+: vi auto/cc/msvc
+: #CFLAGS="$CFLAGS -WX"
 
 ** fatal error C1010: 在查找预编译头时遇到意外的文件结尾。是否忘记了向源中添加“#include "ngx_config.h"”?
 windows模块开发中会遇到的问题，每个源文件第一行代码必须添加 *#include "ngx_config.h"* ，如果不想这样做就吧编译参数 *-Yungx_config.h* 去掉。
 
 ** 每次编译的时候都完全编译
 执行这行代码的时候 *nmake -f objs/Makefile* ，每次都要完全编译，好浪费时间啊。原因是这样的，文件 *objs/Makefile* 里有这样一行：
-# objs/lib/openssl-1.0.1e/include/openssl/ssl.h:	objs/Makefile
+: objs/lib/openssl-1.0.1e/include/openssl/ssl.h:	objs/Makefile
 *ssh.h* 文件依赖于 *objs/Makefile*，但是如果前者修改时间永远都比后者早，就永远都要执行后面的命令了。把字符串 *objs/Makefile* 去掉就行了。
 
 * 操作流程总结
@@ -61,21 +61,21 @@ windows模块开发中会遇到的问题，每个源文件第一行代码必须�
  2. "C:\MinGW\msys\1.0\msys.bat"
  3. cd /c/nginx
  4. 生成makefile
-# auto/configure --with-cc=cl --builddir=objs --prefix= \
-# --conf-path=conf/nginx.conf --pid-path=logs/nginx.pid \
-# --http-log-path=logs/access.log --error-log-path=logs/error.log \
-# --sbin-path=nginx.exe --http-client-body-temp-path=temp/client_body_temp \
-# --http-proxy-temp-path=temp/proxy_temp \
-# --http-fastcgi-temp-path=temp/fastcgi_temp \
-# --with-cc-opt=-DFD_SETSIZE=1024 --with-pcre=objs/lib/pcre-8.32 \
-# --with-zlib=objs/lib/zlib-1.2.7 --with-openssl=objs/lib/openssl-1.0.1e \
-# --with-select_module --with-http_ssl_module --with-ipv6 \
-# --add-module=objs/lib/naxsi-core-0.48/naxsi_src 
+: auto/configure --with-cc=cl --builddir=objs --prefix= \
+: --conf-path=conf/nginx.conf --pid-path=logs/nginx.pid \
+: --http-log-path=logs/access.log --error-log-path=logs/error.log \
+: --sbin-path=nginx.exe --http-client-body-temp-path=temp/client_body_temp \
+: --http-proxy-temp-path=temp/proxy_temp \
+: --http-fastcgi-temp-path=temp/fastcgi_temp \
+: --with-cc-opt=-DFD_SETSIZE=1024 --with-pcre=objs/lib/pcre-8.32 \
+: --with-zlib=objs/lib/zlib-1.2.7 --with-openssl=objs/lib/openssl-1.0.1e \
+: --with-select_module --with-http_ssl_module --with-ipv6 \
+: --add-module=objs/lib/naxsi-core-0.48/naxsi_src 
  5. nmake -f objs/Makefile
  6. 启动nginx
-# start nginx.exe -p "C:\nginx"
-# nginx.exe -p "C:\nginx" -s reload
-# nginx.exe -p "C:\nginx" -s quit
+: start nginx.exe -p "C:\nginx"
+: nginx.exe -p "C:\nginx" -s reload
+: nginx.exe -p "C:\nginx" -s quit
 
 参考资料：
 [[http://www.metsky.com/archives/536.html][Windows下OpenSSL安装配置]]
