@@ -57,10 +57,10 @@ windows模块开发中会遇到的问题，每个源文件第一行代码必须�
 *ssh.h* 文件依赖于 *objs/Makefile*，但是如果前者修改时间永远都比后者早，就永远都要执行后面的命令了。把字符串 *objs/Makefile* 去掉就行了。
 
 * 操作流程总结
- 1. "C:\Program Files\Microsoft Visual Studio 9.0\VC\vcvarsall.bat"
- 2. "C:\MinGW\msys\1.0\msys.bat"
- 3. cd /c/nginx
- 4. 生成makefile
+ - "C:\Program Files\Microsoft Visual Studio 9.0\VC\vcvarsall.bat"
+ - "C:\MinGW\msys\1.0\msys.bat"
+ - cd /c/nginx
+ - 生成makefile
 : auto/configure --with-cc=cl --builddir=objs --prefix= \
 : --conf-path=conf/nginx.conf --pid-path=logs/nginx.pid \
 : --http-log-path=logs/access.log --error-log-path=logs/error.log \
@@ -71,8 +71,8 @@ windows模块开发中会遇到的问题，每个源文件第一行代码必须�
 : --with-zlib=objs/lib/zlib-1.2.7 --with-openssl=objs/lib/openssl-1.0.1e \
 : --with-select_module --with-http_ssl_module --with-ipv6 \
 : --add-module=objs/lib/naxsi-core-0.48/naxsi_src 
- 5. nmake -f objs/Makefile
- 6. 启动nginx
+ - nmake -f objs/Makefile
+ - 启动nginx
 : start nginx.exe -p "C:\nginx"
 : nginx.exe -p "C:\nginx" -s reload
 : nginx.exe -p "C:\nginx" -s quit
