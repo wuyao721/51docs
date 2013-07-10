@@ -60,6 +60,7 @@
   - [[http://www.zeromq.org/][zeromq]]
   - [[http://www.cs.wustl.edu/~schmidt/ACE.html][ace]]
   - [[http://premake.sourceforge.net/][premake4]]
+  - [[http://legacy.imatix.com/html/sfl/index.htm][SFL]] （C语言代码库）
 
 ** 人工智能
   - [[http://code.google.com/p/tesseract-ocr/][tesseract-ocr]]
