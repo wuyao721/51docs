@@ -42,9 +42,10 @@
  - [[http://www.catonmat.net/][Peteris Krumins' blog]]
  - [[http://www.igvita.com/][Ilya Grigorik's blog]]
  - [[http://www.wall.org/~larry/][Larry Wall's Very Own Home Page]]
- - [[http://stallman.org/][Richard Stallman's Personal Site]] （大名顶顶的stallman）
+ - [[http://stallman.org/][Richard Stallman's Personal Site]] （GNU之父）
  - [[http://blog.sina.com.cn/u/1995001121][露露的博客]] （python基础进阶）
  - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （javascripts技术博客）
+ - [[http://www.cnblogs.com/TomXu/archive/2012/07/26/2581268.html][汤姆大叔的博客]] （深入理解JavaScript系列）
 
 
 * emacs
