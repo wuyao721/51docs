@@ -66,13 +66,16 @@
   - [[http://code.google.com/p/tesseract-ocr/][tesseract-ocr]]
   - [[http://code.google.com/p/leptonica/][leptonica]]
 
+** python 
+  - [[http://bottlepy.org][bottle]]
+  - [[http://djangobook.py3k.cn/2.0/][The Django Book 中文版]]
+
 ** web应用
   - [[http://www.weebly.com/][weebly]]
   - [[http://www.sencha.com/][sencha]]
   - [[http://sourceforge.net/projects/xming/][xming]]
   - [[http://cn.wordpress.org/][wordpress]]
   - [[http://www.sencha.com/][sencha]]
-  - [[http://bottlepy.org][bottle]]
   - [[http://docs.kissyui.com/][kissy]] 
   - [[http://jsbeautifier.org/][jsbeautifier]] （美化js代码，主要是排版美化，便于阅读）
   - [[https://github.com/taobao/nginx-book][nginx-book]] （Nginx开发从入门到精通）
