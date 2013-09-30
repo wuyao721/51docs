@@ -51,6 +51,10 @@ github的访问速度挺快的，这也是越来越多人使用它的原因。
 : https://github.com/wuyao721/51docs.git
 
 
+** svn访问github
+我需要用svn来操作github，原因很简单，我的项目基本上是个人的项目，并不需要分布式管理，用svn操作简单多了。幸运的是github支持svn。
+
+
 * 工具（windows）
 
 ** github for windows
