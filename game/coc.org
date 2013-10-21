@@ -1,6 +1,8 @@
 #+POSTID: 482
 #+DATE: [2013-07-14 星期日 16:45]
 #+BLOG: wuyao721
+#+POSTID: 492
+#+DATE: [2013-08-29 星期四 20:05]
 #+OPTIONS: toc:nil ^:nil 
 #+CATEGORY: game
 #+PERMALINK: coc
@@ -41,3 +43,5 @@
 
 *** 例子2 抢你的人的主基地等级比你高出2级
 你将只损失同等级损失资源的50%(这里指的是如果你和他主基地等级相同你损失量为100%，比如说按照同等级计算你将损失10w，如果你是7本，抢你的人为7本，你将只损失5w。
+
+#+../images/coc.jpg http://www.wuyao721.com/wp-content/uploads/2013/08/wpid-coc.jpg
