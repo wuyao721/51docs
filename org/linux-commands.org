@@ -8,7 +8,9 @@
 #+LaTeX_CLASS: cjk-article
 #+TITLE: linux常用命令
 
-linux常用命令
+[[file:../images/cmatrix.jpg]]
+
+配图是一个挺炫的命令，模拟Matrix。让人想起了《黑客帝国》。
 
 #+html: <!--more-->
 
@@ -110,7 +112,7 @@ top命令大家都很熟悉，可是top竟然不能翻页。还好，我们可�
 ** 删除除某些文件以外的所有文件
 : find . ! -regex ".*/\(file1.txt\|file2.txt\|file3.txt\)" -print0 | xargs -0 -nH -e rm -rf
 
-** Query Wikipedia by dig
+** 用dig查询Wikipedia
 : dig +short txt <keyword>.wp.dg.cx
 
 ** vim忘记sudo
@@ -119,11 +121,18 @@ top命令大家都很熟悉，可是top竟然不能翻页。还好，我们可�
 ** linux桌面录制视屏
 : ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg
 
-** 在特点时刻执行命令
+** 在特定时刻执行命令
 : echo "ls -l" | at midnight
 
 ** 32位还是64位
 : getconf LONG_BIT
+
+
+* 开发命令
+
+** valgrind
+valgrind用来检查运行时程序的内存泄漏以及其它安全隐患，对于C语言写的程序特别有用，能够定位到代码出错行。对于C++程序检测效果不大好（C++的库用的多）。
+: valgrind --tool=memcheck --log-file="error.log" --leak-check=yes --show-reachable=yes ./yourprogram
 
 
 * 参考资料
@@ -134,3 +143,5 @@ top命令大家都很熟悉，可是top竟然不能翻页。还好，我们可�
 转载请注明出处：[[http://www.wuyao721.com/linux-commands.html]]
 #+end_quote
 
+
+#+../images/cmatrix.jpg http://www.wuyao721.com/wp-content/uploads/2013/10/wpid-cmatrix.jpg

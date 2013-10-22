@@ -177,6 +177,9 @@ putty也是我常用的ssh工具，如下优点：
 如果系统所在的网络使用了缓存，可能会导致文件过期，使用代理更新apt源能解决这个问题：
 : apt-get -o Acquire::http::proxy="http://127.0.0.1:8087/" update
   
+** ubuntu老版本不再被支持
+ubuntu版本更新较快，老的版本慢慢的不被支持，导致 *apt-get* 等命令安装软件就会出现找不到软件包的问题。幸好老的发行版有备份，放在域名 *old-releases.ubuntu.com* 下。修改 *sources.list* 即可。
+: deb http://old-releases.ubuntu.com/ubuntu/ maverick main restricted universe multiverse
 
 * 参考资料
  - [[http://askubuntu.com/questions/135540/what-is-the-whoopsie-process-and-how-can-i-remove-it][What is the 'whoopsie' process and how can I remove it?]]
