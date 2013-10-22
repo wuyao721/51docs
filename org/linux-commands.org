@@ -10,7 +10,7 @@
 
 [[file:../images/cmatrix.jpg]]
 
-配图是一个挺炫的命令，模拟Matrix。让人想起了《黑客帝国》。
+配图是一个挺炫的命令——cmatrix，模拟“The Matrix”，让人想起了《黑客帝国》。
 
 #+html: <!--more-->
 
