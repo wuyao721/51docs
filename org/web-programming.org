@@ -1,0 +1,35 @@
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+TAGS: programming html css javascript
+#+PERMALINK: web-programming
+#+LaTeX_CLASS: cjk-article
+#+TITLE: 学习web编程
+
+[[file:../images/webprogramming.jpg]]
+
+毕业后5年，我终于下定决心学习web编程。然而现在的web，已经不再是那时候的web了。早知道有现在一天，但是就应该认真对戴它们。
+
+web说起来简单，学起来不容易。
+
+html css javascript php 
+
+#+html: <!--more-->
+
+* 目标
+
+
+
+* CSS
+ - [[http://zh.html.net/tutorials/css/][CSS教程]]
+ - [[http://zh.learnlayout.com/][学习CSS布局]]
+
+* javascript
+ - [[http://www.wowbox.com.tw/blog/article.asp?id=3004][Javascript 淺析註冊事件]]
+
+
+* 参考资料
+ - [[http://www.w3school.com.cn/][w3school]]
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/web-programming.html]]
+#+end_quote
