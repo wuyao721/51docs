@@ -1,0 +1,79 @@
+#+BLOG: wuyao721
+#+POSTID: 514
+#+DATE: [2013-10-29 星期二 17:53]
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: language
+#+PERMALINK: django-beginning
+#+TAGS: python django
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: django从头学起
+
+我接触的第一个python webwerver框架是bottle，我以为这样就够了。后来我需要做一些复杂一点的web页面，所以我开始学习django。
+
+django更加强大，但是也更复杂。我发现两个月前我学习的django，现在已经忘记的差不多了，得从头开始学。（这一次我得做点笔记。~_~）
+
+[[file:../images/django-framework.png]]
+
+#+html: <!--more--> 
+
+* 安装
+跟其它的python库一样，django安装简单快速。
+
+* 开始我的第一个网站
+
+** 创建网站环境
+: django-admin.py startproject mysite
+
+** 启动网站
+: python manage.py runserver 8000
+
+最后一个参数是端口号，打开这个页面 http://127.0.0.1:8000/ ，可以看到以下的内容，说明我们的网站已经可以访问了。这是一个好的开始。
+: It worked!
+: Congratulations on your first Django-powered page.
+: 
+: Of course, you haven't actually done any work yet. Here's what to do next:
+: If you plan to use a database, edit the DATABASES setting in mysite/settings.py.
+: Start your first app by running python manage.py startapp [appname].
+: You're seeing this message because you have DEBUG = True in your Django settings file and you haven't configured any URLs. Get to work!
+
+** 来个hello world
+刚刚打开的页面提示我们可以设置自己的数据库，同时可以创建自己的应用。但是现在我们先不去管这些事情，我们先弄点自己的页面来看看。
+
+上次有学习django的经验，我很快找到了我想要的文件urls.py：
+: urlpatterns = patterns('',
+:     # Examples:
+:     # url(r'^$', 'mysite.views.home', name='home'),
+:     # url(r'^mysite/', include('mysite.foo.urls')),
+: 
+:     # Uncomment the admin/doc line below to enable admin documentation:
+:     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+: 
+:     # Uncomment the next line to enable the admin:
+:     # url(r'^admin/', include(admin.site.urls)),
+: )
+我猜测这用来设置uri以及其处理函数的地方，我知道要写一个函数输出 *hello world* ，但是具体怎么做我存在疑虑，于是我找到了一本书《The Django Book中文版》，很快找到了我要的。
+
+根据书上所说的，我创建的文件views.py：
+: from django.http import HttpResponse
+: 
+: def hello(request):
+:     return HttpResponse("Hello world")
+
+同时修改urls.py，增加一行：
+: urlpatterns = patterns('',
+: ...
+:                        ('^hello/$', hello),
+: ...
+: )
+
+此时我看到了正在运行的manage.py程序发现了文件修改，重新加载网站。我打开页面 *http://127.0.0.1:8000/hello/* ，的确是预期的 *Hello world*。
+
+* 参考资料
+ - [[http://djangobook.py3k.cn/2.0/][The Django Book中文版]] 
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/django-beginning.html]]
+#+end_quote
+
+#+../images/django-framework.png http://www.wuyao721.com/wp-content/uploads/2013/10/wpid-django-framework.png
