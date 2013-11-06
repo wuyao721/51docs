@@ -181,8 +181,30 @@ putty也是我常用的ssh工具，如下优点：
 ubuntu版本更新较快，老的版本慢慢的不被支持，导致 *apt-get* 等命令安装软件就会出现找不到软件包的问题。幸好老的发行版有备份，放在域名 *old-releases.ubuntu.com* 下。修改 *sources.list* 即可。
 : deb http://old-releases.ubuntu.com/ubuntu/ maverick main restricted universe multiverse
 
+以下是ubuntu的版本列表
+ - Ubuntu 4.10 (Warty Warthog)
+ - Ubuntu 5.04 (Hoary Hedgehog)
+ - Ubuntu 5.10 (Breezy Badger)
+ - Ubuntu 6.06 LTS (Dapper Drake)
+ - Ubuntu 6.10 (Edgy Eft)
+ - Ubuntu 7.04 (Feisty Fawn)
+ - Ubuntu 7.10 (Gutsy Gibbon)
+ - Ubuntu 8.04 LTS (Hardy Heron)
+ - Ubuntu 8.10 (Intrepid Ibex)
+ - Ubuntu 9.04 (Jaunty Jackalope)
+ - Ubuntu 9.10 (Karmic Koala)
+ - Ubuntu 10.04 LTS (Lucid Lynx)
+ - Ubuntu 10.10 (Maverick Meerkat)
+ - Ubuntu 11.04 (Natty Narwhal)
+ - Ubuntu 11.10 (Oneiric Ocelot)
+ - Ubuntu 12.04 LTS (Precise Pangolin)
+ - Ubuntu 12.10 (Quantal Quetzal)
+ - Ubuntu 13.04 (Raring Ringtail)
+ - Ubuntu 13.10 (Saucy Salamander)
+
 * 参考资料
  - [[http://askubuntu.com/questions/135540/what-is-the-whoopsie-process-and-how-can-i-remove-it][What is the 'whoopsie' process and how can I remove it?]]
+ - [[http://en.wikipedia.org/wiki/List_of_Ubuntu_releases][List of Ubuntu releases]]
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/ubuntu-setup.html]]
