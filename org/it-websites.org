@@ -55,6 +55,7 @@
  - [[http://djangobook.py3k.cn/2.0/][django cook book中文版]] （新手看还是挺好的，循循善诱）
  - [[https://docs.djangoproject.com/en/][django document]] （官网的文档，学django必看）
  - [[http://tour.golang.org][tour of golang]] （既有文档，也有示例，还可以测试效果，可惜得翻墙才行）
+ - [[http://zh.html.net/][Html.net]] （HTML和CSS教程，比较简单）
 
 * emacs
 我用并喜爱emacs
