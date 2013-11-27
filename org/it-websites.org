@@ -48,6 +48,7 @@
  - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （javascripts技术博客）
  - [[http://www.cnblogs.com/TomXu/archive/2012/07/26/2581268.html][汤姆大叔的博客]] （深入理解JavaScript系列）
 
+
 * 学习资料
  - [[http://learn.jquery.com/][学习jquery]] 
  - [[http://www.w3school.com.cn][w3school]] （web编程，包罗万象，可惜对每一个领域都不是特别透彻）
@@ -55,7 +56,9 @@
  - [[http://djangobook.py3k.cn/2.0/][django cook book中文版]] （新手看还是挺好的，循循善诱）
  - [[https://docs.djangoproject.com/en/][django document]] （官网的文档，学django必看）
  - [[http://tour.golang.org][tour of golang]] （既有文档，也有示例，还可以测试效果，可惜得翻墙才行）
- - [[http://zh.html.net/][Html.net]] （HTML和CSS教程，比较简单）
+ - [[http://html.net/tutorials/][html.net]] （html, js, css教程。比较简单。[[http://zh.html.net/][中文版]] ）
+ - [[http://learnlayout.com/][Learn CSS Layout]] （ [[http://zh.learnlayout.com/][中文版]] ）
+ - [[https://developer.mozilla.org/en/learn][LEARN HOW TO MAKE WEBSITES]] （mozilla提供的教材 [[https://developer.mozilla.org/zh-CN/learn/][中文版]] ）
 
 * emacs
 我用并喜爱emacs

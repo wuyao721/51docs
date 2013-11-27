@@ -71,6 +71,8 @@
   - [[http://djangobook.py3k.cn/2.0/][The Django Book 中文版]]
 
 ** web应用
+  - [[http://html5boilerplate.com/][html5 Boilerplate]]
+  - [[http://www.bootcss.com/][bootstrap]]
   - [[http://www.weebly.com/][weebly]]
   - [[http://www.sencha.com/][sencha]]
   - [[http://sourceforge.net/projects/xming/][xming]]
