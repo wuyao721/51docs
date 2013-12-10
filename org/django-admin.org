@@ -41,7 +41,9 @@ Django管理站点完全是可选择的，因为仅仅某些特殊类型的站�
 * 生成数据库
 运行 *python manage.py syncdb* ，生成数据库使用的表格
 
-参考资料： [[http://blog.sina.com.cn/s/blog_6fb22e5b0100ns1c.html][django 学习总结 管理界面]]
+参考资料： 
+ - [[http://blog.sina.com.cn/s/blog_6fb22e5b0100ns1c.html][django 学习总结 管理界面]]
+ - [[http://www.djangosites.org/][django网站资源]]
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/django-admin.html]]

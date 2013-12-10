@@ -29,11 +29,12 @@ html css javascript php
  - [[http://www.cnblogs.com/meil/archive/2007/05/16/748854.html][你真的会JavaScript吗]]
 http://www.cnblogs.com/litao229/archive/2009/06/19/1506859.html
 http://www.ruanyifeng.com/blog/2012/10/javascript_module.html
+http://rolfzhang.com/articles/793.html
 
 ** 代码美化
 css，js等代码文件最小化有利于网络传输，但是给我们阅读造成麻烦，所以需要把代码还原、美化。
  - [[http://html.fwpolice.com/css/][CSS代码美化]]
- - [[http://jsbeautifier.org/][javascript代码美化]]
+ - [[http://jsbeautifier.org/][javascript代码美化]
 
 * 参考资料
  - [[http://www.w3school.com.cn/][w3school]]
