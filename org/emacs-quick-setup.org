@@ -60,9 +60,8 @@
 ** emacs配置文件
 安顺序执行以下的指令，就可以使用我的emacs配置。
 : root@ubuntu:~# cd ~/
-: root@ubuntu:~# git clone git://github.com/wuyao721/51dotemacs.git
-: root@ubuntu:~# cp 51dotemacs/.emacs ~/
-: root@ubuntu:~# cp -r 51dotemacs/.emacs.d ~/
+: root@ubuntu:~# svn export https://github.com/wuyao721/51dotemacs/trunk
+: root@ubuntu:~# cp -r 51dotemacs/.emacs* ~/
 
 ** .screenrc
 服务器版的emacs还须配上一个screen（可以参考我这篇文章——[[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] ），把 *.screenrc* 也拷到HOME目录即可。
