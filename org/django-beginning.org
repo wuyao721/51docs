@@ -207,6 +207,15 @@ views是这样的，通过模型Publisher从数据库里读数据，与模版合
 : 1	Apress	2855 Telegraph Avenue	Berkeley	CA	U.S.A.	http://www.apress.com/
 : 2	O'Reilly	10 Fawcett St.	Cambridge	MA	U.S.A.	http://www.oreilly.com/
 
+
+* 常见错误
+
+** ImproperlyConfigured: Requested setting USE_I18N, but settings are not configured.....
+项目创建好之后就不要用 *django-admin.py* 
+: django-admin.py validate
+而是要用 *manage.py*
+: manage.py validate
+
 * 参考资料
  - [[http://djangobook.py3k.cn/2.0/][The Django Book中文版]] 
  - 写你的第一个Django应用 （网上搜到的，有PDF下载）
