@@ -38,6 +38,17 @@ django要求我们先创建一个应用，做为网站运行环境
 : Start your first app by running python manage.py startapp [appname].
 : You're seeing this message because you have DEBUG = True in your Django settings file and you haven't configured any URLs. Get to work!
 
+** 常见的设置
+
+修改 *setting.py* ，设置正确的时区，语言。
+: TIME_ZONE = 'Asia/Shanghai'
+: LANGUAGE_CODE = 'zh-CN'
+
+设置模版目录
+: TEMPLATE_DIRS = (
+:     'templates',
+: )
+
 ** 第一个例子——hello world
 刚刚打开的页面提示我们可以设置自己的数据库，同时可以创建自己的应用。但是现在我们先不去管这些事情，我们先弄个简单的页面来看看。
 
@@ -219,6 +230,7 @@ views是这样的，通过模型Publisher从数据库里读数据，与模版合
 * 参考资料
  - [[http://djangobook.py3k.cn/2.0/][The Django Book中文版]] 
  - 写你的第一个Django应用 （网上搜到的，有PDF下载）
+ - https://djangosnippets.org/
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/django-beginning.html]]
