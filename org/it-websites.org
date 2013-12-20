@@ -47,6 +47,7 @@
  - [[http://blog.sina.com.cn/u/1995001121][露露的博客]] （python基础进阶）
  - [[http://www.adequatelygood.com][adequately good - by Ben Cherry]] （javascripts技术博客）
  - [[http://www.cnblogs.com/TomXu/archive/2012/07/26/2581268.html][汤姆大叔的博客]] （深入理解JavaScript系列）
+ - [[http://stonelee.info/][Stonelee's Blog]] 
 
 
 * 学习资料
@@ -60,6 +61,7 @@
  - [[http://learnlayout.com/][Learn CSS Layout]] （ [[http://zh.learnlayout.com/][中文版]] ）
  - [[https://developer.mozilla.org/en/learn][LEARN HOW TO MAKE WEBSITES]] （mozilla提供的教材 [[https://developer.mozilla.org/zh-CN/learn/][中文版]] ）
  - [[http://www.certifiedchinesetranslation.com/openaccess/CSS/][网页样式表 - CSS的提示与窍门]]
+ - [[http://timgolden.me.uk/python/win32_how_do_i.html][Win32 How Do I]] （python win32）
 
 * emacs
 我用并喜爱emacs

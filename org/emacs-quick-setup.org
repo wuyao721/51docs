@@ -20,6 +20,24 @@
 
 也就是说emacs的安装目录是 *C:/Emacs* ，这一点很重要，如果你不想装在这里，那么就要自己修改注册表文件 *quick_open.reg* 和 *set_path.reg* 。
 
+** 编译（可选） 
+我使用MinGW编译emacs，除此以外，还可以用MSVC或者Cygwin编译。
+
+到 [[http://www.gnu.org/software/emacs/][官网]] 下载emacs源码，解压，进入nt目录
+: cd nt
+
+设置环境变量（保持PATH纯粹很重要，MinGW的命令可能跟其它工具的命令冲突了）
+: PATH=C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\MinGW\msys\1.0\local\bin
+
+生成makefile（选项包括：设置安装目录、去掉调试信息、不需要图片库）
+: configure --prefix=C:/Emacs --with-gcc --no-debug --no-cygwin --without-png --without-xpm --without-jpeg --without-tiff --without-gif 
+
+编译
+: mingw32-make
+
+安装
+: mingw32-make install
+
 ** emacs配置
   - 下载 [[https://github.com/wuyao721/51dotemacs]] 的打包文件master.zip，将内容解压到emacs安装目录下
   - 将目录 *C:/Emacs/.emacs.d/elisp* 下的 *XXX.example.el* 该名为 *XXX.el* ，并酌情修改，主要是设置环境变量
@@ -57,21 +75,24 @@
 这个版本是不支持 *x-window* 的，服务器可以选择装这个。
 : apt-get install emacs23-nox
 
+*** 源码
+linux源码安装比较简单，就不介绍了。
+
 ** emacs配置文件
 安顺序执行以下的指令，就可以使用我的emacs配置。
 : root@ubuntu:~# cd ~/
 : root@ubuntu:~# svn export https://github.com/wuyao721/51dotemacs/trunk
-: root@ubuntu:~# cp -r 51dotemacs/.emacs* ~/
+: root@ubuntu:~# cp -r trunk/.emacs* ~/
 
 ** .screenrc
 服务器版的emacs还须配上一个screen（可以参考我这篇文章——[[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] ），把 *.screenrc* 也拷到HOME目录即可。
-: cp 51dotemacs/.screenrc ~/
+: cp trunk/.screenrc ~/
 
 
 * 参考资料
  - [[http://www.mympc.org][键盘映射工具下载地址]]
+ - [[https://github.com/wuyao721/51dotemacs][我的emacs配置库]]
  - [[https://code.google.com/p/emacs-for-windows]]
- - https://github.com/wuyao721/51dotemacs
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/emacs-quick-setup.html]]
