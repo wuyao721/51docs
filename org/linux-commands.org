@@ -10,7 +10,7 @@
 
 [[file:../images/cmatrix.jpg]]
 
-配图是一个挺炫的命令——cmatrix，模拟“The Matrix”，让人想起了《黑客帝国》。
+配图是一个挺炫的命令——cmatrix，人想起了《黑客帝国》。
 
 #+html: <!--more-->
 
@@ -81,7 +81,7 @@ yum&rpm 是redhat和centos的软件包管理工具，使用方法跟apt&dpkg类�
 * 特别（有用）的命令
 以下的命令可能会少用写，但都是好东西。
 ** screen
-远程登录的时候， *screen* 可以让程序在连接断开后能重新连接。参考这篇文章 [[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]]
+远程登录的时候， *screen* 可以让程序在连接断开后能重新连接。参考这篇文章 [[http://www.wuyao721.com/screen-intro.html][screen简介]] 。
 
 ** sshfs
 将远程目录挂载到本地
@@ -127,6 +127,29 @@ top命令大家都很熟悉，可是top竟然不能翻页。还好，我们可�
 
 ** 32位还是64位
 : getconf LONG_BIT
+
+** pstree
+列出进程树，很直观的看到所有进程。
+: yao@twomoon:~$ pstree -A
+: init-+-atd
+:      |-avahi-daemon---avahi-daemon
+:      |-console-kit-dae---61*[{console-kit-dae}]
+:      |-cupsd
+:      |-dbus-daemon
+:      |-dd
+:      |-dhcdbd
+:      |-2*[dhclient3]
+:      |-dictd
+:      |-hald---hald-runner
+:      |-klogd
+:      |-login---bash---emacs---bash
+:      |-screen-+-bash
+:      |        `-emacs-+-2*[bash]
+:      |                `-bash---pstree
+:      |-sshd---sshd---sshd---bash---screen
+:      |-syslogd
+:      |-system-tools-ba
+:      `-udevd
 
 
 * 开发命令

@@ -43,7 +43,7 @@ github的访问速度挺快的，这也是越来越多人使用它的原因。
 : 204.232.175.78    documentcloud.github.com
 
 ** 证书登录
-当然也可以用证书登录，原理跟ssh证书登录一样。参考我这篇文章 [[http://www.wuyao721.com/ssh-proxy.html][ssh证书]] 。
+当然也可以用证书登录，原理跟ssh证书登录一样。参考我这篇文章 [[http://www.wuyao721.com/ssh-proxy.html][ssh证书]] ，也可以参考github的帮助 [[https://help.github.com/articles/generating-ssh-keys][Generating SSH Keys]] 。
 
 使用证书登录，它是不支持https的方法的，举个例子，我的一个项目 [[https://github.com/wuyao721/51docs]] ，
 这个地址可以通过证书做push，pull等操作：
