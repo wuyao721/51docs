@@ -53,7 +53,7 @@ github的访问速度挺快的，这也是越来越多人使用它的原因。
 
 
 ** svn访问github
-很多时候我更需要svn，因为我的项目基本上是个人的项目，并不需要分布式管理，用svn操作简单多了。幸运的是github支持svn，不幸的是它不支持证书登录。所以我必须使用用户名密码来认证：
+很多时候我更需要svn，因为我的项目基本上是个人的项目，并不需要分布式管理，用svn操作简单多了。幸运的是github支持svn，不幸的是它不支持证书登录。
 : svn co --username wuyao721@163.com --password mypassword https://github.com/wuyao721/51docs/trunk 51docs
 
 
