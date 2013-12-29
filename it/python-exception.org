@@ -1,7 +1,6 @@
 #+BLOG: wuyao721
 #+POSTID: 427
 #+DATE: [2013-02-10 日 18:10]
-#+BLOG: wuyao721
 #+OPTIONS: toc:nil ^:nil 
 #+CATEGORY: language
 #+PERMALINK: python-exception

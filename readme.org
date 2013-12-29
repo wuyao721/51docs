@@ -1,10 +1,39 @@
 #+TAGS: org-mode, github
 #+TITLE: 项目说明
 
-这个项目存放我的大部分的文档。文档都发布到我的个人网站 [[http://www.wuyao721.com]] 。
+这个项目存放我的大部分的文档。文档用emacs的org-mode来编辑，最后通过 *org2blog* 发送到我的个人网站 [[http://www.wuyao721.com]] 。
 
-* org-mode
-我用emacs的org-mode来编写文档，感觉效率挺高的，不必关注排版问题。
+* 文档索引
 
-* org2blog
-org文档可以通过 *org2blog* 发送到 *wordpress* 网站。
+** emacs
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-quick-setup.org][快速搭建emacs环境]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/xming-emacs-remote-linux.org][使用XMing+Emacs/vim操控Linux]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-org-mode-pdf.org][Emacs Org-mode 制作PDF文档]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-indent.org][emacs缩进]] （C/C++、java等语言的缩进方式）
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-screen.org][一个emacser的screen]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-win-shell-buffer.org][emacs win32缓存shell输出]]
+
+** nginx
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-proxy-short.org][nginx正向代理的不足]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-cache-proxy-naxsi.org][nginx搭建反向代理服务器和web防火墙]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-server-name.org][nginx server_name 命名规则]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]]
+
+** 其它
+ - [[https://github.com/wuyao721/51docs/blob/master/it/crontab.org][crontab 格式说明]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/django-beginning.org][django从头学起]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/gdb-nginx.org][gdb调试nginx要点]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/git-intro.org][git简介]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/it-websites.org][网站列表]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/ubuntu-setup.org][ubuntu服务器环境搭建]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/linux-commands.org][linux常用命令]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-building-windows.org][windows平台下编译nginx]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/project-list.org][项目列表]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/python-exception.org][python异常一锅端]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/python-thread-exit.org][python如何优雅的退出线程和进程]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/screen-intro.org][screen简介]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/skipfish-usage.org][skipfish用法]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/ssh-key.org][ssh证书]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/ssh-proxy.org][ssh代理]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/wordpress-post-by-email.org][用邮件发布wordpress博客]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/wordpress-quick-setup.org][wordpress环境快速搭建]]
