@@ -1,0 +1,23 @@
+#+BLOG: wuyao721
+#+POSTID: 10
+#+DATE: [2012-11-08 17:56]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: nginx
+#+TAGS: nginx, proxy
+#+PERMALINK: nginx-upstream-cache-status
+#+TITLE: nginx代理流量统计
+
+nginx代理流量统计
+
+#+html: <!--more--> 
+
+  1. 在配置文件里的log_format里加上 $upstream_cache_status
+  2. 修改awstats等工具的解释日志方法
+  3. 变量$upstream_cache_status有3种可能情况
+       - *-*     不走代理
+       - *MISS*  走代理，没有中缓存
+       - *HIT*   走代理，中缓存
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/nginx-upstream-cache-status.html]]
+#+end_quote

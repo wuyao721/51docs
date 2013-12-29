@@ -1,0 +1,42 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: nginx-python-uwsgi
+#+TAGS: nginx, python, uwsgi
+#+DESCRIPTION:
+#+TITLE: Nginx + python + uwsgi 搭建web服务器
+
+我用的系统版本是ubuntu 12.04，
+
+* 安装
+apt-get install nginx python uwsgi uwsgi-plugin-python
+
+
+* 
+apt-get install python-libxml2
+apt-get install python-pip
+pip install libxml2dom
+
+
+* 
+
+
+* 常见问题
+
+** Python application not found
+检查一下是不是python文件写错了，可以看看日子文件
+/var/log/uwsgi/app/uwsgi.log
+
+** unavailable modifier requested: 0 
+这个bug由于uwsgi没有指定使用python插件，
+
+** ImportError: No module named site
+python环境变量设置错误
+
+* 参考资料
+http://stackoverflow.com/questions/10748108/nginx-uwsgi-unavailable-modifier-requested-0
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/nginx-python-uwsgi.html]]
+#+end_quote
+

@@ -1,0 +1,49 @@
+#+BLOG: wuyao721
+#+POSTID: 463
+#+DATE: [2013-04-11 四 18:14]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: language
+#+PERMALINK: python-thread-exit
+#+TAGS: python
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: python如何优雅的退出线程和进程
+
+[[file:../images/python-thread-exit.png]]
+
+#+html: <!--more--> 
+
+ 1. signal中断主线程
+ 2. threading.Event中断其它线程
+
+代码如下：
+ : import signal,threading,time
+ : 
+ : def cleartaskloop(event):
+ :     while not event.isSet():
+ :         event.wait(60)
+ : 
+ : def friendtaskloop(event):
+ :     while not event.isSet():
+ :         event.wait(1)
+ : 
+ : if __name__ == '__main__':
+ :     threads = [1,2]
+ :     event = threading.Event()
+ :     threads[0] = threading.Thread(target=friendtaskloop, args=(event,))
+ :     threads[0].start()
+ :     threads[1] = threading.Thread(target=cleartaskloop, args=(event,))
+ :     threads[1].start()
+ :     signal.signal(signal.SIGINT,lambda *args: event.set())
+ :     signal.signal(signal.SIGTERM,lambda *args: event.set())
+ :     while not event.isSet():
+ :         time.sleep(60)
+ :     for t in threads:
+ :         t.join()
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/python-thread-exit.html]]
+#+end_quote
+
+#+../images/python-thread-exit.png http://www.wuyao721.com/wp-content/uploads/2013/04/wpid-python-thread-exit.png

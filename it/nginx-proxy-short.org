@@ -1,0 +1,26 @@
+#+BLOG: wuyao721
+#+POSTID: 28
+#+DATE: [2012-11-09 17:56]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil 
+#+CATEGORY: nginx
+#+TAGS: nginx, proxy
+#+PERMALINK: nginx-proxy-short
+#+TITLE: nginx正向代理的不足
+
+用nignx做正向代理，可以用来代理浏览网页。但是却不能代理QQ等应用，这是为什么呢？
+
+#+HTML: <!--more--> 
+
+我们来分析一下，抓包的第一行是这样的：
+: CONNECT http.tencent.com:443 HTTP/1.1
+
+原来连接方法是CONNECT，不是我们平时用的GET或者POST。
+网上的资料表示nginx不支持CONNECT方法，可以选用apache或squid作为代替方案。
+
+参考资料：
+[[http://www.serverphorums.com/read.php?5,9758][Does nginx support connect method?]]
+
+#+begin_quote
+本文由吴遥编写，转载请注明出处。
+文章链接：[[http://www.wuyao721.com/nginx-proxy-short.html]]
+#+end_quote

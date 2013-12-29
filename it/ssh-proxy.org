@@ -1,0 +1,87 @@
+#+BLOG: wuyao721
+#+POSTID: 206
+#+DATE: [2012-12-12 星期三 16:19]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: ssh-proxy
+#+TAGS: ssh, plink, proxy
+#+DESCRIPTION: ssh代理说明
+#+TITLE: ssh代理
+
+ssh是标准的linux远程登录工具，用以代替以往的rlogin，rsh，telnet等工具。它可在不安全的网络上建立安全加密的通道。
+
+除此以外，ssh还能充当socks代理服务器。
+
+#+begin_html
+<!--more--> 
+#+end_html
+
+* 生成ssh证书（可选）
+如果不想每次都输入密码，那么可以选择证书登录。以下是linux平台生成证书的方法。
+
+** 生成SSH RSA密匙对
+: ssh-keygen -t rsa 
+
+将会生成 ~/.ssh/id_rsa 和 ~/.ssh/id_rsa.pub 两文件，分别对应私匙和公匙。
+
+** 将私匙保存在本地
+这个似乎什么都不用做。
+
+** 将公匙传到服务器 
+通过任何方法将 *id_rsa.pub* 传到服务器上，并追加到文件 *~/.ssh/authorized_keys* 里。
+: ssh-copy-id ssh-server 
+
+* socks代理服务器
+只要是linux系统，并且支持ssh登录，那么它就是一台socks代理服务器。
+
+* 个人电脑 & 工作站
+在我们的PC机里，就要做一些工作了。
+
+首先，我们要用一个ssh工具远程登录到代理服务器；同时，这个工具监听本地的端口；最后，要代理的网络工具（比如说IE）通过这个端口代理上网。
+
+** linux
+如果PC是linux系统，就用ssh：
+: ssh -i xxx.pem -o StrictHostKeyChecking=no root@www.host.com -D 8015 -N -f
+
+以下是参数说明：
+| 参数                        | 说明                                       |
+|-----------------------------+--------------------------------------------|
+| -i xxx.pem                  | 使用证书xxx.pem（默认 *~/.ssh/id_rsa* ）  |
+| -o StrictHostKeyChecking=no | 不再检查key是否过时或无效                  |
+| root@www.host.com           | root用户登录到主机www.host.com             |
+| -D 8051                     | 监听本地端口8051                           |
+| -N                          | 不执行命令                                 |
+| -f                          | 转入后台处理                               |
+
+** windows
+如果PC是windows系统，也可以用 *ssh.exe* ，不过我感觉有时会出错。所以我推荐使用 *plink* ，它是 *putty* 的一部分。可以到 [[http://www.putty.org/]] 下载。
+: plink -i xxx.ppk root@www.host.com -D 8051 -N
+
+*** ppk格式 && puttygen
+plink也可以使用证书登录，不过需要的格式有点不一样。这时我们就需要 *puttygen* 了。它也是putty的一部分。
+
+  1. 运行puttygen
+  2. 点击Conversions菜单项中的Import key 
+  3. 选择在Linux生成的 *~/.ssh/id_rsa* 文件 
+  4. 在主界面上点击 *Save private key* 按钮，就可以把私钥转换为ppk的格式了
+
+** 浏览器 & 网络工具
+当我们的代理程序准备就绪后，就只要配置一下上网工具就行了（现在很多应用程序都支持socks代理了）。这里以IE为例子：
+
+  1. 打开IE
+  2. 点 *工具*
+  3. 点 *Internet选项*
+  4. 点 *连接*
+  5. 点 *局域网设置*
+  6. 把 *代理服务器* 的选项勾上，并且点 *高级*
+  7. 把 *对所有协议使用相同的代理服务器* 的选项去掉，并且在 *套接字* 行填上地址 *localhost* 和端口 *8051* 。
+
+* 参考资料
+  - [[http://baike.baidu.com/view/610470.htm][Socks代理_百度百科]]
+  - [[http://ahei.info/tsocks.htm][用tsocks代替sockscap来转发网络请求]]
+  - ssh man手册 
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/ssh-proxy.html]]
+#+end_quote

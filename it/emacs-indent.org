@@ -1,0 +1,28 @@
+#+BLOG: wuyao721
+#+POSTID: 12
+#+DATE: [2012-11-08 12:21]
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: emacs
+#+PERMALINK: emacs-indent
+#+TAGS: emacs
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: emacs缩进
+
+对于C/C++、java等语言，emacs默认的缩进方法有点特别，在团队开发时显得不合群，因此要做一点小的修改。
+
+#+html: <!--more--> 
+
+以下是我的缩进配置，一个tab占4个空格。应该算是比较通用的了。
+
+: (c-set-style "ellemtel")
+: (setq c-default-style "ellemtel" c-basic-offset 4)
+: (setq tab-width 4 indent-tabs-mode nil)
+
+另外，常用的缩进命令有：
+ | *C-M-\*       | *对指定区域缩进* |
+ | *C-x h C-M-\* | *对整个文件缩进* |
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/emacs-indent.html]]
+#+end_quote

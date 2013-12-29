@@ -1,0 +1,19 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+PERMALINK: weibo-login
+#+TAGS: sso, weibo
+#+DESCRIPTION:
+#+TITLE: 微博登陆
+
+
+#+HTML: <!--more--> 
+
+weibo.com
+
+: http://js.t.sinajs.cn/t35/miniblog/static/js/sso.js?version=c9a068c862bc342e
+: http://js.t.sinajs.cn/t4/apps/secure/js/login/plugin.js?version=c9a068c862bc342e
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/weibo-login.html]]
+#+end_quote

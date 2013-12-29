@@ -1,0 +1,35 @@
+#+BLOG: wuyao721
+#+CATEGORY: 
+#+OPTIONS: num:nil todo:nil pri:nil tags:nil TeX:nil
+#+PERMALINK: perl-study-notes
+#+TAGS: perl
+#+DESCRIPTION:
+#+TITLE: perl学习笔记
+
+* 数据结构
+
+** 标量
+标量是perl里最简单的数据结构，标量主要是数字和字符串。
+
+* 编程思想
+ - 
+
+* 命名规则
+
+| 标识符         | 值      | 说明           |
+|----------------+---------+----------------|
+| $people        | "wuyao" | 变量           |
+| @people        |         | 数组           |
+| $people[0]     | "wuyao" | 数组第一个元素 |
+| $people[1]     | "wuyao" | 数组第二个元素 |
+| %people        |         | 哈希           |
+| $people{"yao"} |         | 哈希元素读取   |
+|                |         |                |
+
+* 参考资料
+ - http://perldoc.perl.org/index-tutorials.html
+ - http://perldoc.perl.org/index-language.html
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/perl-study-notes.html]]
+#+end_quote

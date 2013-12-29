@@ -1,0 +1,16 @@
+#+POSTID: 184
+#+DATE: [2012-12-05 星期三 20:04]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+TAGS: about
+#+PERMALINK: about
+#+TITLE: 关于
+
+欢迎！我叫吴遥，是个程序员，这是我的技术博客，主要用来写点IT技术文章。我的新浪微博是 *weibo.com/wuyao721* 。
+
+我最喜欢用的开发工具是 *emacs* ，最喜欢的操作系统是 *ubuntu* ，最喜欢的编程语言是 *python* 。
+
+我住在天朝的广州。
+
+另外，这个网站使用了CDN代理，静态页面的缓存12小时更新一次。所以评论无法立刻看到。
