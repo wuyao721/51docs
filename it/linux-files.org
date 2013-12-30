@@ -1,0 +1,47 @@
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+TAGS: linux, 
+#+PERMALINK: linux-files
+#+LaTeX_CLASS: cjk-article
+#+TITLE: linux常用文件
+
+#+html: <!--more-->
+
+* 常见文件
+
+** /etc/event.d/
+** /etc/crontab
+
+** /etc/hosts
+绑定IP域名
+
+** /etc/hostname
+主机域名
+
+** /etc/resolv.conf
+dns设置
+
+** bashrc
+bashrc存放bash shell用户的环境配置信息， */etc/bash.bashrc* 或者 */etc/bashrc* 对所有用户有效； *~/.bashrc* 则指定用户生效。
+
+** profile
+profile存放系统用户登录环境信息，当用户第一次登录时，这些文件被执行。其中 */etc/profile* 对所有用户生效，并且会去加载 */etc/bash.bashrc* 以及 */etc/profile.d* 目录下的所有sh配置文件。 *~/.profile* 则对指定用户登录有效，并且会去加载 *~/.bashrc* 配置。
+
+** /etc/apt/sources.list
+apt软件包管理工具使用的配置文件
+: yao@twomoon:~$ cat /etc/apt/sources.list
+: deb http://old-releases.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
+: deb http://old-releases.ubuntu.com/ubuntu/ hardy-security main restricted universe multiverse
+: deb http://old-releases.ubuntu.com/ubuntu/ hardy-updates main restricted universe multiverse
+: deb http://old-releases.ubuntu.com/ubuntu/ hardy-proposed main restricted universe multiverse
+: deb http://old-releases.ubuntu.com/ubuntu/ hardy-backports main restricted universe multiverse
+: deb-src http://old-releases.ubuntu.com/ubuntu/ hardy main restricted universe multiverse
+
+   
+* 参考资料
+ - [[https://wido.me/sunteya/understand-bashrc-and-profile/][理解 bashrc 和 profile]]
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/linux-files.html]]
+#+end_quote
+

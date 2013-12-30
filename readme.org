@@ -1,7 +1,7 @@
 #+TAGS: org-mode, github
 #+TITLE: 项目说明
 
-这个项目存放我的大部分的文档。文档用emacs的org-mode来编辑，最后通过 *org2blog* 发送到我的个人网站 [[http://www.wuyao721.com]] 。
+这个项目存放我的大部分的文档。文档用emacs的 *org-mode* 来编辑，最后通过 *org2blog* 发送到我的个人网站 [[http://www.wuyao721.com]] 。
 
 * 文档索引
 
