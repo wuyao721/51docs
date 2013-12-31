@@ -1,0 +1,30 @@
+#+BLOG: wuyao721
+#+POSTID: 408
+#+DATE: [2013-02-06 三 10:54]
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: life
+#+PERMALINK: dazuo
+#+TAGS: 打坐
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: 打坐干嘛呢
+
+打坐不是为了想什么，而是为了不想什么。试想一下，一天工作下来，脑子里有很多的情绪，高兴、悲哀、悔恨、狂躁等等。说不上那里不对，反正就是坐立不安，这时候您需要安静一下。
+
+[[file:../images/dazuo2.jpg]]
+
+#+html: <!--more--> 
+
+打坐不一定要盘着，也可以坐着，可以站着，还可以跪着，但是最好不要躺着，那可能会睡着了。打坐的唯一要求就是腰得直，试想一下：
+
+您闭上眼睛、挺直着腰一动不动10多分钟，这个腰得开始酸了，同时您可以轻易的感受到全身各个部位，是否有微风轻抚您的皮肤，又或者屋外的嘈杂声。但是最主要的还是这个腰，不仅是酸痛，还要歪了似的。此时此刻所有的烦恼都比不上控制好您的腰来的重要了，所有的想法都能进入您的脑子，然而又轻轻的溜走了，不带来情绪的波动。
+
+打坐的时候可以碎碎念。碎碎念有助于排除各种想法，可以是经文，名言等等。比如我喜欢念这一句：得失随缘，心无增减。
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/dazuo.html]]
+#+end_quote
+
+
+#+../images/dazuo2.jpg http://www.wuyao721.com/wp-content/uploads/2013/02/wpid-dazuo21.jpg
