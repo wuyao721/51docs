@@ -1,0 +1,34 @@
+#+BLOG: wuyao721
+#+POSTID: 540
+#+DATE: [2013-12-31 二 18:03]
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: emacs
+#+LaTeX_CLASS: cjk-article
+#+TAGS: emacs
+#+PERMALINK: emacs-win-build
+#+TITLE: windows平台MinGW编译emacs
+
+本文介绍如何在windows平台用MinGW编译emacs
+
+#+html: <!--more--> 
+
+我使用MinGW编译emacs，除此以外，还可以用MSVC或者Cygwin编译。
+
+到 [[http://www.gnu.org/software/emacs/][官网]] 下载emacs源码，解压，进入nt目录
+: cd nt
+
+设置环境变量（保持PATH纯粹很重要，MinGW的命令可能跟其它工具的命令冲突了）
+: PATH=C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\MinGW\msys\1.0\local\bin
+
+生成makefile（选项包括：设置安装目录、去掉调试信息、不需要图片库）
+: configure --prefix=C:/Emacs --with-gcc --no-debug --no-cygwin --without-png --without-xpm --without-jpeg --without-tiff --without-gif 
+
+编译
+: mingw32-make
+
+安装
+: mingw32-make install
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/emacs-win-build.html]]
+#+end_quote

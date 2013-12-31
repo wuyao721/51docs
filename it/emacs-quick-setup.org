@@ -21,22 +21,7 @@
 也就是说emacs的安装目录是 *C:/Emacs* ，这一点很重要，如果你不想装在这里，那么就要自己修改注册表文件 *quick_open.reg* 和 *set_path.reg* 。
 
 ** 编译（可选） 
-我使用MinGW编译emacs，除此以外，还可以用MSVC或者Cygwin编译。
-
-到 [[http://www.gnu.org/software/emacs/][官网]] 下载emacs源码，解压，进入nt目录
-: cd nt
-
-设置环境变量（保持PATH纯粹很重要，MinGW的命令可能跟其它工具的命令冲突了）
-: PATH=C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\MinGW\msys\1.0\local\bin
-
-生成makefile（选项包括：设置安装目录、去掉调试信息、不需要图片库）
-: configure --prefix=C:/Emacs --with-gcc --no-debug --no-cygwin --without-png --without-xpm --without-jpeg --without-tiff --without-gif 
-
-编译
-: mingw32-make
-
-安装
-: mingw32-make install
+有时候我们得编译一个新的emacs，看这篇 [[http://www.wuyao721.com/emacs-win-build.html][windows平台MinGW编译emacs]] 。
 
 ** emacs配置
   - 下载 [[https://github.com/wuyao721/51dotemacs]] 的打包文件master.zip，将内容解压到emacs安装目录下
@@ -84,9 +69,11 @@ linux源码安装比较简单，就不介绍了。
 : root@ubuntu:~# svn export https://github.com/wuyao721/51dotemacs/trunk
 : root@ubuntu:~# cp -r trunk/.emacs* ~/
 
-** .screenrc
-服务器版的emacs还须配上一个screen（可以参考我这篇文章——[[http://www.wuyao721.com/emacs-screen.html][一个emacser的screen]] ），把 *.screenrc* 也拷到HOME目录即可。
-: cp trunk/.screenrc ~/
+** screen设置
+服务器版的emacs还须配上一个screen（参考 [[http://www.wuyao721.com/screen-intro.html][screen让你使用linux更高效]] ），执行下面语句即可：
+: echo "alias 51screen='screen -fn -e^Zz -S wuyao -R -DD'" >> ~/.profile
+
+这样，就可以执行51screen来启动screen。
 
 
 * 参考资料

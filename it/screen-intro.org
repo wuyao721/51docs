@@ -1,9 +1,12 @@
+#+BLOG: wuyao721
+#+POSTID: 542
+#+DATE: [2013-12-31 二 18:53]
 #+OPTIONS: toc:nil ^:nil
 #+CATEGORY: linux
 #+TAGS: emacs, screen
 #+PERMALINK: screen-intro
 #+LaTeX_CLASS: cjk-article
-#+TITLE: screen简介
+#+TITLE: screen让你使用linux更高效
 
 有时候，我们需要远程登录到linux一段比较长的时间。在使用过程中由于各种原因（比如断网），连接断开了。我们的工作被中断了，又得重头再来，纠结。
 
@@ -11,30 +14,15 @@ screen能够解决这样问题，连接断开了没关系，下次再登录进�
 
 #+html: <!--more--> 
 
-* 如何理解screen
+* 原理
+当我们在远程登录时，网络断开了，这个时候，我们所运行的程序会收到系统发送的信号 *SIGHUP* ，一般程序对 *SIGHUP* 的处理方式是进程退出。
+
 screen就像一个容器，里面可以装很多的进程（什么emacs，vim，ftp等等）。当screen启动的时候（不带参数），实际上启动两个screen：一个是后台运行（用大写表示，即SCREEN），即使连接断开，SCREEN也不会结束，SCREEN也就是刚刚说的容器；另外一个在前台运行（用小写表示，即screen），screen启动的时候，它要去attach一个SCREEN，然后我们就能和SCREEN里的子进程交互，screen结束的时候，它会detach那个SCREEN，这时候交互断开了，但是SCREEN（以及它的装的进程）并没有结束，只是等待下一次attach。
 
-* 常用参数
-| 参数            | 描述                                     |
-|-----------------+------------------------------------------|
-| -fn             | 关闭控制流（控制流可能会跟其它程序冲突） |
-| -e xy           | 指定控制字符（默认是C-a）                |
-| -c file         | 使用指定配置文件（默认是~/.screenrc）    |
-| -ls             | 列出所有的screen                         |
-| -r sessionowner | 重新连接一个断开的会话。                 |
-| -S sessionname  | 指定screen名称                           |
-| -e              | 切换到下一个窗口                         |
-| -D -RR          | 无论如何，都要取得指定的screen           |
 
-* screen常用快捷键
-尽管screen的快捷键不少，但是我们只要记住几个就行了，实际上我只用到前三个。
-| 快捷键 | 描述                                      |
-|--------+-------------------------------------------|
-| C-a c  | 创建一个新的运行shell的窗口并切换到该窗口 |
-| C-a n  | 切换到下一个窗口                          |
-| C-a d  | 暂时断开screen会话                        |
-| C-a k  | 杀掉当前窗口                              |
-| C-a w  | 显示所有窗口列表                          |
+* 使用
+直接在命令行敲 *screen* 即可，这个时候screen已经创建一个shell进程等着我们使用。用快捷键 *C-a c* 创建新的会话（同时也有一个新的shell进程），用 *C-a n* 在各个会话中切换，用 *C-a d* 断开（detach），然后敲 *screen -r* 再次建立连接（attach），刚刚那些进程一下子统统都回来了，非常方便。当screen里所有的进程都推出，screen也就退出。
+
 
 * 自定义配置
 有些用户需要修改screen默认配置（例如，emacs和screen的快捷键有冲突），配置文件可能会是这样的：
@@ -45,25 +33,58 @@ screen就像一个容器，里面可以装很多的进程（什么emacs，vim，
 命令行参数也可以实现这个效果：
 : screen -fn -e^Zz
 
-* 工作环境中的screen解决方案
-实际工作环境我们对screen有这样的要求：
+
+* 使用screen带来的问题
+screen使用不当，也会带来麻烦，比如说，我正在使用的screen被被人拿去用了。
+
+总结一下，有以下要求：
  - linux系统有多人使用，并可能使用同一个帐号（比如说root）
  - 每个人的screen配置都不同（比如有人使用C-a为控制字符，而有些人则喜欢用C-z）
  - 每个用户都不愿意记自己的SCREEN名称（很可能记错了，拿了别人的SCREEN来用都说不准呢）
  - 大部分人都不想认真学习screen，使用方法必须简单
 
-解决方案其实很简单，为每个人制定单独的screen配置，以我自己作为例子。我给自己取一个的命令叫 *51screen* ，alias如下：
+
+* 工作环境中的screen解决方案
+解决方案其实很简单，为每个人制定单独的screen配置。以我自己作为例子，创建一个新命令叫 *51screen* ，如下：
 : alias 51screen='screen -fn -e^Zz -S wuyao -R -DD'
 
-将这行代码加到 *~/.profile* 或者 */etc/profile* 里面，以后每次我ssh登录到linux服务器后，我敲的第一个命令就是 *51scren* ，这样我就能连接上我自己的SCREEN（而不是别人的SCREEN）。以后无论什么时候，只要我想打开我的程序，我就敲 *51screen* ，如果找不到 *51creen* 这个命令，那么说明已经在SCREEN里了（为什么呢，因为SCREEN里创建的进程不会加载profile）。
+每个用户都使用自己的命令和SCREEN名称，比如jack的命令可以是：
+: alias jkscreen='screen -fn -e^Zz -S jack -R -DD'
+
+将这行代码加到 *~/.profile* 或者 */etc/profile* 里面，以后每次我ssh登录到linux服务器后，我敲的命令就是 *51screen* ，这样我就能连接上正确的SCREEN（如果我的SCREEN不存在，就会创建一个，而且不会是别人的SCREEN）。总之无论什么时候，只要我想找回我的程序，我就敲 *51screen* ，如果找不到 *51creen* 这个命令，那么说明已经在SCREEN里了（为什么呢，因为SCREEN里创建的进程不会加载profile）。
 
 在attache上SCREEN的时候，我用 *C-z c* 创建新的会话，然后用 *C-z n* 在各个会话中切换。下班了我有急着回家把电脑一关，第二天回到公司，我敲 *51screen* ，那些程序一下子统统都回来了。
 
-于是方案出来了，linux用户们需要知道有4个要点，也能够享受到screen的方便：
+简单来说，linux用户们需要知道有4个要点，就能在享受screen便利的同时避开麻烦：
  1. 用户自己的命令代号，比如 *51screen* （当然管理员要给每个用户单独创建一个命令）
  2. 在screen里用快捷键 *C-a c* 创建一个新的screen会话 （或者 *C-z c* ，取决于配置）
  3. 在screen里用快捷键 *C-a n* 切换到另一个screen会话
  4. 在screen里用快捷键 *C-a d* 断开连接
+
+
+* 常用参数
+| 参数            | 描述                                     |
+|-----------------+------------------------------------------|
+| -fn             | 关闭控制流（控制流可能会跟其它程序冲突） |
+| -e xy           | 指定控制字符（默认是C-a）                |
+| -c file         | 使用指定配置文件（默认是~/.screenrc）    |
+| -ls             | 列出所有的SCREEN                         |
+| -r sessionowner | 重新连接一个断开的会话。                 |
+| -S sessionname  | 指定SCREEN名称                           |
+| -e              | 切换到下一个窗口                         |
+| -D -RR          | 无论如何，都要取得指定的SCREEN           |
+
+
+* screen常用快捷键
+尽管screen的快捷键不少，但是我们只要记住几个就行了，实际上我只用到前三个。（以默认的控制字符为例）
+| 快捷键 | 描述                                      |
+|--------+-------------------------------------------|
+| C-a c  | 创建一个新的运行shell的窗口并切换到该窗口 |
+| C-a n  | 切换到下一个窗口                          |
+| C-a d  | 暂时断开screen会话                        |
+| C-a k  | 杀掉当前窗口                              |
+| C-a w  | 显示所有窗口列表                          |
+
 
 * 参考资料
  - [[http://www.ibm.com/developerworks/cn/linux/l-cn-screen/][使用screen管理你的远程会话]]
