@@ -1,0 +1,58 @@
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: linux
+#+TAGS: ubuntu, apt
+#+PERMALINK: ubuntu-apt
+#+LaTeX_CLASS: cjk-article
+#+TITLE: ubuntu软件包管理系统
+
+/etc/apt/sources.list
+
+https://help.ubuntu.com/community/UbuntuBackports 
+
+简单的解释：
+基础：由于ubuntu是每6个月发行一个新版，当发行后，所有软件包的版本在这六个月内将保持不变，即使是有新版都不更新。除开重要的安全补丁外，所有新功能和非安全性补丁将不会提供给用户更新。
+
+security：仅修复漏洞，并且尽可能少的改变软件包的行为。低风险。
+backports：backports 的团队则认为最好的更新策略是 security 策略加上新版本的软件（包括候选版本的）。但不会由Ubuntu security team审查和更新。
+update：修复严重但不影响系统安全运行的漏洞，这类补丁在经过QA人员记录和验证后才提供，和security那类一样低风险。
+proposed：update类的测试部分，仅建议提供测试和反馈的人进行安装。
+
+个人认为：
+1.重要的服务器：用发行版默认的、security 
+2.当有要较新软件包才行能运作的服务器：用发行版默认的、 security、（backports 还是不适合） 
+3.一般个人桌面：用发行版默认的、 security、backports、update
+4.追求最新、能提供建议和反馈大虾：发行版默认的、 security、backports、update、proposed 全部用上！
+
+英文不好，如果有不适当的地方，希望大家给予指正。
+
+#+html: <!--more-->
+
+** old releases
+ubuntu版本更新较快，老的版本慢慢的不被支持，导致 *apt-get* 等命令安装软件就会出现找不到软件包的问题。幸好老的发行版有备份，放在域名 *old-releases.ubuntu.com* 下。修改 *sources.list* 即可。
+: deb http://old-releases.ubuntu.com/ubuntu/ maverick main restricted universe multiverse
+
+以下是ubuntu的版本列表
+ - Ubuntu 4.10 (Warty Warthog)
+ - Ubuntu 5.04 (Hoary Hedgehog)
+ - Ubuntu 5.10 (Breezy Badger)
+ - Ubuntu 6.06 LTS (Dapper Drake)
+ - Ubuntu 6.10 (Edgy Eft)
+ - Ubuntu 7.04 (Feisty Fawn)
+ - Ubuntu 7.10 (Gutsy Gibbon)
+ - Ubuntu 8.04 LTS (Hardy Heron)
+ - Ubuntu 8.10 (Intrepid Ibex)
+ - Ubuntu 9.04 (Jaunty Jackalope)
+ - Ubuntu 9.10 (Karmic Koala)
+ - Ubuntu 10.04 LTS (Lucid Lynx)
+ - Ubuntu 10.10 (Maverick Meerkat)
+ - Ubuntu 11.04 (Natty Narwhal)
+ - Ubuntu 11.10 (Oneiric Ocelot)
+ - Ubuntu 12.04 LTS (Precise Pangolin)
+ - Ubuntu 12.10 (Quantal Quetzal)
+ - Ubuntu 13.04 (Raring Ringtail)
+ - Ubuntu 13.10 (Saucy Salamander)
+
+
+* Footnotes
+
+[fn:1] 实际上emacs有些按键还是用不上了，比如说按键 *C-M-f* 被屏蔽了，又比如按键 *M-DEL* 被转成 *C-M-h* 。哪个大牛帮我解决这个问题。

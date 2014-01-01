@@ -1,0 +1,49 @@
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: ubuntu
+#+PERMALINK: colinux-ubuntu-precise
+#+TAGS: ubuntu, colinux
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: colinux安装笔记
+
+这两天都在折腾 [[http://colinux.org/][colinux]] ，结果让我非常不爽。
+
+大概是2011年的是，我开始接触到colinux，那时我见到的是一个叫 [[http://sourceforge.net/projects/portableubuntu/][portable ubuntu]] 的东西 ，ubuntu的版本是8.04。2、3年过后，我又用了一下，可以我希望能使用新版的ubuntu，比如12.04，没想这个过程挺麻烦的。
+
+#+html: <!--more--> 
+
+* 爱恨各半的colinux
+colinux简单易懂，跟其它同类产品（例如vmware）相比，它的架构更简单，没有搭建虚拟机，而是直接将linux kernel运行在宿主操作系统上面，这样能消耗更少的系统资源。而且linux kernel是运行在内核态（privileged mode），运行速度可以媲美宿主操作系统。因此特别适合个人工作、学习、研究。
+
+但是colinux最多只能做为linux爱好者的玩具，无法应用到生产环境中。
+
+首先是用户群太小、开发力量不足。很多linux开源软件都会有这样的问题，太少人用，项目进展慢，从2012年到现在2年的时间项目没有再更新，让人怀疑这个项目有没有将来。
+
+另外一方面，项目的文档太少，并且很多不一致，这给新手入门带来不少麻烦，在使用过程中我遇到了好多的问题，我几乎方便我官网的所有文档，但总有一些问题找不到答案，难道要我对着源码看来找答案。
+
+第三个问题是，制作镜像很麻烦，官方文档有说到主要用qemu来制作系统镜像，拜托，如果我能很好的使用qemu，可能我都不愿意使用colinux了！官网上提供了不少镜像做好了的，不过部署过程中遇到了好多的问题。
+
+* FAQ
+** openpty: No such file or directory
+我在使用ubuntu12.04的镜像时遇到这个问题，ssh登录后没办法打开shell。原因是文件 */dev/ptmx* 不见了。（我的天，怎么会不见了！） 解决办法如下：
+: mknod /dev/ptmx c 5 2
+: chmod 666 /dev/ptmx
+: mkdir /dev/pts
+
+** stdin: is not a tty
+跟上面是一样的。
+
+** fstab无法mount cofs
+ubuntu12.04镜像的问题， */etc/fstab* 配置无法生效，应该算是一个BUG。必须手工加载，比如：
+: mount -t cofs cofs0 /mnt/win
+
+** colinux: manager open: 系统找不到指定的文件。
+原因是找不到驱动。可能是忘记关掉窗口 *colinux-console-fltk.exe* 或者 *colinux-console-nt.exe* 导致驱动卸载不干净，又无法重新安装，再次运行 *colinux-daemon.exe* 时会有这样的问题。
+
+* 参考资料
+ - [[http://sourceforge.net/projects/colinux/files/Images%202.6.x%20Ubuntu/Ubuntu%2012.04/][colinux ubuntu12.04安装指南]]
+ - [[http://www.qwolf.com/?p=1195][colinux安装指南]]
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/colinux-ubuntu-precise.html]]
+#+end_quote

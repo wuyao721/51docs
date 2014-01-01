@@ -202,6 +202,7 @@ ubuntu版本更新较快，老的版本慢慢的不被支持，导致 *apt-get* 
  - Ubuntu 13.04 (Raring Ringtail)
  - Ubuntu 13.10 (Saucy Salamander)
 
+
 * 参考资料
  - [[http://askubuntu.com/questions/135540/what-is-the-whoopsie-process-and-how-can-i-remove-it][What is the 'whoopsie' process and how can I remove it?]]
  - [[http://en.wikipedia.org/wiki/List_of_Ubuntu_releases][List of Ubuntu releases]]
