@@ -23,7 +23,33 @@ colinux简单易懂，跟其它同类产品（例如vmware）相比，它的架�
 
 第三个问题是，制作镜像很麻烦，官方文档有说到主要用qemu来制作系统镜像，拜托，如果我能很好的使用qemu，可能我都不愿意使用colinux了！官网上提供了不少镜像做好了的，不过部署过程中遇到了好多的问题。
 
+* ubuntu12.04的笔记
+** hack.sh
+系统启动后需要做一些设置，我把它们写成shell脚本，追加到 */etc/rc.local* 里面：
+: # my screen setting
+: if test "x`grep 51screen /etc/profile`" = "x" ; then
+:     echo "alias 51screen='screen -fn -e^Zz -S wuyao -R -DD'" >> /etc/profile
+: fi
+: 
+: # if ptmx not exist, create it
+: if test ! -e /dev/ptmx; then
+:     mknod /dev/ptmx c 5 2
+:     chmod 666 /dev/ptmx
+: fi
+: 
+: # mount windows share directory
+: mount -t cofs cofs0 /mnt/win
+
+注：要添加到语句 *exit 0* 前面才行。
+
+** 卸载一些没用的软件 
+: apt-get purge gnome-keyring
+
 * FAQ
+** WARNING: no socket to connect to
+我使用svn的时候遇到的问题，只是一个warnging，不管也可以。把 *gnome-keyring* 软件包卸载掉就行。
+: apt-get purge gnome-keyring
+
 ** openpty: No such file or directory
 我在使用ubuntu12.04的镜像时遇到这个问题，ssh登录后没办法打开shell。原因是文件 */dev/ptmx* 不见了。（我的天，怎么会不见了！） 解决办法如下：
 : mknod /dev/ptmx c 5 2

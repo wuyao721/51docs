@@ -206,6 +206,7 @@ ubuntu版本更新较快，老的版本慢慢的不被支持，导致 *apt-get* 
 * 参考资料
  - [[http://askubuntu.com/questions/135540/what-is-the-whoopsie-process-and-how-can-i-remove-it][What is the 'whoopsie' process and how can I remove it?]]
  - [[http://en.wikipedia.org/wiki/List_of_Ubuntu_releases][List of Ubuntu releases]]
+ - [[http://simon-fu.vicp.cc/?p=1177][Ubuntu启动到命令行模式]]
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/ubuntu-setup.html]]
