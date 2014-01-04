@@ -49,6 +49,7 @@
  - [[http://www.cnblogs.com/TomXu/archive/2012/07/26/2581268.html][汤姆大叔的博客]] （深入理解JavaScript系列）
  - [[http://stonelee.info/][Stonelee's Blog]] 
  - [[http://simon-fu.vicp.cc/][云中漫步]]
+ - [[http://ksmx.me][明学的白板]] 
 
 
 * 学习资料

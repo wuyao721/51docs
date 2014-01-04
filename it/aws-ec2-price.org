@@ -1,0 +1,53 @@
+#+BLOG: wuyao721
+#+POSTID: 550
+#+DATE: [2014-01-05 星期日 02:14]
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: 
+#+PERMALINK: aws-ec2-price
+#+TAGS: ubuntu, colinux
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: 亚马逊EC2收费笔记
+
+用了亚马逊一年一个月的虚拟主机，今天终于收到亚马逊的账单了（第一年是免费的），上个月一共收费16.71美元（相当于100人名币），还是觉得有点高的。账单如下图：
+[[file:../images/aws-billing-201311.jpg]]
+
+#+html: <!--more--> 
+
+其中虚拟主机（EC2）的收费每个小时0.02美元，共14.88美元，占了大头。
+
+免费过后，EC2使用的套餐默认是按需消费，也就是按小时收费，每个小时0.02美元，用多久就收多少。一个月下来，总的费用比起国内某些厂家都还高。
+
+幸好，还可以选择便宜点的套餐——预留实例（reserved instance）。预留实例收费是按月按年收费（具体不同套餐还有不同）。总的来说，费用比较便宜，我正要买的预留实例价格如下图所示：
+file:../images/aws-ec2-ri-price.jpg
+
+*Instance Type* 是实例类型， *t1.macro* 是规模最小（512内存，单CPU）的实例，也是最便宜的，用来搭博客，做代理，搭小网站都没有问题。
+
+*Avaliaiblily Zone* 是服务器所在的地区，我选择的服务器在新加波，共有两个地区 *ap-southeast-1a* 和 *ap-southeast-1b* ，而我原来用的地区是 *ap-southeast-1b* ，所以现在也只能选这个。
+
+*Offering Type* 是指使用率，共有三种使用率： *Light Utilization* 、 *Medium Utilization* 和 *Heavy Utilization* ，收费情况各不相同。第一种适合用的比较少的情况，不需要使用的时候关闭实例（服务器）能节省开销；第二种适合使用比较多一点的情况，也能节省开销；第三种适合一直运行的情况，比如运营网站、博客等等。
+
+*Term* 是套餐期限，有1年和3年两种，3年的会便宜些（这不是废话吗！-~-）。
+
+*Upfront Price* 是预付费用，就像手机月租一样。 *Light Utilization* 比较便宜， *Heavy Utilization* 比较贵。3年比1年便宜。
+
+*Hourly Price* 是每小时费用，相当于手机通话费用，打的越多越便宜。（老外真会忽悠人吧）
+
+*Effective Rate* 是指实际每小时费用（实例一直开着的情况），综合所有费用的平均值。例如：1年的 *Light Utilization* 一直开着，每小时0.018美元，比按需使用的0.02便不了多少；3年的 *Heavy Utilization* 每个小时0.012美元。
+
+*Desired Quantity* 是指买多少个实例。
+
+如果想节省费用，将现有的实例变成预留实例，那么直接购买预留实例即可，值得注意的是 *Instance Type* 和 *Avaliaiblily Zone* 这两个选项必须跟原来的实例一致。购买预留实例后，现有实例每个小时的费用就会变成预留实例的费用。
+
+经过认真考虑，我最终选择了3年的 *Heavy Utilization* 预留实例。（被忽悠的厉害。-_-）
+
+* 参考资料
+ - [[http://stackoverflow.com/questions/3821324/how-to-reserve-a-running-amazon-ec2-instance/3821415#3821415][how to reserve a running amazon ec2 instance?]]
+ - [[http://aws.amazon.com/cn/ec2/reserved-instances/#4][Amazon EC2 预留实例]] （官网介绍）
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/aws-ec2-price.html]]
+#+end_quote
+
+#+../images/aws-billing-201311.jpg http://www.wuyao721.com/wp-content/uploads/2014/01/wpid-aws-billing-201311.jpg
+#+../images/aws-ec2-ri-price.jpg http://www.wuyao721.com/wp-content/uploads/2014/01/wpid-aws-ec2-ri-price.jpg
