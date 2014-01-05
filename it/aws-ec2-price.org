@@ -39,7 +39,7 @@
 
 如果想节省费用，将现有的实例变成预留实例，那么直接购买预留实例即可，值得注意的是 *Instance Type* 和 *Avaliaiblily Zone* 这两个选项必须跟原来的实例一致。购买预留实例后，现有实例每个小时的费用就会变成预留实例的费用。
 
-经过认真考虑，我最终选择了3年的 *Heavy Utilization* 预留实例。（被忽悠的厉害。-_-）
+经过认真考虑，我最终选择了3年的 *Heavy Utilization* 预留实例。（被忽悠的厉害-_-）
 
 * 参考资料
  - [[http://stackoverflow.com/questions/3821324/how-to-reserve-a-running-amazon-ec2-instance/3821415#3821415][how to reserve a running amazon ec2 instance?]]

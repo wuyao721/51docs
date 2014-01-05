@@ -69,6 +69,7 @@ ubuntu12.04镜像的问题， */etc/fstab* 配置无法生效，应该算是一�
 * 参考资料
  - [[http://sourceforge.net/projects/colinux/files/Images%202.6.x%20Ubuntu/Ubuntu%2012.04/][colinux ubuntu12.04安装指南]]
  - [[http://www.qwolf.com/?p=1195][colinux安装指南]]
+ - [[http://jhuix.blog.51cto.com/3455746/729217][用qemu搭建CentOS 6 for colinux虚拟系统]]
 
 #+begin_quote
 转载请注明出处：[[http://www.wuyao721.com/colinux-ubuntu-precise.html]]
