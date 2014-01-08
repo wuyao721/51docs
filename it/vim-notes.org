@@ -1,0 +1,31 @@
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: 
+#+PERMALINK: vim-notes
+#+TAGS: vim
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: vim学习笔记
+
+我平时用emacs比较多，但是架不住偶尔使用vim，还得懂一点点。
+
+#+html: <!--more--> 
+
+| 功能         | 操作             | 说明                 |
+|--------------+------------------+----------------------|
+| 移动         | kjhl             | 上、下、左、右       |
+| 移动         | $^               | 行首、行尾           |
+| 复制         | y                |                      |
+| 粘帖         | p P              | 追加粘帖、插入粘帖   |
+| 进入编辑模式 | aAiI             | 起始位置各不同       |
+| 剪切行       | n d d            | n是数字（可选）      |
+| 行跳转       | n g g            | n是数字              |
+| 多行插入     | C-v I youstr Esc | C-v 后移动选择行     |
+| 多行删除     | C-v d            | C-v 后移动选择行     |
+| 字符串替换   | :%s/src/dest/g   | 全文件字符串替换     |
+| 字符串替换   | :%s/src/dest/gc  | 全文件字符串询问替换 |
+
+* 参考资料
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/vim-notes.html]]
+#+end_quote

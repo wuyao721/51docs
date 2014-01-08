@@ -6,9 +6,9 @@
 #+DESCRIPTION:
 #+TITLE: colinux安装笔记
 
-这两天都在折腾 [[http://colinux.org/][colinux]] ，结果让我非常不爽。
+大概是2011年的时候，我发现的一个叫 [[http://sourceforge.net/projects/portableubuntu/][portable ubuntu]] 的东西，ubuntu的版本是8.04，其实就是 [[http://colinux.org/][colinux]] 的变体。
 
-大概是2011年的是，我开始接触到colinux，那时我见到的是一个叫 [[http://sourceforge.net/projects/portableubuntu/][portable ubuntu]] 的东西 ，ubuntu的版本是8.04。2、3年过后，我又用了一下，可以我希望能使用新版的ubuntu，比如12.04，没想这个过程挺麻烦的。
+最近我希望能使用新版的ubuntu（比如12.04），找了半天都找不到高版本的 *portable ubuntu* ，没办法，只能研究colinux，没想到这一下子就花了我两三天。
 
 #+html: <!--more--> 
 
@@ -19,11 +19,13 @@ colinux简单易懂，跟其它同类产品（例如vmware）相比，它的架�
 
 首先是用户群太小、开发力量不足。很多linux开源软件都会有这样的问题，太少人用，项目进展慢，从2012年到现在2年的时间项目没有再更新，让人怀疑这个项目有没有将来。
 
-另外一方面，项目的文档太少，并且很多不一致，这给新手入门带来不少麻烦，在使用过程中我遇到了好多的问题，我几乎方便我官网的所有文档，但总有一些问题找不到答案，难道要我对着源码看来找答案。
+另外一方面，项目的文档太少，并且很多不一致，这给新手入门带来不少麻烦，在使用过程中我遇到了好些的问题，几乎翻遍官网的所有文档，还是找不到答案，难道要我对着源码看来找答案。
 
-第三个问题是，制作镜像很麻烦，官方文档有说到主要用qemu来制作系统镜像，拜托，如果我能很好的使用qemu，可能我都不愿意使用colinux了！官网上提供了不少镜像做好了的，不过部署过程中遇到了好多的问题。
+第三个问题是，制作镜像很麻烦，官方文档有说到主要用qemu来制作系统镜像，拜托，如果我能很好的使用qemu，可能我都不愿意使用colinux了！官网上提供了不少镜像做好了的，不过部署过程繁琐，而且容易出错。
 
 * ubuntu12.04的笔记
+ubuntu12.04的镜像默认语言是de，键盘布局上有问题（例如z和y调换了），一开始给我带来很大麻烦。
+
 ** hack.sh
 系统启动后需要做一些设置，我把它们写成shell脚本，追加到 */etc/rc.local* 里面：
 : # my screen setting
@@ -45,6 +47,10 @@ colinux简单易懂，跟其它同类产品（例如vmware）相比，它的架�
 ** 卸载一些没用的软件 
 : apt-get purge gnome-keyring
 
+** 键盘布局设置
+tty默认的键盘布局是de的，很多的按键都不对，重新设置即可：
+: dpkg-reconfigure keyboard-configuration
+
 * FAQ
 ** WARNING: no socket to connect to
 我使用svn的时候遇到的问题，只是一个warnging，不管也可以。把 *gnome-keyring* 软件包卸载掉就行。
@@ -65,6 +71,7 @@ ubuntu12.04镜像的问题， */etc/fstab* 配置无法生效，应该算是一�
 
 ** colinux: manager open: 系统找不到指定的文件。
 原因是找不到驱动。可能是忘记关掉窗口 *colinux-console-fltk.exe* 或者 *colinux-console-nt.exe* 导致驱动卸载不干净，又无法重新安装，再次运行 *colinux-daemon.exe* 时会有这样的问题。
+
 
 * 参考资料
  - [[http://sourceforge.net/projects/colinux/files/Images%202.6.x%20Ubuntu/Ubuntu%2012.04/][colinux ubuntu12.04安装指南]]
