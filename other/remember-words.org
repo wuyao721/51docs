@@ -1,0 +1,74 @@
+英语单词是元音和辅音的故事。
+
+* 辅音双写
+单词开始
+ - a?? 加强语气             
+ - e?? 向外                 
+ - i?? in/im(里面/否定)     
+
+: abbreviate -> ab + brev + i + ate  
+: essay -> es + say -> exit + say    
+: illegal -> il + legal -> im + legal
+单词结尾辅音双写用于注音，改变元音发音
+: turret 发^音而不是ju或者u音
+: summer 发^音而不是ju或者u音
+
+* 两种音变（元/辅）
+通过音变来扩展文字
+
+辅音变音
+ - b p m f
+ - d t s ge
+ - r l n
+ - u v w
+
+元音变音
+ - 阴元音 a e i y
+ - 阳元音 o u
+same, sem, sim, sym等等
+
+* 简化词根
+通过摘取字母来扩展文字。    
+** 摘取元音
+: brief -> brev 
+: tower -> tur
+: school -> scholar
+** 摘取辅音
+倒数第二个弱辅音消失
+: tend -> to + end
+: tend -> ted
+: tedious -> ted + ious
+: tedium -> ted + ium
+
+* 单词拆分法
+每个单词都可以分为两部分或三部分
+: imbalance -> im + balance
+: intuition -> in + tuit + ion
+: tuit -> i + tut -> i + teach
+
+* 重音常给词根
+* 单/多音节单词
+单音节单词不能拆分，多音节单词可以拆分
+: forge / forgo
+: chart / cartoon 
+: forgo -> for + go
+: forgive -> for + give
+: force -> forge
+
+* 同/反义同源
+** 同义
+首辅音相同，尾辅音通假
+: teach -> tut
+: brief -> brev
+: clean -> clean
+
+陀螺相似
+: food -> feed
+: share -> shore
+: blood -> bleed
+: core -> care
+
+**反义
+: tut -> tuit
+: our -> your
+: vote -> veto
