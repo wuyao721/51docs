@@ -89,12 +89,6 @@ putty也是我常用的ssh工具，如下优点：
 : LANG="en_US.UTF-8"
 : LANGUAGE="en_US:en"
 
-***  /var/lib/locales/supported.d/local
-: root@ubuntu:~# cat /var/lib/locales/supported.d/local
-: en_US.UTF-8 UTF-8
-: zh_CN.UTF-8 UTF-8
-
-
 * 设置时间
 如果时间不对，可以考虑设置时区
 : cp /etc/localtime /etc/localtime.bak

@@ -1,0 +1,31 @@
+#+OPTIONS: toc:nil ^:nil 
+#+CATEGORY: language
+#+PERMALINK: python-exception
+#+TAGS: python
+#+LaTeX_CLASS: cjk-article
+#+DESCRIPTION:
+#+TITLE: 你必须知道的python模块
+
+#+html: <!--more--> 
+
+* 必须知道的模块
+** pyquey
+** watchdog
+** sh
+** pattern
+
+* 参考资料
+- [[https://devcharm.com/pages/11-python-modules-you-should-know][Python modules you should know]]
+- [[http://www.lleess.com/2013/03/7-python-libraries-you-should-know-about.html][7 Python Libraries you should know about]]
+- [[http://blog.csdn.net/walle_love_eva/article/details/9705653][Modules you should know in Python Libray]]
+- [[https://wiki.python.org/moin/Applications][Applications Written in Python]]
+- [[http://www.python.org/about/apps/][Applications for Python]]
+- [[http://stackoverflow.com/questions/1453952/most-useful-python-modules-from-the-standard-library][Most useful Python modules from the standard library?]]
+- [[http://www.catswhocode.com/blog/python-50-modules-for-all-needs][Python: 50 modules for all needs]]
+- [[https://wiki.python.org/moin/UsefulModules][Useful Modules, Packages and Libraries]]
+- [[http://freepythontips.wordpress.com/2013/07/30/20-python-libraries-you-cant-live-without/][20 Python libraries you can’t live without]]
+- [[http://pythonhackers.com/open-source/][Top 400 Python Projects in Github]]
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/python-modules-should-know.html]]
+#+end_quote
