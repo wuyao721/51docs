@@ -1,0 +1,41 @@
+#+BLOG: wuyao721
+#+POSTID: 556
+#+DATE: [2014-03-26 星期三 14:49]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: mysql-performance
+#+TAGS: mysql
+#+DESCRIPTION:
+#+TITLE: mysql插入性能测试
+
+在一台4核4G内存的服务器上测试mysql插入性能，结果发现最快一秒钟可以插入16万条记录。
+
+#+begin_html
+<!--more--> 
+#+end_html
+
+测试代码在 [[https://github.com/wuyao721/51lib/blob/master/python/demo/mysqldemo.py][github这里]] ，用例分别是
+ 1. func_mysql_client 用mysql自带的客户端登录，source命令导入4万条insert语句
+ 2. func_mysql_client2 用mysql自带的客户端登录，source命令导入4百条合并的insert语句（每条insert有100个value）
+ 3. func_mysql_client3 用mysql自带的客户端登录，load data命令导入4万条数据
+ 4. func_mysqldb 用python模块MySQLdb，execute 4万条insert语句
+ 5. func_mysqldb2 用python模块MySQLdb，execute 4百条合并的insert语句（每条insert有100个value）
+ 6. func_sqlalchemy 用python模块sqlalchemy，execute 4万条insert语句
+
+选用了MyISAM数据库引擎，数据库本身没有优化。运行结果如下：
+: 'func_mysql_client' ((), {}) 1.97 sec  
+: 'func_mysql_client2' ((), {}) 0.32 sec 
+: 'func_mysql_client3' ((), {}) 0.25 sec 
+: 'func_mysqldb' ((), {}) 2.09 sec       
+: 'func_mysqldb2' ((), {}) 0.26 sec      
+: 'func_sqlalchemy' ((), {}) 7.92 sec    
+
+从结果可以得到一些结论：
+ - LOAD DATA命令性能几乎是最高的
+ - 合并多条insert为一条，性能能够极大的提高，甚至接近LOAD DATA的水平
+ - 使用python模块MySQLdb性能并不比mysql自带的客户端低
+ - ORM性能比非ORM低4倍
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/mysql-performance.html]]
+#+end_quote
