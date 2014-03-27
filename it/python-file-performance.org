@@ -1,0 +1,44 @@
+#+BLOG: wuyao721
+#+POSTID: 557
+#+DATE: [2014-03-27 星期四 15:42]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: python-file-performance
+#+TAGS: python, linux
+#+DESCRIPTION:
+#+TITLE: python读文件性能测试
+
+在一台4核4G内存的服务器上测试python读文本文件性能。
+
+#+begin_html
+<!--more--> 
+#+end_html
+
+使用14550个1K大小的文本文件来测试，硬盘性能未知。
+
+测试代码在 [[https://github.com/wuyao721/51lib/blob/master/python/demo/filedemo.py][github这里]] ，用例分别是
+ 1. func_multifile 遍历14550个文件，一行行读。
+ 2. func_multifile2 遍历14550个文件，用for in open的方法读。
+ 3. func_multifile_multiline 遍历14550个文件，一次读多行。
+ 4. func_onefile 14550个文件合并到一个文件，一行行读。
+ 5. func_onefile2 14550个文件合并到一个文件，用for in open的方法读。
+ 6. func_onefile_multiline 14550个文件合并到一个文件，一次读一万行
+
+结果如下：
+: 'func_multifile' ((), {}) 0.35 sec
+: 'func_multifile2' ((), {}) 0.17 sec
+: 'func_multifile_multiline' ((), {}) 0.19 sec
+: 'func_onefile' ((), {}) 0.13 sec
+: 'func_onefile2' ((), {}) 0.03 sec
+: 'func_onefile_multiline' ((), {}) 0.03 sec
+
+从结果可以得到一些结论：
+ - 读一个大文件比多个小文件速度快，当文件数量巨大的时候尤为明显
+ - readlines比readline快，当行数量大的时候尤为明显，可以是好几倍
+ - *for in open(filepath)* 性能非常高，python对其做了优化
+
+第一次运行，花的比较长的时间；第二次运行就特别快（上面的结果是第二次运行的）。应该是第一次读磁盘，第二次有了缓存，所以速度相差很大（估计有10倍的差别）。
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/python-file-performance.html]]
+#+end_quote
