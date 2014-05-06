@@ -1,0 +1,75 @@
+#+BLOG: wuyao721
+#+POSTID: 560
+#+DATE: [2014-05-06 星期二 21:00]
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: python-codecs
+#+TAGS: python, linux
+#+DESCRIPTION:
+#+TITLE: python2如何理解字符串编码解码
+
+python2新手经常会给字符串编码问题纠结死了，比如下面的出错信息：
+: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+
+对于这个问题，我一直都是似懂非懂，反正代码能跑就行。幸运的是，一次无意中的测试让真正的理解字符串的编码问题。
+
+#+begin_html
+<!--more--> 
+#+end_html
+
+首先，要这样理解。在python2里面只有一种内码，那就是unicode，对应类型unicode。
+把unicode对象转化成str类型的对象就叫编码(encode)，反过来就是解码(decode)。
+
+编码就是从内码unicode转成str的某种字符编码，如：
+ - encode unicode -> ascii
+ - encode unicode -> utf-8
+ - encode unicode -> gbk
+对应如下的代码：
+: >>> u'test'.encode('ascii')
+: 'test'
+: >>> u'测试'.encode('utf-8')
+: '\xe6\xb5\x8b\xe8\xaf\x95'
+: >>> u'测试'.encode('gbk')
+: '\xb2\xe2\xca\xd4'
+
+但是这样也可以，应该怎么理解呢？
+: >>> 'test'.encode('ascii')
+: 'test'
+
+为了解答这个问题，我们得先着看这个：
+: >>> '测试'.encode('gbk')
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+
+上面这一条等价于下面的:
+: >>> '测试'.decode().encode('gbk')
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+
+由此，我们可以猜测出：一个str是不可以编码的，因为它不配，必须先转成unicode才行。（decode不带参数的时候，encoding的默认值就是ascii）
+
+下面的例子也是一样的道理，一个str和一个unicode的合并，必须先将str转成unicode。
+: >>> '测试'+u'测试'
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+
+解码就是从str转成内码unicode，比如：
+ - decode ascii -> unicode
+ - decode utf8 -> unicode
+ - decode gbk -> unicode
+对应如下的代码：
+: >>> 'test'.decode('ascii')
+: u'test'
+: >>> '测试'.decode('utf-8')       # utf-8 环境下（一般是linux）
+: u'\u6d4b\u8bd5'
+: >>> '测试'.decode('gbk')         # gbk 环境下（一般是windows）
+: u'\u6d4b\u8bd5'
+
+最后，吐槽一下python2的str，str和unicode的同时出现带来了无穷的麻烦，这对于一个优秀的语言来说是不可容忍的。因此才会有python3摒除str，将unicode当str用。
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/python-codecs.html]]
+#+end_quote
