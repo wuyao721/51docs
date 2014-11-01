@@ -1,0 +1,53 @@
+#+BLOG: wuyao721
+#+OPTIONS: toc:nil num:nil todo:nil pri:nil tags:nil ^:nil TeX:nil
+#+CATEGORY: 
+#+PERMALINK: python-sort-with-depends
+#+TAGS: python, linux
+#+DESCRIPTION:
+#+TITLE: 解360的一道python编程题
+
+最近看到一篇文章 [[http://blogs.360.cn/blog/how-360-uses-python-1-virtualenv/][我们在360如何使用Python – virtualenv 篇]] ，里面有一道编程题。耐着性子做完这道题目。
+
+#+begin_html
+<!--more--> 
+#+end_html
+
+
+代码比较丑，不过做完后，实在不愿再修改了。基本思路：
+  1. 将所有的项目依赖都加进字典，包括间接依赖。
+  2. 根据依赖关系排序
+
+: def sort_with_depends(dep_map):
+:     dep_list = []
+:     def a(k,s):
+:         if k in dep_map:
+:             for i in dep_map[k]:
+:                 s.add(i)
+:             for i in dep_map[k]:
+:                 a(i,s)
+:     for key in dep_map:
+:         s = set()
+:         a(key,s)
+:         dep_map[key] = s
+:     for key in dep_map:
+:         i = 0
+:         print key
+:         for key_value in dep_list:
+:             if key not in key_value[1]:
+:                 i += 1
+:             else:
+:                 break
+:         dep_list.insert(i,(key, dep_map[key]))
+:     return map(lambda x: x[0], dep_list)
+: dep_map  = {
+:     'a': ['b',],
+:     'b': ['c',],
+:     'c': ['d','e'],
+:     'e': [],
+:     'k': ['e', 'c'],
+: }
+: print sort_with_depends(dep_map)
+
+#+begin_quote
+转载请注明出处：[[http://www.wuyao721.com/python-sort-with-depends.html]]
+#+end_quote
