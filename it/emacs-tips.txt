@@ -1,0 +1,51 @@
+emacs重要技能
+
+1. emacs命令自动提示
+ (ido-mode 1)
+
+2. 管理多个buffer
+
+3. 管理多个shell
+
+4. 让emacs长期运行 
+配合screen，emacs能跑一年
+
+5. 作为gdb调试界面
+
+6. 搜索字符串
+ - 当前buffer正向搜索 C-s 
+ - 当前buffer反向搜索 C-r
+ - 当前buffer搜索所有出现 M-s o
+ - 目录下搜索指定字符串 M-x grep-find
+ - 目录下搜索指定文件名 M-x find-dired
+
+7. 删除/替换字符串
+ - 删除长方形文本 C-x r k
+ - 插入长方形文件 C-x r t
+ - 单buffer查询替换 M-x query-replace
+ - 单buffer自动替换 M-x replace-string
+ - 多buffer查询替换 M-x ibuffer 先用m，选择buffer，再用Q查询替换
+ - 多文件查询替换 M-x dired 先用m选择文件，再用Q查询替换
+ - 多文件自动替换 M-x grep-find-replace
+
+8. 重复执行
+ - 开始一个宏 M-x ( 
+ - 结束一个宏 M-x ( 
+ - 重复执行刚刚录制的宏 M-x eeee 
+ - 执行4次 M-u 执行16次 M-u M-u 以此类推
+ - M-x zzzz简化重复命令
+
+9. 用二进制格式打开文件
+ M-x hexl-mode
+
+10. 比较、合并文件/目录
+ - 合并文件 M-x ediff
+ - 合并目录 M-x ediff-directories
+
+11. 字符串着色
+ - M-shp 输入一个正则表达式，给当前buffer中所有匹配该正则的字符串着上指定颜色
+ - M-shl 输入一个正则表达式，给当前buffer中包含该正则的行着上指定颜色
+ - M-shu 取消着色
+ - M-x highlight-symbol-at-point 高亮当前单词
+
+12. 代码折叠
