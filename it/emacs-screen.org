@@ -46,6 +46,9 @@ screen能够解决这样问题，它就好像一个容器一样把进程都装�
 | C-z k  | 杀掉当前窗口                              |
 | C-z w  | 显示所有窗口列表                          |
 
+* screen中文问题
+如果发现使用screen后显示中文的文件名乱码，那么应该在运行screen前改变中文环境：
+: export LANG="en_US.utf8"
 
 * 参考资料
  - [[http://blog.csdn.net/circleexpandor/article/details/5808258][Screen和Emacs的完美结合]]

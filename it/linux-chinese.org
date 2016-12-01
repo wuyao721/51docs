@@ -1,0 +1,35 @@
+#+OPTIONS: toc:nil ^:nil
+#+CATEGORY: 
+#+TAGS: linux, 
+#+PERMALINK: linux-files
+#+LaTeX_CLASS: cjk-article
+#+TITLE: linux中文化的问题
+
+#+html: <!--more-->
+
+* 支持中文
+先看看环境是否正确设置：
+: root@ubuntu:~# locale -a
+: C
+: C.UTF-8
+: en_US.utf8
+: POSIX
+: zh_CN.utf8
+: zh_CN.gbk
+
+如果看到 *en_US.utf8* 和 *zh_CN.gbk* ，就支持中文，不然手工生成中文语言：
+: root@ubuntu:~# locale-gen --lang en_US.UTF-8
+: root@ubuntu:~# locale-gen --lang zh_CN.gbk
+
+* 环境变量
+在一个shell里面执行以下这一句：
+: export LANG="en_US.utf8"
+
+也可以将其加入 */etc/profile* 文件中，这样每次启动一个新的shell也能自动设置该值。
+
+* samba共享
+windows文件名是什么编码，文件内容又是什么编码呢？
+汉字“一”GBK编码为d2bb，utf8编码为e4b880。我们通过二进制的方式打开汉字“一”，就能知道文件是什么编码。
+以windows7为例子，文件名的编码是utf8，文件内容的编码是gbk。
+
+因此，linux语言环境应该设置成utft8，这样才能看到文件名。编辑工具则需要支持gbk编码。

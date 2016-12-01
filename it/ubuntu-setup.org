@@ -84,6 +84,9 @@ putty也是我常用的ssh工具，如下优点：
 : root@ubuntu:~# locale-gen --lang zh_CN.UTF-8
 
 ** 设置默认环境
+在一个shell里面设置环境：
+: export LANG="en_US.UTF-8"
+
 *** /etc/default/locale
 : root@ubuntu:~# cat /etc/default/locale
 : LANG="en_US.UTF-8"
