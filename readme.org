@@ -21,7 +21,7 @@
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]
 
 ** 思维导图
-  [[https://github.com/wuyao721/51docs/blob/master/人月神话.png][人月神话]]
+  [[https://github.com/wuyao721/51docs/blob/master/mindmap/人月神话.png][人月神话]
 
 ** 其它
  - [[https://github.com/wuyao721/51docs/blob/master/it/crontab.org][crontab 格式说明]]
