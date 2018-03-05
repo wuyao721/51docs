@@ -18,7 +18,10 @@
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-proxy-short.org][nginx正向代理的不足]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-cache-proxy-naxsi.org][nginx搭建反向代理服务器和web防火墙]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-server-name.org][nginx server_name 命名规则]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]
+
+** 思维导图
+  [[https://github.com/wuyao721/51docs/blob/master/人月神话.png][人月神话]]
 
 ** 其它
  - [[https://github.com/wuyao721/51docs/blob/master/it/crontab.org][crontab 格式说明]]
