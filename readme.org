@@ -1,7 +1,7 @@
 #+TAGS: org-mode, github
 #+TITLE: 项目说明
 
-这个项目存放我的大部分的文档。文档用emacs的 *org-mode* 来编辑，最后通过 *org2blog* 发送到我的个人网站 [[http://www.wuyao721.com]] 。
+这个项目存放我的大部分的文档。文档用emacs的 *org-mode* 来编辑
 
 
 * 文档索引
@@ -18,10 +18,14 @@
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-proxy-short.org][nginx正向代理的不足]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-cache-proxy-naxsi.org][nginx搭建反向代理服务器和web防火墙]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-server-name.org][nginx server_name 命名规则]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]]
 
 ** 思维导图
-  [[https://github.com/wuyao721/51docs/blob/master/mindmap/人月神话.png][人月神话]
+思维导图使用软件XMind ZEN编辑。
+ - [[https://github.com/wuyao721/51docs/blob/master/mindmap/人月神话.png][人月神话]] （书籍）
+ - [[https://github.com/wuyao721/51docs/blob/master/mindmap/如何高效学习.png][如何高效学习]] （书籍）
+ - [[https://github.com/wuyao721/51docs/blob/master/mindmap/自控力.png][自控力]] （书籍）
+ - [[https://github.com/wuyao721/51docs/blob/master/mindmap/linux技术.png][linux技术]] （总结）
 
 ** 其它
  - [[https://github.com/wuyao721/51docs/blob/master/it/crontab.org][crontab 格式说明]]
