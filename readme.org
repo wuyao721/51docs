@@ -7,18 +7,18 @@
 * 文档索引
 
 ** emacs
- - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-quick-setup.org][快速搭建emacs环境]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/xming-emacs-remote-linux.org][使用XMing+Emacs/vim操控Linux]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-org-mode-pdf.org][Emacs Org-mode 制作PDF文档]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-indent.org][emacs缩进]] （C/C++、java等语言的缩进方式）
- - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-screen.org][一个emacser的screen]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/emacs-win-shell-buffer.org][emacs win32缓存shell输出]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs/emacs-quick-setup.org][快速搭建emacs环境]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs/xming-emacs-remote-linux.org][使用XMing+Emacs/vim操控Linux]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs/emacs-org-mode-pdf.org][Emacs Org-mode 制作PDF文档]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs/emacs-indent.org][emacs缩进]] （C/C++、java等语言的缩进方式）
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs/emacs-screen.org][一个emacser的screen]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/emacs/emacs-win-shell-buffer.org][emacs win32缓存shell输出]]
 
 ** nginx
- - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-proxy-short.org][nginx正向代理的不足]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-cache-proxy-naxsi.org][nginx搭建反向代理服务器和web防火墙]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-server-name.org][nginx server_name 命名规则]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-upstream-cache-status.org][nginx代理流量统计]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx/nginx-proxy-short.org][nginx正向代理的不足]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx/nginx-cache-proxy-naxsi.org][nginx搭建反向代理服务器和web防火墙]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx/nginx-server-name.org][nginx server_name 命名规则]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/nginx/nginx-upstream-cache-status.org][nginx代理流量统计]]
 
 ** 思维导图
 思维导图使用软件XMind ZEN编辑。
@@ -37,8 +37,8 @@
  - [[https://github.com/wuyao721/51docs/blob/master/it/linux-commands.org][linux常用命令]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/nginx-building-windows.org][windows平台下编译nginx]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/project-list.org][项目列表]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/python-exception.org][python异常一锅端]]
- - [[https://github.com/wuyao721/51docs/blob/master/it/python-thread-exit.org][python如何优雅的退出线程和进程]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/python/python-exception.org][python异常一锅端]]
+ - [[https://github.com/wuyao721/51docs/blob/master/it/python/python-thread-exit.org][python如何优雅的退出线程和进程]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/screen-intro.org][screen简介]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/skipfish-usage.org][skipfish用法]]
  - [[https://github.com/wuyao721/51docs/blob/master/it/ssh-key.org][ssh证书]]
