@@ -1,0 +1,347 @@
+
+* 杂项
+** BOSS (Business & Operation Support System)
+指的是业务运营支撑系统。通常说的BOSS系统分为4个部分：计费及结算系统、营业和账务系统、客户服务系统和决策支持系统。
+
+** PLMN (Public Land Mobile Network)
+公共陆地移动网络PLMN由政府或它所批准的经营者，为公众提供陆地移动通信业务目的而建立和经营的网络。
+该网络通常与公众交换网PSTN互联，形成整个地区或国家规模的通信网。
+PLMN = MCC + MNC
+例如，中国移动的PLMN是46000，中国联通的PLMN为46001。
+** MCC (Mobile Country Code)
+移动国家号MCC由3个十进制数(BCD)组成，编码范围为000-999。它是由ITU-T规定，定义移动台全球唯一国家识别。
+** MNC (Mobile Network Code)
+移动网号MNC由2个或3个十进制数组成，编码范围是00-99或000-999。目前，我国由2个十进制组成。它标识移动台来自那个PLMN。
+
+** PSTN (Public Switched Telephone Network)
+公共交换电话网络，一种常用旧式电话系统，即我们日常生活中常用的电话网。
+PSTN是一种以模拟技术为基础的电路交换网络。它提供的是一个模拟的专有通道，通道之间经由若干个电话交换机连接而成。
+当两个主机或路由设备需要同PSTN连接时，在两端的网络接入侧（即用户回路侧）必须使用调制解调器(Modem)实现信号的模/数、数/模转换。
+从OSI七层模型的角度来看，PSTN可以看成物理层的一个简单的延伸，没有向用户提供流量控制、差错控制等服务。
+而且，由于PSTN是一种电路交换的方式，所以一条同路自建立直至释放，其全部带宽仅能被通路两端的设备使用，及时它们之间没有任何数据需要传送。
+因此，这种电路交换的方式不能实现对网络带宽的充分利用。
+
+
+* GSM (Global System For Mobile Communication)
+全球移动通讯系统GSM系统主要由移动台MS、移动子系统NSS，基站子系统BSS和操作子系统OSS四部分组成。
+GSM = MS + BSS + NSS + OSS
+MS = TE + MT
+BSS = BTS + BSC
+NSS = MSC + VLR + HLR + AUC + OMC+ EIR
+
+** MS (Mobile Station)
+移动台，语音通过过程中，完成编解码，信号调制发射。可以看作是MT和TE功能的集成实体，物理上可以是一个实体，也可以是两个实体（TE+MT）。
+
+** TE (Teminal Equipment)
+TE（Teminal Equipment，终端设备）是终端用户操作和使用的计算机终端设备，在GPRS系统中用于发送和接收终端用户的分组数据。
+TE可以是独立的桌面计算机，也可以将TE的功能集成到手持的移动终端设备上，同MT（Mobile Terminal）合二为一。
+从某种程度上说，GPRS网络所提供的所有功能都是为了在TE和外部数据网络之间建立起一个分组数据传送的通路。
+
+** MT (Mobile Termial)
+MT（Mobile Termianl，移动终端）一方面同TE通信，另一方面通过空中接口同BTS通信，并可以建立到SGSN的逻辑链路
+。GPRS的MT必须配置GPRS功能软件，以支持GPRS系统业务。在数据通信过程中，从TE的观点来看，MT的作用就相当于将TE连接到GPRS系统的Modem。
+MT和TE的功能可以集成在同一个物理设备中。
+
+** BSS (Base Sub System)
+基站子系统BSS又称接入网，是GSM系统中与无线蜂窝方面关系最直接的基本组成部分，由BTS和BSC组成。
+
+** BTS (Base Transceiver Station)
+基站收发台，可以看作一个无线调制解调器，负责移动信号的接收和发送处理。包括无线传输所需要的各种软件硬件，如发射机、接收机、
+支持小区结构（如全向、扇形、星状和链状）所需要的天线，连接基站控制器的接口电路以及收发台本事所需要的检测和控制装置。
+
+** BSC (Base Station Controller)
+基站控制器BSC是基站和移动交换中心的连接点，相当与一个小型的交换机。一个BSC通常控制几个基站收发台，其主要功能是进行无线信道管理、
+实施呼叫和通信信道的建立和拆除，并为本控制区内移动台的过去切换进行控制等。衡量它的指标有话务量和忙时试呼次数（BHCA）。
+爱尔兰是衡量话务量的指标，它是根据信道占空比来计算，可以理解为一条电话信道1小时内被占用的时常，如果一小时被占用一小时，则该电话线路的话务量为1Erl。
+
+** MSS (Mobile Sub System)
+移动子系统又称核心网。
+
+** MSC (Mobile Switching Center)
+移动交换中心MSC是整个GSM网络的核心，它控制所有BSC的业务，提供交换功能以及系统内其他功能的连接，
+MSC可以直接提供或通过移动网关GMSC提供和公共电话交换网PSTN、综合业务数字网ISND、公共数据网PDN等固定网的接口功能，
+把移动用户和移动用户、移动用户和固定网用户互相连接起来。
+MSC从HLR、VLR和AuC中获取用户位置登记和呼叫请求所需的全部数据。
+另外，MSC也根据最新获取的信息请求更新数据库的部分数据。作为GSM网络的核心，MSC还支持位置登记、越区切换、自动漫游等具有移动特征的功能及其它网络功能。
+对于容量比较大的移动通信网，一个NSS（网络子系统）可包括若干个MSC、HLR和VLR。
+当某移动用户A进入到一个拜访移动交换中心（VMSC），为了建立对该移动用户A的呼叫，要通过移动用户A所归属的HLR（归属位置寄存器）获取路由信息。
+功能可以为：
+ - 交换和呼叫路由选择：MSC控制用户呼叫的建立、监测和释放，有时还需要与网络的其它节点相互协作。例如当手机呼叫PSTN时，需要为呼叫进行路由的选择。
+ - 计费：MSC负责为手机通话进行计费，并且还处理如分时分区计费等特定计费费率的信息。在通话过程中，MSC将记录这些信息，在通话结束后将其存储起来，然后可以输出给计费中心处理。
+ - 业务提供：补充业务是由MSC提供并管理的，另外，SMS服务也是由MSC处理的。
+ - 与HLR通信：MSC与HLR的通信主要发生在MS做被叫的通话建立过程中，这时HLR将向MSC请求一些路由信息。
+ - 与VLR通信：VLR一般和MSC合并在一起，MSC与VLR通信是为了得到用户信息，尤其在通话建立和释放的时候。
+ - 与其它MSC通信：在不同MSC之间的呼叫建立和小区间切换的时候，MSC之间要进行必要的相互通信。
+ - 控制相连接的BSC：MSC要控制BSS主要的节点：BSC。每一个MSC可以控制许多个BSC，BSC的数量取决于在该MSC服务区里的话务量的大小。MSC在呼叫建立和BSC间切换的时候需要与其控制的BSC联系。
+ - 互连网直接接入服务：通常MSC是通过PSTN或其它的网络接入互连网业务供应商的互连网结点。而互连网直接接入服务使得MSC可以直接与互连网结点通信，从而减少了呼叫建立的时间。直接接入服务可以由一种叫做Tigris的接入服务器来提供。接入服务器可以位于MSC里，也可以是与MSC相连的独立设备。
+ - ISDN主速率接入（PRA）：该功能使得MSC可以向用户提供PRA服务。例如，网络运营者可以使用该功能通过PLMN网提供PABX连接服务。通过这种方法，运营者可以在ISDN商业用户领域与PSTN运营者展开直接的竞争。
+
+** 移动中的位置更新
+小区群被划分为不同的区域LA，其中LAI表示不同区域的标识码。手机会不间断收到当前区域发来的LAI消息，当移动台更换位置区时，移动台发现其存储器中的LAI与接收到的LAI发生了变化，便执行登记。这个过程就叫“位置更新”，位置更新是移动台主动发起的。位置更新有两种情况：移动台的位置区发生了变化，但仍在同一MSC区域内； 移动台从一个MSC区域到了另一个MSC区域。
+*** 同一MSC内的位置更新
+如果在同一MSC内进行位置更新，无需HLR参与。分为以下几步：
+ 1．移动台漫游到新的LA时，分析接收到的LAC和存储在SIM卡中的LAC不一致，就向当前的基站控制器（BSC）发一个位置更新请求。
+ 2．BSC接收到MS的位置更新请求，就向MSC/VLR发一个位置更新请求。
+ 3．VLR修改这个MS的数据，将位置区号码改成当前的位置区号码，然后向BSC发一个应答消息。
+ 4．BSC向MS发一个应答消息，MS将自己SIM卡中存储的LAC改成当前的LAC。这样，一个同一MSC局内的位置更新过程就结束了。
+ 
+*** 越区位置更新
+当移动用户从一个MSC局漫游到另一个MSC局时，就要进行越区域位置更新。这时HLR就要参与位置更新过程，
+假设原来所在的MSC局为MSC1，漫游到的MSC区为MSC2，将BSC和MSC一样称为BSC1和BSC2，具体步骤如下：
+ 1．移动用户漫游到另一个MSC局时，移动台（MS）发现当前的位置区号码和SIM卡中存储的位置区号码不一致，就向BSC2发位置更新请求，BSC2向MSC2发一个位置更新请求。
+ 2. MSC/VLR2接到位置更新请求，发现当前MSC中不存在该用户信息（从其他MSC漫游过来的用户），就向用户登记的HLR发一个位置更新请求。
+ 3. HLR向MSC/VLR2发一个位置更新证实，并将此用户的一些数据传送给MSC/VLR2。
+ 4. MSC/VLR2通过BSC2给MS发一个位置更新证实消息，MS接到后，将SIM卡中位置区号码改成当前的位置区码。
+ 5. HLR负责向MSC/VLR1发消息，通知VLR1将该用户的数据删除。
+ 
+在每次位置更新之前，都将对这个用户进行鉴权。
+ 
+** 通信过程中的切换
+处于通话状态的移动用户从一个BSS移动到另一个BSS时，切换功能保持移动用户已经建立的链路不被中断。切换与否主要由BSS决定，当BSS检测到当前的无线链路通信质量下降时，BSS将根据具体情况进行不同的切换。也可以由MSS根据话务信息要求开始切换。
+切换包括BSS内部切换、BSS间的切换和MSS间的切换。其中BSS间的切换和MSS间的切换都需要由MSC来控制完成，而BSS内部切换由BSC控制完成。由MSC控制完成的切换又可以划分为MSC内部切换、基本切换和后续切换。
+ 
+*** MSC内部切换
+MSC内部切换是指移动用户无线信道由当前BSS切换到同一MSC下的另一BSS的过程。
+整个切换进程由一个MSC来控制完成，MSC需要向新的BSS发起切换请求，使新BSS为MS接入作好准备；新BSS响应切换请求后，MSC通过原先BSS通知MS进行切换；当MS在新BSS接入成功时，MSC负责建立新的连接。MSC在整个切换完成之前需要保持原先的连接，这样可以当MS切换失败时能够继续在原有连接上进行通信。只有在切换已完成时，MSC才能释放原先的连接并在新连接上为MS提供通信。
+ 
+*** 基本切换
+基本切换是指移动用户通信时从一个MSC的BSS覆盖范围移动到另一个MSC的BSS覆盖范围内，为保持通信而发生的切换过程。基本切换的实现需要MSC－A与MSC－B/VLR相互配合，MSC－A作为切换的移动用户控制方直至呼叫释放为止。
+基本切换过程：
+ 1. BSS－A对MS无线信道质量不满意，并查看邻近位置信息，将合适邻近位置区码作为目的地信息通过切换要求信息要求MSC－A控制切换；
+ 2. MSC－A分析切换要求消息，发现目的地属于MSC－B覆盖范围，通过MSC－B请求BSS－B作MS接入准备即切换请求；
+ 3. MSC－B接收MSC－A的切换请求，向VLR要求切换号码作为MSC－A到MSC－B电路建立的寻址信息；
+
+** GMSC (Gateway Mobile Switching Center)
+网关移动交换中心GMSC具有从HLR查询得到被叫MS目前的位置信息，并根据此信息选择路由。GMSC可以是任意的MSC，也可以单独设置。
+单独设置时，不处理 MS的呼叫，因此不需设VLR，不与BSC 相连。 　　
+功能：
+当固定电话用户拨打GSM网用户时，由于移动电话用户漫游的特殊性，网络必须先查询用户归属的HLR以获得该用户当前的位置信息，才能继续进行接续。
+GMSC向HLR查询用户当前的位置并获得包含路由信息的漫游号码，该功能称为“Interrogation HLR”。
+当网络规模较小时（只设有1～2个MSC），各MSC与PSTN直联，该项功能由MSC完成。随着网络的逐步扩容，MSC数目的增加，
+若仍采用各MSC与PSTN直联的方式，网络结构会存在诸多弊病：
+ 1. 网络结构复杂，不利于维护管理
+ 2. 各MSC的中继线群多，每个线群中继系统少，利用率低
+ 3. 虽然网络建设初期投资少，但日后运行维护成本高
+ 4. 不利于两网间话费结算。由此可见，GSM网的多局制使得GSM网原有与PSTN之间的组网方式，已不再继续适用。因此为维护网络界面的清晰，保障网间结算的准确便捷，需要在移动网与其他网之间设置独立的GMSC，以实现本地移动网与其他网间的话务、信令转接。
+
+** VMSC
+** LAI (Location Area Identifier)
+位置标识码LAI用于标识跟踪区域，由MCC、MNC以及LAC组成。LAI是2G和3G时代电路域的概念，它使移动交换机（MSC/SERVER）能及时知道
+终端的位置，当寻呼终端时，移动交换中心就在该终端的位置区中的所有小区进行搜索。在一个位置去内终端不需要位置更新；
+在跨LA移动时，需要发起LA更新过程，以便网络知道终端的位置去；同时终端为了和网络侧保存紧密联系，需要周期性LA更新过程。
+LAI = MCC + MNC + LAC
+** LAC (Location Area Code)
+位置区号码LAC由16bit的整数组成，由运营商管理分配，它识别一个GSM网络中的位置区。理论上可以在一个GSM/VLR内定义65536个位置区。
+
+** CGI (Cell Global Identifier)
+小区全球识别码CGI是用来识别一个位置区内的小区。它是在位置区识别吗LAI后加上一个小区识别码CI。
+CGI = MMC + MNC + LAC + CI
+
+** RSZI (Regional Subscription Zone Identity)
+一个PLMN唯一的地方预约信息段识别清晰地定义整个PLMN中漫游允许的地区。它由一个或者多个地方预约区域组成。
+ - 国家编码（Country Code, CC），即移动台等级注册的国家码，我国为86
+ - 国内网络接入号码（National Destination Code, NDC），中国移动网为134-139，中国联通为130-133
+ - 区域编码（Zone Code, ZC），ZC是固定长度包含两个字节长的数，以BCD编码来表示。
+RSZI = CC + NDC + ZC
+** HLR (Home Location Register)
+归属位置寄存器HLR是GSM/GPRS/EDGE网络的CN(core network, 核心网)的网元。它是一个数据库，存储着某个运营商的用户相关信息。例如：
+SIM卡信息、手机号码、签约业务、补充业务、用户漫游权限、鉴权参数、APN（Access Point Name，接入点名称）、用户当前访问的MSC/VLR号码、用户当前访问的SGSN号码、
+手机是否关机等信息。可为至某MS的呼叫提供路由信息。
+
+补充业务(Supplementary Service)是对基本电信业务进行修改或者补充的业务，它不能脱离呼叫业务而单独向用户提供，必须与响应的基本业务一起提供。
+补充业务包括：
+ - 号码显示业务
+ - 呼叫前转业务
+ - 呼叫等待与呼叫保持业务
+ - 多方通话业务
+ - 呼叫限制业务
+ - 呼叫转接业务
+
+** AUC (Authentication Center)
+鉴权中心AUC通常是HLR的一个功能单元，是一个管理与移动台相关鉴权信息的功能实体。鉴权原理：
+客户三参数包括客户号码（手机号码）、客户识别码（IMSI）、与IMSI对应的唯一的客户鉴权键Ki（制作时写入SIM卡）。
+AUC和MS都拥有同样的三参数，通过单向A3算法将三参数的集合与一个随机数进行运算，得到一个新的结果。如果两边结果一致，则鉴权成功。
+
+** VLR (Visitor Localtion Register)
+拜访位置寄存器是一个数据库，它存储所管辖区域中MS的来电、去话呼叫所需检索的信息以及用户签约业务和附加业务的信息，
+例如客户的号码，手机的LAI，向客户提供的服务等参数。MSC与VLR在硬件设备上经常组合在一起。
+
+** EIR (Equipemnt Identity Register)
+设备标志寄存器EIR是存储移动台设备参数的数据库，用于对移动设备的鉴别和监视，并拒绝非移动台入网。
+
+** OMC
+操作和维护中心OMC的任务是对全网进行监控和操作，例如系统的自检、报警与备用设备的激活、系统的故障诊断与处理、话务量的统计和计费数据的记录与传递，
+以及各种资料的收集、分析、与显示等。
+** 计费中心
+** Um接口
+Um接口是GSM/GRPS/EDGE网络中，MS和网络直接的接口，也被称为空中接口（Air Interface）。
+Um接口用于传输MS与网络之间的信令信息和业务信息。通过该接口，MS完成与网络侧的通信，完成分组数据传送、移动性管理、会话管理、无线资源管理等多方面的功能。
+
+** Abis接口
+基站子系统的两个功能实体BSC(基站控制器)和BTS(基站收发信台)之间的通信接口，用于BTS与BSC之间的远端互连方式，
+该接口支持所有向用户提供的服务，并支持对BTS无线设备的控制和无线频率的分配。
+
+** A接口
+A接口定义为网络子系统（NSS）与基站子系统（BSS）间的通信接口。从系统上来讲，就是MSC与BSC之间的接口，
+物理链路采用标准的2.048Mbit/s的数字传输链路实现。此接口传递的信息包括移动台管理、基站管理、移动性管理、接续管理等。
+
+** B接口
+MSC和VLR的接口
+
+** C接口
+MSC和HLR的接口
+
+** D接口
+HLR和VLR的接口
+
+** E接口
+MSC之间的接口
+
+** F接口
+MSC和EIR的接口
+
+** G接口
+VLR之间的接口
+
+
+* GPRS (General Packet Radio Service)
+GPRS网络主要实体包括GPRS骨干网、GGSN、SGSN、本地位置寄存器HLR、移动交换中心MSC、拜访位置寄存器VLR、移动台MS、分组数据网络PDN、
+短消息业务网关移动交换中心SMS.GMSC和短消息业务互通移动交换中心SMS.IWMSC等。
+
+** SGSN (Serving GPRS Support Node)
+分组路由和传输、移动管理、逻辑链路管理、认证和计费。
+SGSN的位置寄存器（Location Register，LR）存储了SGSN中注册的所有用户的位置信息（当前小区，VLR）和个人信息（IMSI，地址）等
+SGSN是GPRS网络的一个基本组成网元，是为了提供GPRS业务而在GSM网络中引进的一个新的网元设备。
+其主要的作用就是为本SGSN服务区域的MS转发输入/输出的IP分组，其地位类似于GSM电路网中的VMSC。SGSN提供以下功能：
+ - 本SGSN区域内的分组数据包的路由与转发功能，为本SGSN区域内的所有GPRS用户提供服务。
+ - 加密与鉴权功能
+ - 会话管理功能
+ - 移动性管理功能
+ - 逻辑链路管理功能
+ - 同GPRS BSS、GGSN、HLR、MSC、SMS-GMSC、SMS-IWMSC的接口功能
+ - 话单产生和输出功能，主要收集用户对无线资源的使用情况
+此外，SGSN中还集成了类似于GSM网络中VLR的功能，当用户处于GPRS Attach（GPRS附着）状态时，SGSN中存储了同分组相关的用户信息和位置信息。同VLR相似，SGSN中的大部分用户信息在位置更新过程中从HLR获取。
+** GGSN (Gateway GPRS Support Node)
+用于GRPS网络与外部分组交换网络（internet、X.25等）之间的通讯，从外部网络看，GGSN就是一个子网的路由器，GGSN对外部网络隐藏了GPRS的底层结构。
+当GGSN接收到一个指定用户的数据时，检查用户是否是活动的，如果是，GGSN将数据转发给SGSN，否则丢弃数据。反过来，GGSN将用户的数据包向外传递除去。
+
+** PCU (Packet Control Unit)
+分组控制单元PCU是在BSS侧增加的一个处理单元，主要完成BSS侧的分组业务处理和分组无线信道资源管理，目前PCU一般在BSC和SGSN之间实现。
+
+** GSN
+GGSN和SGSN合称GSN
+
+** SGW Serving Gateway
+
+TA Trace Area
+PDNGW P-GW 
+S-GW
+
+** RA (Route Area)
+路由区RA是2G时代和3G时代分组域的概念，它使SGSN能及时知道终端的位置，终端要发起数据传输时，须向SGSN和HLR注册并寻呼路由区内终端。
+中孤单可以在一个RA内不需要做RA更新；在跨路由区移动时将发生RA更新；同时需要进行周期性RA更新。
+RAI = PLMN + LAC + RAC
+
+** IMSI (International Mobile Subscriber Identity)
+** GUID (Globally Unique Identity)
+** GUTI (Globally Unique Temporary UE ID)
+UE初始附着的时候，在attache accept中会给UE带下来一个GUTI，下次接入时UE带老的GUTI进行鉴权。
+
+PDP上下文
+
+TEID Tunnel Endpoint Identifier
+GTPv1的概念，用于表示一条隧道，分为数据面TEID（TEID(U)）和控制面TEID（TEID(C)），有SGSN和GGSN自己分配。
+APN Access Point Name
+MEI Mobile Equipment Identity
+ULI User Location Info
+
+** Gn (GGSN & SGSN)
+
+** GTP (GPRS tunneling protocol)
+GPRS管道协议是定义IP的GPRS核心网协议，主要用于GSM和WCDMA网络，允许终端用户从一个地方移动到另外一个地方时保持与Internet的连接。
+通过将SGSN中的用户数据传递到GGSN来处理用户会话。GPRS核心网使用三种形式的GTP协议：
+1. GTP-U 对每个PDP上下文(packet data protocol context)，用单独的管道来传输用户数据
+   GTP-C 用于控制、建立和删除PDP上下文、认证GSN可达性、更新（例如用户从一个SGSN移动到另一个SGSN）
+2. GTP 传输计费数据
+   GGSN和SGSN（合称GSN）使用UDP2123端口监听GTP-C报文，DUP端口2152监听GTP-U报文
+3. 计费网关（charging gateway function, CGF）使用TCP或UDP端口3386监听GSN发送的GTP协议的报文。
+   GPRS核心网发送计费信息给CGF，包括PDP上下文的激活时间、终端用户已传输的数据量。
+
+
+* EPS (Evolved Packet System)
+EPS = E-UTRAN + EPC
+E-UTRAN = UE + eNB
+LTE = E-UTRAN
+EPC = MMU + SGW + PGW + PCRF
+GSN = SGSN + GGSN
+
+** LTE (Long Term Evolution)
+
+** E-UTRAN
+** PSPDN 
+** UE User Equipment
+** eNB (eNodeB)
+
+** EPC (Evolved Packet Core)
+EPC网络可以支持3GPP和非3GPP（如Wi-Fi、WiMAX等）多种接入方式，是支持异构网络的融合架构。
+在次架构下，短信、语音等传统的电路域业务将借助VoLTE模式进行承载，也可以采用CSFB（Circuit Switched Fallback，电路域回落）的方案使用原来的电路域完成语音业务。
+EPC网络是4G移动通信网络的核心网，具备用户签约数据存储，移动性管理和数据交换等移动网络的传统能力，并能给用户提供超高速的网络体验。具备以下特点：
+ 1. 核心网趋同化，交换功能路优化
+ 2. 业务平面和控制平面完全分离
+ 3. 网元数目最小化，协议层次最优化
+ 4. 网络扁平化，全IP化。
+EPC由MMU, SGW, PGW, PCRF等网元组成。
+
+** MME (Mobility Management Entity)
+负责信令处理部分，包括空闲模式下的UE的定位，传呼过程，包括中继。原3G网络中SGSN网元的控制面功能
+
+** SGW (Serving Gateway)
+原3G网络中SGSN网元的用户面功能，也可写为S-GW
+
+** PGW (PDN Gateway)
+原3G网络中GGSN网元的功能，也可写为P-GW
+
+** PCRF (Policy and Charging Rules Function)
+完成对用户数据报文的策略和计费功能
+
+** HSS (Home Subscribe Server)
+
+** TA (Tracking Area)
+跟踪区TA是LTE系统为UE的位置管理新设立的概念。当UE处于空闲状态时，核心网络能够知道UE所在的跟踪区，
+同时当处于空闲状态的UE需要被寻呼时，必须在UE所注册的跟踪区进行寻呼。
+** TAC (Tracking Area Code)
+** TAI (Tracking Area Identifier)
+TAI = PLMN + TAC
+** TA List
+UE在该TA列表内移动时不需要执行TA更新，以减少网络频繁交互；当UE进入不在其所注册的TA列表中的新TA时，需要执行TA更新，
+MME给UE重新分配一组TA；每个小区只属于一个TA，多个小区可以配置相同的TA。
+** ECI (E-UTRAN Cell Identifier)
+E-UTRAN小区标识用于在一个PLMN范围内对小区进行标识。由28bit长的整数组成，包含了eNodeB标识。
+** ECGI (E-UTRAN Cell Global Identifier)
+E-UTRAN小区全球标识码ECGI是唯一地识别一个小区的识别码。
+ECGI = MCC + MNC + ECI
+** S1
+eNB和EPC
+** X2
+eNB和eNB
+** S1-MME
+
+** S1-U
+** S11
+** S6a
+MME & HSS
+
+** interface
+Um Gb Gi Gn Gs Gr Gd Gp Gc Gf
+
+
+** NAS (No Access Stratum)
+
+
+* 情景分析
+** 在跨省火车上，手机邮箱（使用163邮箱）收到异常登录，存在被盗号的可能。这么巧？
+
+
+* 参考资料
+** GSM基本原理
+** LTE initial attach 3GPP 23.401

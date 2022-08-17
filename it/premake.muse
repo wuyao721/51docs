@@ -1,0 +1,77 @@
+#author 吴遥
+#title Premake 快速入门
+
+本文参考了英文版[[http://industriousone.com/premake-quick-start][Premake Quick Start]]，但并不是它的中文译文。
+
+<contents>
+
+* 你应该使用premake吗
+
+如果在软件项目管理过程中，你有以下烦恼，那么你就应该考虑使用premake：
+
+   - 你正在管理一个跨平台的工程，你想只拥有一个工程文件，而不用为每个平台写工程文件
+   - 你觉得使用Microsoft Visual Studio管理（设置）工程很麻烦，你必须不停地点鼠标
+   - 你觉得你难以记住makefile糟糕的语法
+
+* premake是什么
+premake是一个生成配置文件的工具，它读入一个描述文件(premake4.lua)，该文件描述了解决方案里有哪些工程，各自己有哪些配置（比如说使用哪些宏，链接哪些库）等等，最后生成各种工具可使用的文件（例如sln或者makefile）。
+
+* premake用法
+premake是一个命令行程序，默认情况下它读入文件premake4.lua并生成工程（解决方案）。最简单的命令如下：
+<example>
+premake4 action
+</example>
+
+action可以是以下的其中一项：
+    - vs2008 	Visual Studio 2008 (or Express)
+    - vs2005 	Visual Studio 2005 (or Express), SharpDevelop, or MonoDevelop
+    - vs2003 	Visual Studio 2003
+    - vs2002 	Visual Studio 2002
+    - gmake 	GNU Make (including Cygwin and MinGW)
+    - xcode3 	Apple Xcode 3
+    - codeblocks 	Code::Blocks
+    - codelite 	CodeLite
+
+这样你就可以使用Microsoft Visual Studio来打开sln文件或者通过make程序打开Makefile
+
+通过以下命令可以得到所有的用法:
+
+<example>
+premake4 --help
+</example>
+
+* 一个简单的例子
+以下是一个简单的例子，解决方案名为MyApplication，它有一个工程为MyApplication，此工程是控制台程序，使用程序语言是C++，源代码使用当前目录下的所有.cpp以及所有.h文件；此解决方案有两种配置Debug和Release，它们分别有不同的宏信息以及其它配置信息。
+
+<example>
+-- A solution contains projects, and defines the available configurations
+solution "MyApplication"
+   configurations { "Debug", "Release" }
+ 
+   -- A project defines one build target
+   project "MyApplication"
+      kind "ConsoleApp"
+      language "C++"
+      files { "**.h", "**.cpp" }
+ 
+      configuration "Debug"
+         defines { "DEBUG" }
+         flags { "Symbols" }
+ 
+      configuration "Release"
+         defines { "NDEBUG" }
+         flags { "Optimize" }   
+</example>
+
+* lua语言
+程序premake4其实是一个lua语言的解释器，因此文件premake4.lua就是lua程序代码。所以如果对lua语言有一定的了解将有助于读写工程文件。
+
+* premake派生的语言
+premake4.lua文件除了遵从lua语言之，它还有自己的扩展，好像solution、project、configuration、luanguage等关键字（实际上它们在lua语言里只是函数）。
+想了这些关键字的意义，可以参考[[http://industriousone.com/scripting-reference][premake语法参考手册]]。
+
+* FAQ
+
+** 运行premake4时出现 “invalid value 'NoIncrementalLink'”
+使用较新版本（4.4或以上）将能解决这个问题
+

@@ -167,3 +167,11 @@ M-x magit-checkout
 1. 在magit-log视图中复制这个版本的代号，如99ba3094
 2. 在magit-log视图中按以下步骤：E r 99ba3094 RET RET
 
+# github环境配置
+1. 先将证书公钥部分上传到github网站
+cat ~/.ssh/id_rsa.pub
+
+2. 登陆**https://github.com/settings/keys**，点击**New SSH key**，并上传证书公钥
+
+3. 使用ssh的方式拉取项目，如：
+git clone git@github.com:wuyao721/51docs.git
