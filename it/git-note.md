@@ -87,7 +87,7 @@ git reset xxx
 ```
 
 2. 撤销掉远程的提交
-有时候push以后发现代码有问题，不想改了重新提交一次，在确保没有人获取该提交的前提下，撤销是一个好选择
+有时候push以后发现代码有问题，不想改了重新提交一次，撤销是一个好选择
 ```
 git reset xxx
 git push --force
@@ -175,3 +175,8 @@ cat ~/.ssh/id_rsa.pub
 
 3. 使用ssh的方式拉取项目，如：
 git clone git@github.com:wuyao721/51docs.git
+
+
+
+# 参考资料
+[Pro Git](https://www.progit.cn/)

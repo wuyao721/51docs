@@ -7,13 +7,33 @@
 ## 继承
 ## 多态
 ### 模版
+模板一般都写在头文件中。
+
+一般情况类模板中的函数定义和声明不分开，如需分开，需在定义中类名称后加上类型列表。
+``` C++
+template<typename T>
+class  xxx {
+public:
+    T xx;
+    xxx(T t);
+    int jjj();
+};
+            
+template<typename T>
+xxx<T>::xxx(T t)
+{
+    xx = t;
+}
+            	
+```
+不允许将声明和定义写在不同的文件中（例如.h和.cpp）
 ### 虚函数
 ### 函数/运算符重载
 
 # 关键字
 ## namespace
 ## using
-``` C++17
+``` C++
 using InflightExtHttpRequestPtr = std::shared_ptr<InflightExtHttpRequest>;
 ```
 
@@ -175,3 +195,4 @@ void iii()
   400626:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
   40062d:	00 00 00 
 ```
+
