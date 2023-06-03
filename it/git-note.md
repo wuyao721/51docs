@@ -31,7 +31,7 @@ git --no-pager diff
 # 常用命令
 ## 拉取
 1. 从远程仓库拉取分支
-git clone -b shiro550 git@git.woa.com:sec-menshen/menshen_proj.git
+git clone -b shiro550 git@git.xxx.com:xx-xxx/xxx.git
 
 2. 切换分支
 -f参数用于在冲突的时候强行切换
